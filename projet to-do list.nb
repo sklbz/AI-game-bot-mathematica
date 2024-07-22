@@ -1,0 +1,57 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 14.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      1663,         49]
+NotebookOptionsPosition[      1306,         35]
+NotebookOutlinePosition[      1712,         51]
+CellTagsIndexPosition[      1669,         48]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ StyleBox["To-Do List:",
+  FontVariations->{"Underline"->True}],
+ "\n-Grid de depart(initialisation)\n-Fonction pour deplacer le pion du \
+joueur\n-Fonction pour detruire une case\n-Fonction qui verifie si le joueur \
+peut se deplacer(et donc si victoire ou pas)\n-Graphisme pions et cases \
+detruites\n-Mettre le tout dans un dynamique module\n-IA\n-Faire le machine \
+Learning\n-Boutons pour jouer contre humain ou machine etc...\n"
+}], "Text",
+ CellChangeTimes->{{3.9306253281739902`*^9, 3.9306254773455467`*^9}, {
+  3.930625796362833*^9, 3.9306258132895412`*^9}, {3.9306258483830776`*^9, 
+  3.930625848743946*^9}, {3.9306258836388073`*^9, 
+  3.9306258837286816`*^9}},ExpressionUUID->"d97be080-36f2-724b-971d-\
+0c11b2d1de96"]
+},
+WindowSize->{960, 532},
+WindowMargins->{{-5.5, Automatic}, {Automatic, -5.5}},
+FrontEndVersion->"14.0 for Microsoft Windows (64-bit) (December 12, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"e3b15000-e2ad-1146-9c1d-69f186928ac6"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 744, 13, 265, "Text",ExpressionUUID->"d97be080-36f2-724b-971d-0c11b2d1de96"]
+}
+]
+*)
+
