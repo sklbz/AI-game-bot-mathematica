@@ -1,7 +1,7 @@
 TODO
 - [x] grid
-- [] deplacement
-- [] detruire case 
+- [/] deplacement
+- [/] detruire case 
 - [] possibilité deplacement 
 - [] graphisme 
 - [] AI 
