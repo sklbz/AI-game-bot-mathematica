@@ -2,7 +2,7 @@ TODO
 - [x] grid
 - [/] deplacement
 - [/] detruire case 
-- [] possibilité deplacement 
-- [] graphisme 
+- [x] possibilité deplacement 
+- [/] graphisme 
 - [] AI 
 - [] pvp, pva
