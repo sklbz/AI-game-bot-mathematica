@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     31413,        762]
-NotebookOptionsPosition[     30348,        735]
-NotebookOutlinePosition[     30784,        752]
-CellTagsIndexPosition[     30741,        749]
+NotebookDataLength[     42456,       1067]
+NotebookOptionsPosition[     41504,       1040]
+NotebookOutlinePosition[     42276,       1065]
+CellTagsIndexPosition[     42233,       1062]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -33,12 +33,17 @@ Cell[BoxData[{
     RowBox[{
      RowBox[{"{", "\[IndentingNewLine]", 
       RowBox[{
-      "displayGrid", ",", " ", "displayGraphGrid", ",", " ", "displayMatrix", 
-       ",", " ", 
+       RowBox[{"infinity", " ", "=", " ", "1000"}], ",", 
+       "\[IndentingNewLine]", "displayGrid", ",", " ", "graphDestroyGrid", 
+       ",", " ", "displayMatrix", ",", " ", 
        RowBox[{"gridX", " ", "=", " ", "5"}], ",", " ", 
        RowBox[{"gridY", " ", "=", " ", "5"}], ",", " ", 
        RowBox[{"cellSize", " ", "=", " ", "73"}], ",", "destroyMatrix", ",", 
-       "\[IndentingNewLine]", 
+       "distanceMatrixRed", ",", " ", "distanceMatrixBlue", ",", 
+       "\[IndentingNewLine]", "moveMatrixRed", ",", "moveMatrixBlue", ",", 
+       " ", "simplerMatrix", ",", "displayRedGrid", ",", " ", 
+       "displayBlueGrid", ",", "graphBlueGrid", ",", " ", "graphRedGrid", ",",
+        "\[IndentingNewLine]", "updateDistances", ",", "\[IndentingNewLine]", 
        RowBox[{"terrainMatrix", " ", "=", " ", "0"}], ",", "floor", ",", 
        "\[IndentingNewLine]", "terrainGrid", ",", "\[IndentingNewLine]", 
        RowBox[{"gridRules", " ", "=", " ", 
@@ -53,26 +58,31 @@ Cell[BoxData[{
            "\"\<floor1\>\"", ",", " ", "\"\<void\>\"", ",", " ", 
             "\"\<floor2\>\"", ",", " ", "\"\<player1\>\"", ",", " ", 
             "\"\<player2\>\""}], "}"}]}], "]"}]}], ",", "\[IndentingNewLine]", 
-       RowBox[{"matrixToTerrain", " ", "=", " ", 
+       RowBox[{"playingTurnRules", " ", "=", " ", 
         RowBox[{"AssociationThread", "[", 
          RowBox[{
           RowBox[{"{", 
-           RowBox[{"0", ",", " ", "1", ",", " ", "2", ",", " ", "3"}], "}"}], 
-          ",", " ", 
+           RowBox[{"0", ",", " ", "1"}], "}"}], ",", " ", 
           RowBox[{"{", 
-           RowBox[{
-            RowBox[{"Graphics", "[", 
-             RowBox[{"{", 
-              RowBox[{"Black", ",", " ", "S"}], "}"}], "]"}], ",", " ", 
-            "\"\<floor\>\"", ",", " ", "\"\<player1\>\"", ",", " ", 
-            "\"\<player2\>\""}], "}"}]}], "]"}]}], ",", "\[IndentingNewLine]",
-        "getTerrain", ",", "\[IndentingNewLine]", "centerX", ",", " ", 
-       "centerY", ",", "\[IndentingNewLine]", 
-       RowBox[{"whoIsPlaying", " ", "=", " ", "0"}], ",", " ", "changeTurn", 
-       ",", "\[IndentingNewLine]", "position", ",", "\[IndentingNewLine]", 
-       "init", ",", "\[IndentingNewLine]", "updateMatrix", ",", 
-       "\[IndentingNewLine]", "display", ",", "\[IndentingNewLine]", 
-       "displayBtn"}], "\[IndentingNewLine]", "}"}], ",", 
+           RowBox[{"\"\<blue\>\"", ",", " ", "\"\<red\>\""}], "}"}]}], 
+         "]"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"playingActionRules", " ", "=", " ", 
+        RowBox[{"AssociationThread", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", ",", " ", "1"}], "}"}], ",", " ", 
+          RowBox[{"{", 
+           RowBox[{"\"\<move\>\"", ",", " ", "\"\<destroy\>\""}], "}"}]}], 
+         "]"}]}], ",", "\[IndentingNewLine]", "getTerrain", ",", 
+       "\[IndentingNewLine]", "centerX", ",", " ", "centerY", ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"whoIsPlaying", " ", "=", " ", "0"}], ",", " ", 
+       RowBox[{"currentAction", " ", "=", " ", "0"}], ",", 
+       "\[IndentingNewLine]", "changeTurn", ",", "\[IndentingNewLine]", 
+       "position", ",", "\[IndentingNewLine]", "init", ",", 
+       "\[IndentingNewLine]", "updateMatrix", ",", "\[IndentingNewLine]", 
+       "display", ",", "\[IndentingNewLine]", "graybtn", ",", " ", "redbtn", 
+       ",", " ", "bluebtn"}], "\[IndentingNewLine]", "}"}], ",", 
      "\[IndentingNewLine]", 
      RowBox[{"(*", "variables", "*)"}], "\[IndentingNewLine]", 
      RowBox[{
@@ -194,11 +204,272 @@ Cell[BoxData[{
               RowBox[{"position", "[", 
                RowBox[{"[", "2", "]"}], "]"}], "[", 
               RowBox[{"[", "2", "]"}], "]"}]}], "]"}], "]"}], " ", "=", " ", 
-          "3"}], ";"}], "\[IndentingNewLine]", ")"}]}], ";", 
+          "3"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"updateDistances", "[", "]"}], ";"}], "\[IndentingNewLine]", 
+        ")"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"(*", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"(*", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"graybtn", "[", "]"}], " ", ":=", " ", 
+       RowBox[{"Button", "[", 
+        RowBox[{
+         RowBox[{"Graphics", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Darker", "[", 
+             RowBox[{"Gray", ",", " ", "0.5"}], "]"}], ",", " ", 
+            RowBox[{"Circle", "[", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"0", ",", " ", "0"}], "}"}], ",", " ", "15"}], "]"}], 
+            ",", " ", 
+            RowBox[{"Opacity", "[", "0.4", "]"}], ",", " ", 
+            RowBox[{"Disk", "[", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"0", ",", " ", "0"}], "}"}], ",", " ", "15"}], "]"}]}],
+            "}"}], "]"}], ",", " ", 
+         RowBox[{"Print", "[", "\"\<click\>\"", "]"}], ",", " ", 
+         RowBox[{"Method", "->", "\"\<Queued\>\""}], ",", " ", 
+         RowBox[{"ImageSize", " ", "->", " ", 
+          RowBox[{"{", 
+           RowBox[{"10", ",", " ", "10"}], "}"}]}], ",", " ", 
+         RowBox[{"Appearance", "->", "\"\<Frameless\>\""}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"bluebtn", "[", "]"}], " ", ":=", " ", 
+       RowBox[{"Button", "[", 
+        RowBox[{
+         RowBox[{"Graphics", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Darker", "[", 
+             RowBox[{"Blue", ",", " ", "0.5"}], "]"}], ",", " ", 
+            RowBox[{"Circle", "[", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"0", ",", " ", "0"}], "}"}], ",", " ", "15"}], "]"}], 
+            ",", " ", 
+            RowBox[{"Opacity", "[", "0.4", "]"}], ",", " ", 
+            RowBox[{"Disk", "[", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"0", ",", " ", "0"}], "}"}], ",", " ", "15"}], "]"}]}],
+            "}"}], "]"}], ",", " ", 
+         RowBox[{"Print", "[", "\"\<click\>\"", "]"}], ",", " ", 
+         RowBox[{"Method", "->", "\"\<Queued\>\""}], ",", " ", 
+         RowBox[{"ImageSize", " ", "->", " ", 
+          RowBox[{"{", 
+           RowBox[{"10", ",", " ", "10"}], "}"}]}], ",", " ", 
+         RowBox[{"Appearance", "->", "\"\<Frameless\>\""}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"redbtn", "[", "]"}], " ", ":=", " ", 
+       RowBox[{"Button", "[", 
+        RowBox[{
+         RowBox[{"Graphics", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Darker", "[", 
+             RowBox[{"Red", ",", " ", "0.5"}], "]"}], ",", " ", 
+            RowBox[{"Circle", "[", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"0", ",", " ", "0"}], "}"}], ",", " ", "15"}], "]"}], 
+            ",", " ", 
+            RowBox[{"Opacity", "[", "0.4", "]"}], ",", " ", 
+            RowBox[{"Disk", "[", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"0", ",", " ", "0"}], "}"}], ",", " ", "15"}], "]"}]}],
+            "}"}], "]"}], ",", " ", 
+         RowBox[{"Print", "[", "\"\<click\>\"", "]"}], ",", " ", 
+         RowBox[{"Method", "->", "\"\<Queued\>\""}], ",", " ", 
+         RowBox[{"ImageSize", " ", "->", " ", 
+          RowBox[{"{", 
+           RowBox[{"10", ",", " ", "10"}], "}"}]}], ",", " ", 
+         RowBox[{"Appearance", "->", "\"\<Frameless\>\""}]}], "]"}]}], ";", 
       "\[IndentingNewLine]", 
       RowBox[{"(*", "*)"}], "\[IndentingNewLine]", 
-      RowBox[{"(*", "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
-      RowBox[{"(*", "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{"--", 
+         RowBox[{"--", 
+          RowBox[{"--", 
+           RowBox[{"--", 
+            RowBox[{"--", 
+             RowBox[{"--", 
+              RowBox[{"--", 
+               RowBox[{"--", 
+                RowBox[{"--", 
+                 RowBox[{"--", 
+                  RowBox[{"--", 
+                   RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"MATRICES", "--"}], "--"}], "--"}], 
+                    "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}], 
+        RowBox[{"--", 
+         RowBox[{"--", 
+          RowBox[{"--", 
+           RowBox[{"--", 
+            RowBox[{"--", 
+             RowBox[{"--", 
+              RowBox[{"--", 
+               RowBox[{"--", 
+                RowBox[{"--", 
+                 RowBox[{"--", 
+                  RowBox[{"--", 
+                   RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{
+                    "--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}], 
+       "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"simplerMatrix", " ", ":=", 
+       RowBox[{"terrainMatrix", "/.", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "1"}], "|", "1"}], " ", "->", " ", "0"}], ",", " ", 
+          RowBox[{
+           RowBox[{"0", "|", "2", "|", "3"}], " ", "->", " ", "infinity"}]}], 
+         "}"}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"terrainGrid", " ", ":=", " ", 
+       RowBox[{"terrainMatrix", " ", "/.", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "1"}], " ", "->", " ", 
+           RowBox[{"Lighter", "[", 
+            RowBox[{"Yellow", ",", " ", "0.5"}], "]"}]}], ",", 
+          RowBox[{"0", "->", "Black"}], ",", 
+          RowBox[{"1", "->", 
+           RowBox[{"Lighter", "[", 
+            RowBox[{"Orange", ",", " ", "0.5"}], "]"}]}], ",", 
+          RowBox[{"2", "->", "Null"}], ",", 
+          RowBox[{"3", "->", "Null"}]}], "}"}]}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"destroyMatrix", " ", ":=", " ", 
+       RowBox[{"terrainMatrix", "/.", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "1"}], "|", "1"}], " ", "->", " ", 
+           RowBox[{"graybtn", "[", "]"}]}], ",", " ", 
+          RowBox[{
+           RowBox[{"0", "|", "2", "|", "3"}], " ", "->", " ", "Null"}]}], 
+         "}"}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"moveMatrixRed", " ", ":=", " ", 
+       RowBox[{"distanceMatrixRed", "/.", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"1", "->", " ", 
+           RowBox[{"redbtn", "[", "]"}]}], ",", " ", 
+          RowBox[{
+           RowBox[{"x_", "/;", 
+            RowBox[{"x", ">", "1"}]}], " ", "->", " ", "Null"}]}], "}"}]}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"moveMatrixBlue", " ", ":=", " ", 
+       RowBox[{"distanceMatrixBlue", "/.", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"1", "->", " ", 
+           RowBox[{"bluebtn", "[", "]"}]}], ",", 
+          RowBox[{
+           RowBox[{"x_", "/;", 
+            RowBox[{"x", ">", "1"}]}], " ", "->", " ", "Null"}]}], "}"}]}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"updateDistances", " ", ":=", " ", 
+       RowBox[{"(", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"distanceMatrixRed", ":=", " ", "simplerMatrix"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"distanceMatrixRed", " ", "=", " ", 
+          RowBox[{"Table", "[", 
+           RowBox[{
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"distanceMatrixRed", "[", 
+                RowBox[{"[", 
+                 RowBox[{"j", ",", "i"}], "]"}], "]"}], "+", 
+               RowBox[{"Max", "[", 
+                RowBox[{
+                 RowBox[{"Abs", "[", 
+                  RowBox[{
+                   RowBox[{"position", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"2", ",", " ", "1"}], "]"}], "]"}], " ", "-", " ",
+                    "j"}], "]"}], ",", 
+                 RowBox[{"Abs", "[", 
+                  RowBox[{
+                   RowBox[{"position", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"2", ",", " ", "2"}], "]"}], "]"}], " ", "-", " ",
+                    "i"}], "]"}]}], "]"}]}], ",", " ", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", " ", "gridX"}], "}"}]}], "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"j", ",", " ", "gridY"}], "}"}]}], "]"}]}], ";", 
+         "\[IndentingNewLine]", "\[IndentingNewLine]", 
+         RowBox[{"distanceMatrixBlue", ":=", " ", "simplerMatrix"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"distanceMatrixBlue", " ", "=", " ", 
+          RowBox[{"Table", "[", 
+           RowBox[{
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"distanceMatrixBlue", "[", 
+                RowBox[{"[", 
+                 RowBox[{"j", ",", "i"}], "]"}], "]"}], "+", 
+               RowBox[{"Max", "[", 
+                RowBox[{
+                 RowBox[{"Abs", "[", 
+                  RowBox[{
+                   RowBox[{"position", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"1", ",", " ", "1"}], "]"}], "]"}], " ", "-", " ",
+                    "j"}], "]"}], ",", 
+                 RowBox[{"Abs", "[", 
+                  RowBox[{
+                   RowBox[{"position", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"1", ",", " ", "2"}], "]"}], "]"}], " ", "-", " ",
+                    "i"}], "]"}]}], "]"}]}], ",", " ", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", " ", "gridX"}], "}"}]}], "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"j", ",", " ", "gridY"}], "}"}]}], "]"}]}], ";"}], 
+        "\[IndentingNewLine]", ")"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{"<<", 
+        RowBox[{"<", 
+         RowBox[{"--", 
+          RowBox[{"--", 
+           RowBox[{"--", 
+            RowBox[{"--", 
+             RowBox[{"--", 
+              RowBox[{"--", 
+               RowBox[{"--", 
+                RowBox[{"--", 
+                 RowBox[{"--", 
+                  RowBox[{"--", 
+                   RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", "<<"}]}]}]}]}]}]}]}]}]}]}]}]}], "<"}]}], 
+       "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{
        RowBox[{"displayGrid", "[", "]"}], " ", ":=", " ", 
        RowBox[{"Grid", "[", 
@@ -212,9 +483,67 @@ Cell[BoxData[{
            RowBox[{"5", ",", " ", "5"}], "}"}]}]}], "]"}]}], ";", 
       "\[IndentingNewLine]", 
       RowBox[{
-       RowBox[{"displayGraphGrid", "[", "]"}], " ", ":=", " ", 
+       RowBox[{"displayBlueGrid", "[", "]"}], " ", ":=", " ", 
+       RowBox[{"Grid", "[", 
+        RowBox[{"distanceMatrixBlue", ",", " ", 
+         RowBox[{"Frame", "->", "None"}], ",", "  ", 
+         RowBox[{"Alignment", "->", 
+          RowBox[{"{", 
+           RowBox[{"Center", ",", " ", "Center"}], "}"}]}], ",", " ", 
+         RowBox[{"ItemSize", "->", 
+          RowBox[{"{", 
+           RowBox[{"5", ",", " ", "5"}], "}"}]}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"displayRedGrid", "[", "]"}], " ", ":=", " ", 
+       RowBox[{"Grid", "[", 
+        RowBox[{"distanceMatrixRed", ",", " ", 
+         RowBox[{"Frame", "->", "None"}], ",", "  ", 
+         RowBox[{"Alignment", "->", 
+          RowBox[{"{", 
+           RowBox[{"Center", ",", " ", "Center"}], "}"}]}], ",", " ", 
+         RowBox[{"ItemSize", "->", 
+          RowBox[{"{", 
+           RowBox[{"5", ",", " ", "5"}], "}"}]}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"graphDestroyGrid", "[", "]"}], " ", ":=", " ", 
        RowBox[{"GraphicsGrid", "[", 
-        RowBox[{"terrainGrid", ",", " ", "\[IndentingNewLine]", 
+        RowBox[{"destroyMatrix", ",", " ", "\[IndentingNewLine]", 
+         RowBox[{"Frame", "->", "None"}], ",", "  ", 
+         RowBox[{"Alignment", "->", 
+          RowBox[{"{", 
+           RowBox[{"Center", ",", " ", "Center"}], "}"}]}], ",", " ", 
+         "\[IndentingNewLine]", 
+         RowBox[{"ItemAspectRatio", "->", "1"}]}], " ", 
+        RowBox[{"(*", 
+         RowBox[{"ImageSize", "->", " ", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"gridX", "*", "cellSize"}], ",", " ", 
+            RowBox[{"gridY", " ", "*", " ", "cellSize"}]}], "}"}]}], "*)"}], 
+        "\[IndentingNewLine]", "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"graphRedGrid", "[", "]"}], " ", ":=", " ", 
+       RowBox[{"GraphicsGrid", "[", 
+        RowBox[{"moveMatrixRed", ",", " ", "\[IndentingNewLine]", 
+         RowBox[{"Frame", "->", "None"}], ",", "  ", 
+         RowBox[{"Alignment", "->", 
+          RowBox[{"{", 
+           RowBox[{"Center", ",", " ", "Center"}], "}"}]}], ",", " ", 
+         "\[IndentingNewLine]", 
+         RowBox[{"ItemAspectRatio", "->", "1"}]}], " ", 
+        RowBox[{"(*", 
+         RowBox[{"ImageSize", "->", " ", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"gridX", "*", "cellSize"}], ",", " ", 
+            RowBox[{"gridY", " ", "*", " ", "cellSize"}]}], "}"}]}], "*)"}], 
+        "\[IndentingNewLine]", "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"graphBlueGrid", "[", "]"}], " ", ":=", " ", 
+       RowBox[{"GraphicsGrid", "[", 
+        RowBox[{"moveMatrixBlue", ",", " ", "\[IndentingNewLine]", 
          RowBox[{"Frame", "->", "None"}], ",", "  ", 
          RowBox[{"Alignment", "->", 
           RowBox[{"{", 
@@ -247,33 +576,6 @@ Cell[BoxData[{
             RowBox[{"2", "->", "Blue"}], ",", 
             RowBox[{"3", "->", "Red"}]}], "}"}]}], ",", " ", 
          RowBox[{"Background", "->", "LightBlue"}]}], "]"}]}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"displayBtn", "[", "]"}], " ", ":=", " ", 
-       RowBox[{"Button", "[", 
-        RowBox[{
-         RowBox[{"Graphics", "[", 
-          RowBox[{"{", 
-           RowBox[{
-            RowBox[{"Darker", "[", 
-             RowBox[{"Gray", ",", " ", "0.5"}], "]"}], ",", " ", 
-            RowBox[{"Circle", "[", 
-             RowBox[{
-              RowBox[{"{", 
-               RowBox[{"0", ",", " ", "0"}], "}"}], ",", " ", "15"}], "]"}], 
-            ",", " ", 
-            RowBox[{"Opacity", "[", "0.4", "]"}], ",", " ", 
-            RowBox[{"Disk", "[", 
-             RowBox[{
-              RowBox[{"{", 
-               RowBox[{"0", ",", " ", "0"}], "}"}], ",", " ", "15"}], "]"}]}],
-            "}"}], "]"}], ",", " ", 
-         RowBox[{"Print", "[", "\"\<click\>\"", "]"}], ",", " ", 
-         RowBox[{"Method", "->", "\"\<Queued\>\""}], ",", " ", 
-         RowBox[{"ImageSize", " ", "->", " ", 
-          RowBox[{"{", 
-           RowBox[{"10", ",", " ", "10"}], "}"}]}], ",", " ", 
-         RowBox[{"Appearance", "->", "\"\<Frameless\>\""}]}], "]"}]}], ";", 
       "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{"display", " ", ":=", " ", 
        RowBox[{"displayMatrix", "[", "]"}]}], ";", "\[IndentingNewLine]", 
@@ -289,6 +591,11 @@ Cell[BoxData[{
          RowBox[{"2", ",", " ", "1"}], "]"}], "]"}], " ", "=", " ", "4"}], 
       ";", "\[IndentingNewLine]", 
       RowBox[{
+       RowBox[{"position", "[", 
+        RowBox[{"[", 
+         RowBox[{"2", ",", " ", "2"}], "]"}], "]"}], " ", "=", " ", "3"}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{
        RowBox[{"floor", "[", 
         RowBox[{"[", 
          RowBox[{"3", ",", " ", "3"}], "]"}], "]"}], " ", "=", " ", "0"}], 
@@ -299,72 +606,52 @@ Cell[BoxData[{
          RowBox[{"3", ",", " ", "2"}], "]"}], "]"}], " ", "=", " ", "0"}], 
       ";", "\[IndentingNewLine]", 
       RowBox[{"updateMatrix", "[", "]"}], ";", "\[IndentingNewLine]", 
-      RowBox[{"terrainGrid", " ", "=", " ", 
-       RowBox[{"terrainMatrix", " ", "/.", 
-        RowBox[{"{", 
-         RowBox[{
-          RowBox[{
-           RowBox[{"-", "1"}], " ", "->", " ", 
-           RowBox[{"Lighter", "[", 
-            RowBox[{"Yellow", ",", " ", "0.5"}], "]"}]}], ",", 
-          RowBox[{"0", "->", "Black"}], ",", 
-          RowBox[{"1", "->", 
-           RowBox[{"Lighter", "[", 
-            RowBox[{"Orange", ",", " ", "0.5"}], "]"}]}], ",", 
-          RowBox[{"2", "->", "Null"}], ",", 
-          RowBox[{"3", "->", "Null"}]}], "}"}]}]}], ";", 
       "\[IndentingNewLine]", 
-      RowBox[{"destroyMatrix", " ", ":=", " ", 
-       RowBox[{"terrainMatrix", "/.", 
-        RowBox[{"{", 
-         RowBox[{
-          RowBox[{
-           RowBox[{
-            RowBox[{"-", "1"}], "|", "1"}], " ", "->", " ", 
-           RowBox[{"displayBtn", "[", "]"}]}], ",", " ", 
-          RowBox[{
-           RowBox[{"0", "|", "2", "|", "3"}], " ", "->", " ", "Null"}]}], 
-         "}"}]}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{"Dynamic", "@", 
        RowBox[{"Overlay", "[", 
         RowBox[{
          RowBox[{"{", 
           RowBox[{
            RowBox[{"displayMatrix", "[", "]"}], ",", 
-           RowBox[{"displayGraphGrid", "[", "]"}]}], "}"}], ",", " ", "None", 
+           RowBox[{"graphRedGrid", "[", "]"}], ",", " ", 
+           RowBox[{"graphBlueGrid", "[", "]"}]}], "}"}], ",", " ", "None", 
          ",", " ", "2"}], "]"}]}]}]}], "\[IndentingNewLine]", "]"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{"Isola", "[", "]"}]}], "Input",
  CellChangeTimes->CompressedData["
-1:eJwl0X0sFGAcB/CbMLbrBYeOZpjq8k4n1qTiCrnZ1ZxoR16udTVvzduV9+uW
-y866RStSLkPyFtPpvDNrZC1ZmvdirM7LVaoLMeu+jz+effZ7nt/b9tjEJF64
-okOhUIK0BypZS04mgerT4ru9zlDS1XkUMs07mdBOfi4M6h7sF0BKXWgGZEQO
-10DvudiXsGzMRAUFItY6rNyVpUfTyu4+tg9SLZxMIU/xwBEKR287Q1mSIg2m
-xGlyoddaTT6U+OqXQpafYTl07RK1wfGl7B5Ii0kegGIPyzVYU+W5AZXtxoam
-WntFQyZQHvuYDqPCuVZwa/GtPZxdNHaAH/a0uEB2Mt+f5B9tCoHKycJQ+JOZ
-FA1PHVDvyNq+BhcGzG5A70jfVEjpqkyHtDpNNhTUavJg/YmEQsgUDxENvIVl
-MITWTWRUf6uCUvXMcyhr5zXAUXmaguS56HWQ+73Phkkes+ITkSOYIP2TAr6Q
-PjnniUpT7jwMGKv+DXkLZ9ah6s7MBtmjwF3HTGtudzFRd+qiPrR7ISFSDVup
-0DpnzAYG9O89BL0m0hxI/GbTB9YobvrBsFKrQKiSLAVBzv0VDunXxBaQd0Vj
-GpQ1BKeTuUNW2VDoJBLBhblYCZS8r5WS+pGZJ9DgZEQjlA4w28h7H68D8ku+
-TsKmfy3TpH9q3xoUiNO3yH7uGj1zEo9R4SsdhREcparMYeZGig9krM4GQ5pO
-CRdO778cDVcqkm3oWuPq1LZQ/OmwPXzELvWAjIl3/nDw7+NwOMvtiILregWx
-JO/siXQovXldCKmfi5phZt29HkibvNUP63fnv4eC0ohR6HougcgSF8xANt12
-ntRfslyGcn/Gd8hvO765U8+nW+AfJmS2cLroB3HrtcoD8gbjvaBXFT8QFrtE
-ciGtWXAFOrrtvwr5tYnxsFcozICupll5UFWiug9lU/olJP5o9BSux/RXwIBV
-t0oYJ9e0Q2Vmdw+Z/2v3EJmXIB2BbDeeGnJmy3UttSYtcwzh9DKP2Es/bgLH
-PTMtoJ0z1xoWb/85Al1b590h42G1N/wPTwURfQ==
-  "],ExpressionUUID->"752338eb-bfa3-cb42-8321-7806585fa5b3"],
+1:eJwl0XlM02cYB/AGgYEp86AIBUaAsK0TgYJlNqQyJnUU17huoYpLOYQS6wa1
+ylXGpdDMSkosAkMQZyVcAjqYVMtdwhhIJs5ZwiGMEthWOcZUGIfErd/XP375
+5Hnf53jf3+sRd+aLBAsKhZJg/qCOO+9jH770seKS3hcquzr3Q5ZjJwt6aY5E
+Qst3+ySQ0ngsEzKiH9VDzkz8D7By1N4EJXncdVi9LduKZpbf/eFOSHX2cYAi
+bek+KDfk+0K1TJsGUxJXz0P2Wv1FqDxkXQG5obY3ILMrrw2Ozef0QFpc8gBU
+BLqswfqaAxtQ177b1sGsPm/IHmrir9Fh7AmhG9x69mAvND7b7Q1/ffuuH+Qn
+i8NI/v7mCKibKDwG/2HJTsIQ16U3cl+fhnMDe85CTvShVEjpqk6HtMbVHChp
+WL0Amw5KCyFLMUS04cgrYQStm8io/asGqpam6qC6XXQbGjRpWpLnZ9VB1nfc
+fETyWFUjRIFknPSX8aZJn9zPiToH4Szkjda+hKK5w+vQ9O3UBjlHQYDFHrPn
+u0uIlk+PW0OvW0oi1fYeFbrnjnpAXt+O9yB7PM2bxP2vgmG9NiMURla4hUOT
+cv5TKLiyKCD9mvkSsq+9kwbVt4+mk7lDbjlQ7pOXB+dm4pVQOdygIvWPp65D
+m4+i7kDVAKuN7PeKOqC4/M8J2Lx5d5L0T+1dgxJF+hY5X8CqlSOJR6mw1UK7
+CxqoJkeYtZESDBnPjUchzaJcCCedYk7CxapkD7rZxMYlT6gYeX8vvMqvCISM
+8V/C4OC/105Ao7AjFq5bFcSTvE8OpkNVxldySP29uAVmNV7ugbSJb/pgk93F
+YSipiDJA5hEpkasomIJ8uucsqf/SZQFqwhh/Q3Fb0Ks39WK6M95hXO0JJ4uX
+iVv3TYFQNJjEhuwacTgs8YsWQlqLJAHu83c6BcUNZ5KgXi7PhEyH7AvQVG66
+AtVPrctJ/GTX93A9rq8K8p77V8NEzWo71GV195D5L+yGyDyp6jHk+4uWoMB4
+w9LFrGxBYAsnF0REPT3IHo4dyHKGXr5Cd1jyeuUDyLw3GwAZZbUcGLtVdxiy
+rz78jKy3BotI3dcvT8OQ40wpZGWPniN9v9v+EBrr+odhpbR8AtoYKFMk/8Hm
+DHS6FLcMLZsCV6CmvnQdmvhnt+DOmFN0V/y/Bak7rORvZ8NqQwIHDl7vC4FZ
+xdF8yCwqIrpSmwWQ710WAVV2NiJIPWeRSPIX8+Vw7r5NPnSi/1YILdtGiiCv
+ZewW5LZSO6EyN6UXNvWnDsGtzZYnUEOXjcPWH29OQ2PY9B9Q/3PMMozN2PYC
+euW+tQ51QVHEEN/F/8h9nDJ93sG7JBUFwJ9WSjlQpg4PhSwfTy7U8xwLoVEa
+eRmq5YFlJKZEVcD/AXxWyz8=
+  "],
+ CellLabel->
+  "In[619]:=",ExpressionUUID->"752338eb-bfa3-cb42-8321-7806585fa5b3"],
 
 Cell[BoxData[
- DynamicModuleBox[{$CellContext`displayGrid$$, \
-$CellContext`displayGraphGrid$$, $CellContext`displayMatrix$$, \
-$CellContext`gridX$$ = 5, $CellContext`gridY$$ = 5, $CellContext`cellSize$$ = 
-  73, $CellContext`terrainMatrix$$ = {{-1, 1, -1, 1, -1}, {2, -1, 1, -1, 
-  1}, {-1, 0, 0, 1, -1}, {1, -1, 1, -1, 3}, {-1, 1, -1, 
-  1, -1}}, $CellContext`floor$$ = {{-1, 1, -1, 1, -1}, {1, -1, 1, -1, 1}, {-1,
-   0, 0, 1, -1}, {1, -1, 1, -1, 1}, {-1, 1, -1, 
-  1, -1}}, $CellContext`terrainGrid$$ = {{
+ DynamicModuleBox[{$CellContext`infinity$$ = 
+  1000, $CellContext`displayGrid$$, $CellContext`graphDestroyGrid$$, \
+$CellContext`displayMatrix$$, $CellContext`gridX$$ = 5, $CellContext`gridY$$ =
+   5, $CellContext`cellSize$$ = 73, $CellContext`destroyMatrix$$ = {{
     Button[
      Graphics[{
        RGBColor[0.25, 0.25, 0.25], 
@@ -476,6 +763,30 @@ $CellContext`gridX$$ = 5, $CellContext`gridY$$ = 5, $CellContext`cellSize$$ =
        Opacity[0.4], 
        Disk[{0, 0}, 15]}], 
      Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
+     "Frameless"], Null, 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
+     "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
+     "Frameless"]}, {
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
      "Frameless"], 
     Button[
      Graphics[{
@@ -492,14 +803,6 @@ $CellContext`gridX$$ = 5, $CellContext`gridY$$ = 5, $CellContext`cellSize$$ =
        Opacity[0.4], 
        Disk[{0, 0}, 15]}], 
      Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
-     "Frameless"], Null}, {
-    Button[
-     Graphics[{
-       RGBColor[0.25, 0.25, 0.25], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], 
-     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
      "Frameless"], 
     Button[
      Graphics[{
@@ -516,10 +819,39 @@ $CellContext`gridX$$ = 5, $CellContext`gridY$$ = 5, $CellContext`cellSize$$ =
        Opacity[0.4], 
        Disk[{0, 0}, 15]}], 
      Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
-     "Frameless"], 
+     "Frameless"]}}, $CellContext`distanceMatrixRed$$ = {{3, 3, 3, 3, 3}, {
+  1002, 2, 2, 2, 2}, {2, 1001, 1001, 1, 2}, {2, 1, 1000, 1, 2}, {2, 1, 1, 1, 
+  2}}, $CellContext`distanceMatrixBlue$$ = {{1, 1, 2, 3, 4}, {1000, 1, 2, 3, 
+  4}, {1, 1001, 1002, 3, 4}, {2, 2, 1002, 3, 4}, {3, 3, 3, 3, 
+  4}}, $CellContext`moveMatrixRed$$ = {{Null, Null, Null, Null, Null}, {
+   Null, Null, Null, Null, Null}, {Null, Null, Null, 
     Button[
      Graphics[{
-       RGBColor[0.25, 0.25, 0.25], 
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
+     "Frameless"], Null}, {Null, 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
+     "Frameless"], Null, 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
+     "Frameless"], Null}, {Null, 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
        Circle[{0, 0}, 15], 
        Opacity[0.4], 
        Disk[{0, 0}, 15]}], 
@@ -527,23 +859,96 @@ $CellContext`gridX$$ = 5, $CellContext`gridY$$ = 5, $CellContext`cellSize$$ =
      "Frameless"], 
     Button[
      Graphics[{
-       RGBColor[0.25, 0.25, 0.25], 
+       RGBColor[0.5, 0., 0.], 
        Circle[{0, 0}, 15], 
        Opacity[0.4], 
        Disk[{0, 0}, 15]}], 
      Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
-     "Frameless"]}}, $CellContext`gridRules$$ = <|-1 -> "floor1", 0 -> "void",
-    1 -> "floor2", 2 -> "player1", 3 -> 
-   "player2"|>, $CellContext`matrixToTerrain$$ = <|0 -> Graphics[{
-      GrayLevel[0], $CellContext`S}], 1 -> "floor", 2 -> "player1", 3 -> 
-   "player2"|>, $CellContext`getTerrain$$, $CellContext`centerX$$ = 
+     "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
+     "Frameless"], Null}}, $CellContext`moveMatrixBlue$$ = {{
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
+     "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
+     "Frameless"], Null, Null, Null}, {Null, 
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
+     "Frameless"], Null, Null, Null}, {
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
+     "Frameless"], Null, Null, Null, Null}, {Null, Null, Null, Null, Null}, {
+   Null, Null, Null, Null, Null}}, $CellContext`simplerMatrix$$ = {{0, 0, 0, 
+  0, 0}, {1000, 0, 0, 0, 0}, {0, 1000, 1000, 0, 0}, {0, 0, 1000, 0, 0}, {0, 0,
+   0, 0, 0}}, $CellContext`displayRedGrid$$, $CellContext`displayBlueGrid$$, \
+$CellContext`graphBlueGrid$$, $CellContext`graphRedGrid$$, \
+$CellContext`updateDistances$$ = Null, $CellContext`terrainMatrix$$ = {{-1, 
+  1, -1, 1, -1}, {2, -1, 1, -1, 1}, {-1, 0, 0, 1, -1}, {1, -1, 3, -1, 1}, {-1,
+   1, -1, 1, -1}}, $CellContext`floor$$ = {{-1, 1, -1, 1, -1}, {1, -1, 1, -1, 
+  1}, {-1, 0, 0, 1, -1}, {1, -1, 1, -1, 1}, {-1, 1, -1, 
+  1, -1}}, $CellContext`terrainGrid$$ = {{
+    RGBColor[1., 1., 0.5], 
+    RGBColor[1., 0.75, 0.5], 
+    RGBColor[1., 1., 0.5], 
+    RGBColor[1., 0.75, 0.5], 
+    RGBColor[1., 1., 0.5]}, {Null, 
+    RGBColor[1., 1., 0.5], 
+    RGBColor[1., 0.75, 0.5], 
+    RGBColor[1., 1., 0.5], 
+    RGBColor[1., 0.75, 0.5]}, {
+    RGBColor[1., 1., 0.5], 
+    GrayLevel[0], 
+    GrayLevel[0], 
+    RGBColor[1., 0.75, 0.5], 
+    RGBColor[1., 1., 0.5]}, {
+    RGBColor[1., 0.75, 0.5], 
+    RGBColor[1., 1., 0.5], Null, 
+    RGBColor[1., 1., 0.5], 
+    RGBColor[1., 0.75, 0.5]}, {
+    RGBColor[1., 1., 0.5], 
+    RGBColor[1., 0.75, 0.5], 
+    RGBColor[1., 1., 0.5], 
+    RGBColor[1., 0.75, 0.5], 
+    RGBColor[1., 1., 0.5]}}, $CellContext`gridRules$$ = <|-1 -> "floor1", 0 -> 
+   "void", 1 -> "floor2", 2 -> "player1", 3 -> 
+   "player2"|>, $CellContext`playingTurnRules$$ = <|
+  0 -> "blue", 1 -> "red"|>, $CellContext`playingActionRules$$ = <|
+  0 -> "move", 1 -> 
+   "destroy"|>, $CellContext`getTerrain$$, $CellContext`centerX$$ = 
   3, $CellContext`centerY$$ = 3, $CellContext`whoIsPlaying$$ = 
-  0, $CellContext`changeTurn$$ = False, $CellContext`position$$ = {{2, 1}, {4,
-   5}}, $CellContext`init$$ = Null, $CellContext`updateMatrix$$ = 
-  Null, $CellContext`display$$ = Graphics[
+  0, $CellContext`currentAction$$ = 0, $CellContext`changeTurn$$ = 
+  False, $CellContext`position$$ = {{2, 1}, {4, 3}}, $CellContext`init$$ = 
+  Null, $CellContext`updateMatrix$$ = Null, $CellContext`display$$ = Graphics[
    Raster[CompressedData["
-1:eJxTTMoPSmVmYGBghWIQGwI+2KPSD9D4L3CIDxX16GCg3EPIHUMlPAmrBwD0
-hlQD
+1:eJxTTMoPSmVmYGBghWIQGwI+2KPSD9D4L3CID5R6dDDQ7iFWPSF3D3b3E68e
+AIdmVAM=
     "], {{0, 0}, {5, 5}}, {0, 1}], Background -> RGBColor[0.87, 0.94, 1], 
    Frame -> None, FrameLabel -> {None, None}, 
    FrameTicks -> {{{{4.5, 1}, {3.5, 2}, {2.5, 3}, {1.5, 4}, {0.5, 5}}, {{
@@ -562,182 +967,90 @@ hlQD
           "freeformCursorMode" -> True, 
            "placement" -> {"x" -> "All", "y" -> "None"}}}}, 
      "DefaultPlotStyle" -> Automatic, "DomainPadding" -> Scaled[0.02], 
-     "RangePadding" -> Scaled[0.05]}], $CellContext`displayBtn$$}, 
+     "RangePadding" -> 
+     Scaled[0.05]}], $CellContext`graybtn$$, $CellContext`redbtn$$, \
+$CellContext`bluebtn$$}, 
   DynamicBox[ToBoxes[
     Overlay[{
       $CellContext`displayMatrix$$[], 
-      $CellContext`displayGraphGrid$$[]}, None, 2], StandardForm],
+      $CellContext`graphRedGrid$$[], 
+      $CellContext`graphBlueGrid$$[]}, None, 2], StandardForm],
    ImageSizeCache->{360., {177.634033203125, 183.365966796875}}],
   DynamicModuleValues:>{{DownValues[$CellContext`displayGrid$$] = {HoldPattern[
          $CellContext`displayGrid$$[]] :> 
        Grid[$CellContext`terrainGrid$$, Frame -> None, 
          Alignment -> {Center, Center}, ItemSize -> {5, 5}]}}, {
-    DownValues[$CellContext`displayGraphGrid$$] = {HoldPattern[
-         $CellContext`displayGraphGrid$$[]] :> 
-       GraphicsGrid[$CellContext`terrainGrid$$, Frame -> None, 
+    DownValues[$CellContext`graphDestroyGrid$$] = {HoldPattern[
+         $CellContext`graphDestroyGrid$$[]] :> 
+       GraphicsGrid[$CellContext`destroyMatrix$$, Frame -> None, 
          Alignment -> {Center, Center}, ItemAspectRatio -> 1]}}, {
     DownValues[$CellContext`displayMatrix$$] = {HoldPattern[
          $CellContext`displayMatrix$$[]] :> 
        MatrixPlot[$CellContext`terrainMatrix$$, Frame -> None, 
          ColorRules -> {-1 -> Lighter[Yellow, 0.5], 0 -> Black, 1 -> 
            Lighter[Orange, 0.5], 2 -> Blue, 3 -> Red}, Background -> 
-         LightBlue]}}, {DownValues[$CellContext`displayBtn$$] = {HoldPattern[
-         $CellContext`displayBtn$$[]] :> Button[
+         LightBlue]}}, {
+    DownValues[$CellContext`displayRedGrid$$] = {HoldPattern[
+         $CellContext`displayRedGrid$$[]] :> 
+       Grid[$CellContext`distanceMatrixRed$$, Frame -> None, 
+         Alignment -> {Center, Center}, ItemSize -> {5, 5}]}}, {
+    DownValues[$CellContext`displayBlueGrid$$] = {HoldPattern[
+         $CellContext`displayBlueGrid$$[]] :> 
+       Grid[$CellContext`distanceMatrixBlue$$, Frame -> None, 
+         Alignment -> {Center, Center}, ItemSize -> {5, 5}]}}, {
+    DownValues[$CellContext`graphBlueGrid$$] = {HoldPattern[
+         $CellContext`graphBlueGrid$$[]] :> 
+       GraphicsGrid[$CellContext`moveMatrixBlue$$, Frame -> None, 
+         Alignment -> {Center, Center}, ItemAspectRatio -> 1]}}, {
+    DownValues[$CellContext`graphRedGrid$$] = {HoldPattern[
+         $CellContext`graphRedGrid$$[]] :> 
+       GraphicsGrid[$CellContext`moveMatrixRed$$, Frame -> None, 
+         Alignment -> {Center, Center}, ItemAspectRatio -> 1]}}, {
+    DownValues[$CellContext`graybtn$$] = {HoldPattern[
+         $CellContext`graybtn$$[]] :> Button[
          Graphics[{
            Darker[Gray, 0.5], 
            Circle[{0, 0}, 15], 
            Opacity[0.4], 
            Disk[{0, 0}, 15]}], 
          Print["click"], Method -> "Queued", ImageSize -> {10, 10}, 
+         Appearance -> "Frameless"]}}, {
+    DownValues[$CellContext`redbtn$$] = {HoldPattern[
+         $CellContext`redbtn$$[]] :> Button[
+         Graphics[{
+           Darker[Red, 0.5], 
+           Circle[{0, 0}, 15], 
+           Opacity[0.4], 
+           Disk[{0, 0}, 15]}], 
+         Print["click"], Method -> "Queued", ImageSize -> {10, 10}, 
+         Appearance -> "Frameless"]}}, {
+    DownValues[$CellContext`bluebtn$$] = {HoldPattern[
+         $CellContext`bluebtn$$[]] :> Button[
+         Graphics[{
+           Darker[Blue, 0.5], 
+           Circle[{0, 0}, 15], 
+           Opacity[0.4], 
+           Disk[{0, 0}, 15]}], 
+         Print["click"], Method -> "Queued", ImageSize -> {10, 10}, 
          Appearance -> "Frameless"]}}}]], "Output",
- CellChangeTimes->{{3.930639048978033*^9, 3.9306390538619137`*^9}, {
-   3.930639116242647*^9, 3.930639133415127*^9}, {3.930639293497366*^9, 
-   3.930639328887911*^9}, 3.9306397263368645`*^9, 3.93063982254961*^9, 
-   3.9306398695452023`*^9, {3.930639916839344*^9, 3.930639947423908*^9}, 
-   3.9306399889941654`*^9, 3.9306400450608673`*^9, 3.930640129984852*^9, {
-   3.930640223331457*^9, 3.9306402423782425`*^9}, {3.9306403674824257`*^9, 
-   3.930640467304344*^9}, {3.930640498217392*^9, 3.9306405192231064`*^9}, 
-   3.9306405892395897`*^9, 3.9306406641895027`*^9, 3.930640836079338*^9, 
-   3.93064094827013*^9, {3.9306410062936287`*^9, 3.930641067642105*^9}, {
-   3.9306411958998375`*^9, 3.9306412094147778`*^9}, {3.9306412825334835`*^9, 
-   3.9306413538514824`*^9}, {3.9306414278023033`*^9, 3.930641559930233*^9}, {
-   3.9306416100210934`*^9, 3.930641618838085*^9}, 3.9306416493789215`*^9, {
-   3.930641692425766*^9, 3.9306416980983143`*^9}, {3.9306418955220947`*^9, 
-   3.9306419284088345`*^9}, 3.9306420619390125`*^9, {3.930642289072422*^9, 
-   3.9306423139894543`*^9}, {3.9306423852289276`*^9, 
-   3.9306425078092957`*^9}, {3.930642606176447*^9, 3.9306426447706795`*^9}, 
-   3.930642706654194*^9, {3.930642740477482*^9, 3.930642768763483*^9}, 
-   3.9306428121213818`*^9, 3.930642846799572*^9},
+ CellChangeTimes->{3.9306476925940857`*^9, 3.93064776363167*^9},
  CellLabel->
-  "Out[512]=",ExpressionUUID->"c1be8bd7-54fd-1946-97ac-1dfcb2e60e38"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"\[IndentingNewLine]", 
-  RowBox[{"Options", "@", "Grid"}]}]], "Input",
- CellChangeTimes->{{3.9306400543493576`*^9, 3.9306400590780735`*^9}},
- CellLabel->
-  "In[335]:=",ExpressionUUID->"9372a539-92f7-d74f-9705-899a4682c713"],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{
-   RowBox[{"Alignment", "\[Rule]", 
-    RowBox[{"{", 
-     RowBox[{"Center", ",", "Baseline"}], "}"}]}], ",", 
-   RowBox[{"AllowedDimensions", "\[Rule]", "Automatic"}], ",", 
-   RowBox[{"AllowScriptLevelChange", "\[Rule]", "True"}], ",", 
-   RowBox[{"AutoDelete", "\[Rule]", "False"}], ",", 
-   RowBox[{"Background", "\[Rule]", "None"}], ",", 
-   RowBox[{"BaselinePosition", "\[Rule]", "Automatic"}], ",", 
-   RowBox[{"BaseStyle", "\[Rule]", 
-    RowBox[{"{", "}"}]}], ",", 
-   RowBox[{"DefaultBaseStyle", "\[Rule]", "\<\"Grid\"\>"}], ",", 
-   RowBox[{"DefaultElement", "\[Rule]", "\<\"\[Placeholder]\"\>"}], ",", 
-   RowBox[{"DeleteWithContents", "\[Rule]", "True"}], ",", 
-   RowBox[{"Dividers", "\[Rule]", 
-    RowBox[{"{", "}"}]}], ",", 
-   RowBox[{"Editable", "\[Rule]", "Automatic"}], ",", 
-   RowBox[{"Frame", "\[Rule]", "None"}], ",", 
-   RowBox[{"FrameStyle", "\[Rule]", "Automatic"}], ",", 
-   RowBox[{"ItemSize", "\[Rule]", "Automatic"}], ",", 
-   RowBox[{"ItemStyle", "\[Rule]", "None"}], ",", 
-   RowBox[{"Selectable", "\[Rule]", "Automatic"}], ",", 
-   RowBox[{"Spacings", "\[Rule]", "Automatic"}], ",", 
-   RowBox[{"StripOnInput", "\[Rule]", "False"}]}], "}"}]], "Output",
- CellChangeTimes->{3.9306400596058025`*^9},
- CellLabel->
-  "Out[335]=",ExpressionUUID->"c1e491bf-ec8a-194a-8b6b-76995f34ee6c"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"Options", "@", "MatrixPlot"}]], "Input",
- CellChangeTimes->{{3.930640158874956*^9, 3.930640159805319*^9}},
- CellLabel->
-  "In[338]:=",ExpressionUUID->"1a501680-d46e-1348-b068-fe03628f404d"],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{
-   RowBox[{"AlignmentPoint", "\[Rule]", "Center"}], ",", 
-   RowBox[{"AspectRatio", "\[Rule]", "Automatic"}], ",", 
-   RowBox[{"Axes", "\[Rule]", "False"}], ",", 
-   RowBox[{"AxesLabel", "\[Rule]", "None"}], ",", 
-   RowBox[{"AxesOrigin", "\[Rule]", "Automatic"}], ",", 
-   RowBox[{"AxesStyle", "\[Rule]", 
-    RowBox[{"{", "}"}]}], ",", 
-   RowBox[{"Background", "\[Rule]", "None"}], ",", 
-   RowBox[{"BaselinePosition", "\[Rule]", "Automatic"}], ",", 
-   RowBox[{"BaseStyle", "\[Rule]", 
-    RowBox[{"{", "}"}]}], ",", 
-   RowBox[{"ClippingStyle", "\[Rule]", "Automatic"}], ",", 
-   RowBox[{"ColorFunction", "\[Rule]", "Automatic"}], ",", 
-   RowBox[{"ColorFunctionScaling", "\[Rule]", "True"}], ",", 
-   RowBox[{"ColorOutput", "\[Rule]", "Automatic"}], ",", 
-   RowBox[{"ColorRules", "\[Rule]", "Automatic"}], ",", 
-   RowBox[{"ContentSelectable", "\[Rule]", "Automatic"}], ",", 
-   RowBox[{"CoordinatesToolOptions", "\[Rule]", "Automatic"}], ",", 
-   RowBox[{"DataRange", "\[Rule]", "All"}], ",", 
-   RowBox[{"DataReversed", "\[Rule]", "False"}], ",", 
-   RowBox[{"DisplayFunction", "\[RuleDelayed]", "$DisplayFunction"}], ",", 
-   RowBox[{"Epilog", "\[Rule]", 
-    RowBox[{"{", "}"}]}], ",", 
-   RowBox[{"FormatType", "\[RuleDelayed]", "TraditionalForm"}], ",", 
-   RowBox[{"Frame", "\[Rule]", "True"}], ",", 
-   RowBox[{"FrameLabel", "\[Rule]", "None"}], ",", 
-   RowBox[{"FrameStyle", "\[Rule]", 
-    RowBox[{"{", "}"}]}], ",", 
-   RowBox[{"FrameTicks", "\[Rule]", "All"}], ",", 
-   RowBox[{"FrameTicksStyle", "\[Rule]", 
-    RowBox[{"{", "}"}]}], ",", 
-   RowBox[{"GridLines", "\[Rule]", "None"}], ",", 
-   RowBox[{"GridLinesStyle", "\[Rule]", 
-    RowBox[{"{", "}"}]}], ",", 
-   RowBox[{"ImageMargins", "\[Rule]", "0.`"}], ",", 
-   RowBox[{"ImagePadding", "\[Rule]", "All"}], ",", 
-   RowBox[{"ImageSize", "\[Rule]", "Automatic"}], ",", 
-   RowBox[{"ImageSizeRaw", "\[Rule]", "Automatic"}], ",", 
-   RowBox[{"LabelStyle", "\[Rule]", 
-    RowBox[{"{", "}"}]}], ",", 
-   RowBox[{"MaxPlotPoints", "\[Rule]", "Automatic"}], ",", 
-   RowBox[{"Mesh", "\[Rule]", "False"}], ",", 
-   RowBox[{"MeshStyle", "\[Rule]", 
-    RowBox[{"GrayLevel", "[", 
-     RowBox[{
-      RowBox[{"-", "1"}], "+", "GoldenRatio"}], "]"}]}], ",", 
-   RowBox[{"Method", "\[Rule]", "Automatic"}], ",", 
-   RowBox[{"MissingStyle", "\[Rule]", "Automatic"}], ",", 
-   RowBox[{"PixelConstrained", "\[Rule]", "False"}], ",", 
-   RowBox[{"PlotLabel", "\[Rule]", "None"}], ",", 
-   RowBox[{"PlotLayout", "\[Rule]", "Automatic"}], ",", 
-   RowBox[{"PlotLegends", "\[Rule]", "None"}], ",", 
-   RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
-   RowBox[{"PlotRangeClipping", "\[Rule]", "False"}], ",", 
-   RowBox[{"PlotRangePadding", "\[Rule]", "Automatic"}], ",", 
-   RowBox[{"PlotRegion", "\[Rule]", "Automatic"}], ",", 
-   RowBox[{"PlotTheme", "\[RuleDelayed]", "$PlotTheme"}], ",", 
-   RowBox[{"PreserveImageOptions", "\[Rule]", "Automatic"}], ",", 
-   RowBox[{"Prolog", "\[Rule]", 
-    RowBox[{"{", "}"}]}], ",", 
-   RowBox[{"RotateLabel", "\[Rule]", "True"}], ",", 
-   RowBox[{"TargetUnits", "\[Rule]", "Automatic"}], ",", 
-   RowBox[{"Ticks", "\[Rule]", "Automatic"}], ",", 
-   RowBox[{"TicksStyle", "\[Rule]", 
-    RowBox[{"{", "}"}]}]}], "}"}]], "Output",
- CellChangeTimes->{3.9306401607371063`*^9},
- CellLabel->
-  "Out[338]=",ExpressionUUID->"3e810aee-b693-2949-8bd8-f30baed203dc"]
+  "Out[620]=",ExpressionUUID->"e4bf9b23-f46f-cc4e-9854-8f56b4f49254"]
 }, Open  ]]
 },
 NotebookEventActions->None,
 WindowSize->{1280, 652},
 WindowMargins->{{-5.5, Automatic}, {Automatic, -5.5}},
 FrontEndVersion->"14.0 pour Microsoft Windows (64-bit) (December 12, 2023)",
-StyleDefinitions->"Default.nb",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[StyleDefinitions -> "Default.nb"]], 
+   Cell[
+    StyleData[All]]}, WindowSize -> {1280, 652}, 
+  WindowMargins -> {{-5.5, Automatic}, {Automatic, -5.5}}, Visible -> False, 
+  FrontEndVersion -> 
+  "14.0 pour Microsoft Windows (64-bit) (December 12, 2023)", 
+  StyleDefinitions -> "PrivateStylesheetFormatting.nb"],
 ExpressionUUID->"1448735b-bc87-d441-9c5b-9aa1a90d3c89"
 ]
 (* End of Notebook Content *)
@@ -753,16 +1066,8 @@ CellTagsIndex->{}
 Notebook[{
 Cell[558, 20, 154, 3, 28, "Input",ExpressionUUID->"513c7ea4-1003-fe41-a552-b94b4681cb80"],
 Cell[CellGroupData[{
-Cell[737, 27, 14243, 329, 1575, "Input",ExpressionUUID->"752338eb-bfa3-cb42-8321-7806585fa5b3"],
-Cell[14983, 358, 10059, 253, 380, "Output",ExpressionUUID->"c1be8bd7-54fd-1946-97ac-1dfcb2e60e38"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[25079, 616, 247, 5, 62, "Input",ExpressionUUID->"9372a539-92f7-d74f-9705-899a4682c713"],
-Cell[25329, 623, 1354, 28, 71, "Output",ExpressionUUID->"c1e491bf-ec8a-194a-8b6b-76995f34ee6c"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[26720, 656, 213, 4, 43, "Input",ExpressionUUID->"1a501680-d46e-1348-b068-fe03628f404d"],
-Cell[26936, 662, 3396, 70, 166, "Output",ExpressionUUID->"3e810aee-b693-2949-8bd8-f30baed203dc"]
+Cell[737, 27, 26135, 620, 2462, "Input",ExpressionUUID->"752338eb-bfa3-cb42-8321-7806585fa5b3"],
+Cell[26875, 649, 14613, 388, 380, "Output",ExpressionUUID->"e4bf9b23-f46f-cc4e-9854-8f56b4f49254"]
 }, Open  ]]
 }
 ]
