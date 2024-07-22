@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    363076,       6089]
-NotebookOptionsPosition[    361353,       6056]
-NotebookOutlinePosition[    361755,       6072]
-CellTagsIndexPosition[    361712,       6069]
+NotebookDataLength[    397879,       6921]
+NotebookOptionsPosition[    395916,       6884]
+NotebookOutlinePosition[    396324,       6900]
+CellTagsIndexPosition[    396281,       6897]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -5810,9 +5810,9 @@ kMfghz5/l3j9Xs/XRdGtP+Hf/z3z+v8DlVqSMA==
    PlotRange->{{0, 86.}, {0, 135.}}]}]}], "Input",
  CellChangeTimes->{{3.930631819056967*^9, 3.930631843307804*^9}, {
   3.9306318882402096`*^9, 3.930631911222477*^9}, {3.9306320117324257`*^9, 
-  3.9306320267854576`*^9}, {3.930632072774357*^9, 3.9306320928020763`*^9}, {
+  3.9306320267854576`*^9}, {3.930632072774357*^9, 3.930632092802077*^9}, {
   3.930632143997999*^9, 
-  3.9306321442986546`*^9}},ExpressionUUID->"81f5e1b5-230e-594f-b690-\
+  3.930632144298654*^9}},ExpressionUUID->"81f5e1b5-230e-594f-b690-\
 4ad1af6ecd22"],
 
 Cell[CellGroupData[{
@@ -5943,12 +5943,12 @@ Cell[BoxData[
          RowBox[{"{", 
           RowBox[{"1", ",", "Null"}], "}"}], ",", 
          RowBox[{"{", "5", "}"}]}], "]"}], ",", 
-       RowBox[{"{", "4", "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", 
+       RowBox[{"{", "4", "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", "\n", 
    RowBox[{"(*", 
     RowBox[{
     "Create", " ", "the", " ", "third", " ", "list", " ", "of", " ", "lists", 
-     " ", "based", " ", "on", " ", "the", " ", "criteria"}], "*)"}], "\n", 
+     " ", "based", " ", "on", " ", "the", " ", "criteria"}], "*)"}], 
+   "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"list3", "=", 
      RowBox[{"MapThread", "[", 
@@ -5964,11 +5964,12 @@ Cell[BoxData[
           RowBox[{"{", 
            RowBox[{"#1", ",", "#2"}], "}"}]}], "]"}], "&"}], ",", 
        RowBox[{"{", 
-        RowBox[{"list1", ",", "list2"}], "}"}]}], "]"}]}], ";"}], 
-   "\[IndentingNewLine]", "\n", 
+        RowBox[{"list1", ",", "list2"}], "}"}]}], "]"}]}], ";"}], "\n", 
+   "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{"Display", " ", "the", " ", "lists"}], "*)"}], 
-   "\[IndentingNewLine]", "list1", "\n", "list2", "\n", "list3"}]}]], "Input",
+   "\[IndentingNewLine]", "list1", "\n", "list2", "\n", "list3"}]}]], "Input",\
+
  CellChangeTimes->{{3.9306510065592766`*^9, 
   3.930651015613247*^9}},ExpressionUUID->"f0bd3a2d-0dec-8043-9d62-\
 b43a5d210489"],
@@ -6044,19 +6045,846 @@ Cell[BoxData[""], "Input",
   3.930650874165964*^9}},ExpressionUUID->"ba64fddb-b8a6-1547-8098-\
 76c7c66940db"],
 
-Cell[BoxData[""], "Input",
- CellChangeTimes->{{3.930650872681612*^9, 
-  3.9306508726826153`*^9}},ExpressionUUID->"431ae75c-343a-b945-95cb-\
-6ad885c48547"],
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MapThread", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"MapThread", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"#2", "===", "Null"}], ",", "Null", ",", "#1"}], "]"}], 
+       "&"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"#1", ",", "#2"}], "}"}]}], "]"}], "&"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"list1", ",", "list2"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.930650872681612*^9, 3.9306508726826153`*^9}, {
+  3.9306511165170727`*^9, 3.9306511269566784`*^9}},
+ CellLabel->
+  "In[725]:=",ExpressionUUID->"431ae75c-343a-b945-95cb-6ad885c48547"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"10", ",", "Null", ",", "30", ",", "Null"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"11", ",", "Null", ",", "31", ",", "Null"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.930651130588005*^9},
+ CellLabel->
+  "Out[725]=",ExpressionUUID->"95ee5b24-a84d-0d4e-8e46-597635f1eba5"]
+}, Open  ]],
 
 Cell[BoxData[""], "Input",
  CellChangeTimes->{{3.9306508704147606`*^9, 
   3.930650870416744*^9}},ExpressionUUID->"dd9c1a88-34b3-1540-8e0e-\
-b3b901371faf"]
+b3b901371faf"],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Isola", "[", "]"}], " ", ":=", " ", 
+    RowBox[{"DynamicModule", "[", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"infinity", " ", "=", " ", "1000"}], ",", 
+        "\[IndentingNewLine]", "displayGrid", ",", " ", "graphDestroyGrid", 
+        ",", " ", "displayMatrix", ",", " ", 
+        RowBox[{"gridX", " ", "=", " ", "5"}], ",", " ", 
+        RowBox[{"gridY", " ", "=", " ", "5"}], ",", " ", 
+        RowBox[{"cellSize", " ", "=", " ", "73"}], ",", "destroyMatrix", ",", 
+        "distanceMatrixRed", ",", " ", "distanceMatrixBlue", ",", 
+        "\[IndentingNewLine]", "moveMatrixRed", ",", "moveMatrixBlue", ",", 
+        " ", "simplerMatrix", ",", "displayRedGrid", ",", " ", 
+        "displayBlueGrid", ",", "graphBlueGrid", ",", " ", "graphRedGrid", 
+        ",", "\[IndentingNewLine]", "updateDistances", ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"terrainMatrix", " ", "=", " ", "0"}], ",", "floor", ",", 
+        "\[IndentingNewLine]", "terrainGrid", ",", "\[IndentingNewLine]", 
+        RowBox[{"gridRules", " ", "=", " ", 
+         RowBox[{"AssociationThread", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "1"}], ",", " ", "0", ",", " ", "1", ",", " ", "2", 
+             ",", " ", "3"}], "}"}], ",", " ", 
+           RowBox[{"{", 
+            RowBox[{
+            "\"\<floor1\>\"", ",", " ", "\"\<void\>\"", ",", " ", 
+             "\"\<floor2\>\"", ",", " ", "\"\<player1\>\"", ",", " ", 
+             "\"\<player2\>\""}], "}"}]}], "]"}]}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"playingTurnRules", " ", "=", " ", 
+         RowBox[{"AssociationThread", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", " ", "1"}], "}"}], ",", " ", 
+           RowBox[{"{", 
+            RowBox[{"\"\<blue\>\"", ",", " ", "\"\<red\>\""}], "}"}]}], 
+          "]"}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{"playingActionRules", " ", "=", " ", 
+         RowBox[{"AssociationThread", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", " ", "1"}], "}"}], ",", " ", 
+           RowBox[{"{", 
+            RowBox[{"\"\<move\>\"", ",", " ", "\"\<destroy\>\""}], "}"}]}], 
+          "]"}]}], ",", "\[IndentingNewLine]", "getTerrain", ",", 
+        "\[IndentingNewLine]", "centerX", ",", " ", "centerY", ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"whoIsPlaying", " ", "=", " ", "0"}], ",", " ", 
+        RowBox[{"currentAction", " ", "=", " ", "0"}], ",", 
+        "\[IndentingNewLine]", "changeTurn", ",", " ", "changeAction", ",", 
+        "\[IndentingNewLine]", "position", ",", "\[IndentingNewLine]", "init",
+         ",", "\[IndentingNewLine]", "updateMatrix", ",", 
+        "\[IndentingNewLine]", "graybtn", ",", " ", "redbtn", ",", " ", 
+        "bluebtn", ",", "\[IndentingNewLine]", "allBlueMatrix", ",", " ", 
+        "allRedMatrix", ",", " ", "allBlackMatrix", ",", "preMoveMatrixRed", 
+        ",", "preMoveMatrixBlue", ",", "\[IndentingNewLine]", "moveRed", ",", 
+        " ", "moveBlue", ",", " ", "destroyTile"}], "\[IndentingNewLine]", 
+       "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"(*", "variables", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"changeTurn", " ", ":=", " ", 
+        RowBox[{"(", 
+         RowBox[{"whoIsPlaying", " ", "==", " ", 
+          RowBox[{"Mod", "[", 
+           RowBox[{
+            RowBox[{"whoIsPlaying", " ", "+", " ", "1"}], ",", " ", "2"}], 
+           "]"}]}], ")"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"centerX", " ", "=", " ", 
+        RowBox[{"Ceiling", "@", 
+         FractionBox["gridX", "2"]}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"centerY", " ", "=", " ", 
+        RowBox[{"Ceiling", "@", 
+         FractionBox["gridY", "2"]}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"position", " ", "=", " ", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"centerX", ",", " ", "1"}], "}"}], ",", " ", 
+          RowBox[{"{", 
+           RowBox[{"centerX", ",", " ", "gridY"}], "}"}]}], "}"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", "functions", "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"init", " ", ":=", " ", 
+        RowBox[{"(", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"floor", " ", "=", " ", 
+           RowBox[{
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Table", "[", 
+               RowBox[{
+                RowBox[{"Mod", "[", 
+                 RowBox[{
+                  RowBox[{"i", "+", "j"}], ",", " ", "2"}], "]"}], ",", " ", 
+                RowBox[{"{", 
+                 RowBox[{"i", ",", "gridX"}], "}"}]}], "]"}], ",", " ", 
+              RowBox[{"{", 
+               RowBox[{"j", ",", " ", "gridY"}], "}"}]}], "]"}], "/.", 
+            RowBox[{"{", 
+             RowBox[{"0", "->", " ", 
+              RowBox[{"-", "1"}]}], "}"}]}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"terrainMatrix", " ", "=", " ", 
+           RowBox[{
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Table", "[", 
+               RowBox[{
+                RowBox[{"Mod", "[", 
+                 RowBox[{
+                  RowBox[{"i", "+", "j"}], ",", " ", "2"}], "]"}], ",", " ", 
+                RowBox[{"{", 
+                 RowBox[{"i", ",", "gridX"}], "}"}]}], "]"}], ",", " ", 
+              RowBox[{"{", 
+               RowBox[{"j", ",", " ", "gridY"}], "}"}]}], "]"}], "/.", 
+            RowBox[{"{", 
+             RowBox[{"0", "->", " ", 
+              RowBox[{"-", "1"}]}], "}"}]}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"terrainMatrix", "[", 
+            RowBox[{"[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"position", "[", 
+                RowBox[{"[", "1", "]"}], "]"}], "[", 
+               RowBox[{"[", "1", "]"}], "]"}], ",", 
+              RowBox[{
+               RowBox[{"position", "[", 
+                RowBox[{"[", "1", "]"}], "]"}], "[", 
+               RowBox[{"[", "2", "]"}], "]"}]}], "]"}], "]"}], " ", "=", " ", 
+           "2"}], ";", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"terrainMatrix", "[", 
+            RowBox[{"[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"position", "[", 
+                RowBox[{"[", "2", "]"}], "]"}], "[", 
+               RowBox[{"[", "1", "]"}], "]"}], ",", 
+              RowBox[{
+               RowBox[{"position", "[", 
+                RowBox[{"[", "2", "]"}], "]"}], "[", 
+               RowBox[{"[", "2", "]"}], "]"}]}], "]"}], "]"}], " ", "=", " ", 
+           "3"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"allBlueMatrix", " ", "=", " ", 
+           RowBox[{"Table", "[", 
+            RowBox[{
+             RowBox[{"Table", "[", 
+              RowBox[{
+               RowBox[{"bluebtn", "[", 
+                RowBox[{"j", ",", "i"}], "]"}], ",", " ", 
+               RowBox[{"{", 
+                RowBox[{"i", ",", " ", "gridY"}], "}"}]}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"j", ",", " ", "gridX"}], "}"}]}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"allRedMatrix", " ", "=", " ", 
+           RowBox[{"Table", "[", 
+            RowBox[{
+             RowBox[{"Table", "[", 
+              RowBox[{
+               RowBox[{"redbtn", "[", 
+                RowBox[{"j", ",", "i"}], "]"}], ",", " ", 
+               RowBox[{"{", 
+                RowBox[{"i", ",", " ", "gridY"}], "}"}]}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"j", ",", " ", "gridX"}], "}"}]}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"allBlackMatrix", " ", "=", " ", 
+           RowBox[{"Table", "[", 
+            RowBox[{
+             RowBox[{"Table", "[", 
+              RowBox[{
+               RowBox[{"graybtn", "[", 
+                RowBox[{"j", ",", "i"}], "]"}], ",", " ", 
+               RowBox[{"{", 
+                RowBox[{"i", ",", " ", "gridY"}], "}"}]}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"j", ",", " ", "gridX"}], "}"}]}], "]"}]}], ";"}], 
+         "\[IndentingNewLine]", ")"}]}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"updateMatrix", "[", "]"}], ":=", 
+        RowBox[{"(", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"terrainMatrix", " ", "=", " ", "floor"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"terrainMatrix", "[", 
+            RowBox[{"[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"position", "[", 
+                RowBox[{"[", "1", "]"}], "]"}], "[", 
+               RowBox[{"[", "1", "]"}], "]"}], ",", 
+              RowBox[{
+               RowBox[{"position", "[", 
+                RowBox[{"[", "1", "]"}], "]"}], "[", 
+               RowBox[{"[", "2", "]"}], "]"}]}], "]"}], "]"}], " ", "=", " ", 
+           "2"}], ";", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"terrainMatrix", "[", 
+            RowBox[{"[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"position", "[", 
+                RowBox[{"[", "2", "]"}], "]"}], "[", 
+               RowBox[{"[", "1", "]"}], "]"}], ",", 
+              RowBox[{
+               RowBox[{"position", "[", 
+                RowBox[{"[", "2", "]"}], "]"}], "[", 
+               RowBox[{"[", "2", "]"}], "]"}]}], "]"}], "]"}], " ", "=", " ", 
+           "3"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"updateDistances", "[", "]"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"Print", "[", "\"\<update\>\"", "]"}]}], 
+         "\[IndentingNewLine]", ")"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"(*", "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"(*", "*)"}], "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"graybtn", "[", "]"}], " ", ":=", " ", 
+        RowBox[{"Button", "[", 
+         RowBox[{
+          RowBox[{"Graphics", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Darker", "[", 
+              RowBox[{"Gray", ",", " ", "0.5"}], "]"}], ",", " ", 
+             RowBox[{"Circle", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"0", ",", " ", "0"}], "}"}], ",", " ", "15"}], "]"}], 
+             ",", " ", 
+             RowBox[{"Opacity", "[", "0.4", "]"}], ",", " ", 
+             RowBox[{"Disk", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"0", ",", " ", "0"}], "}"}], ",", " ", "15"}], 
+              "]"}]}], "}"}], "]"}], ",", " ", 
+          RowBox[{"Print", "[", "\"\<click\>\"", "]"}], ",", " ", 
+          RowBox[{"Method", "->", "\"\<Queued\>\""}], ",", " ", 
+          RowBox[{"ImageSize", " ", "->", " ", 
+           RowBox[{"{", 
+            RowBox[{"10", ",", " ", "10"}], "}"}]}], ",", " ", 
+          RowBox[{"Appearance", "->", "\"\<Frameless\>\""}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"bluebtn", "[", "]"}], " ", ":=", " ", 
+        RowBox[{"Button", "[", 
+         RowBox[{
+          RowBox[{"Graphics", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Darker", "[", 
+              RowBox[{"Blue", ",", " ", "0.5"}], "]"}], ",", " ", 
+             RowBox[{"Circle", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"0", ",", " ", "0"}], "}"}], ",", " ", "15"}], "]"}], 
+             ",", " ", 
+             RowBox[{"Opacity", "[", "0.4", "]"}], ",", " ", 
+             RowBox[{"Disk", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"0", ",", " ", "0"}], "}"}], ",", " ", "15"}], 
+              "]"}]}], "}"}], "]"}], ",", " ", 
+          RowBox[{"Print", "[", "\"\<click\>\"", "]"}], ",", " ", 
+          RowBox[{"Method", "->", "\"\<Queued\>\""}], ",", " ", 
+          RowBox[{"ImageSize", " ", "->", " ", 
+           RowBox[{"{", 
+            RowBox[{"10", ",", " ", "10"}], "}"}]}], ",", " ", 
+          RowBox[{"Appearance", "->", "\"\<Frameless\>\""}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"redbtn", "[", "]"}], " ", ":=", " ", 
+        RowBox[{"Button", "[", 
+         RowBox[{
+          RowBox[{"Graphics", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Darker", "[", 
+              RowBox[{"Red", ",", " ", "0.5"}], "]"}], ",", " ", 
+             RowBox[{"Circle", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"0", ",", " ", "0"}], "}"}], ",", " ", "15"}], "]"}], 
+             ",", " ", 
+             RowBox[{"Opacity", "[", "0.4", "]"}], ",", " ", 
+             RowBox[{"Disk", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"0", ",", " ", "0"}], "}"}], ",", " ", "15"}], 
+              "]"}]}], "}"}], "]"}], ",", " ", 
+          RowBox[{"Print", "[", "\"\<click\>\"", "]"}], ",", " ", 
+          RowBox[{"Method", "->", "\"\<Queued\>\""}], ",", " ", 
+          RowBox[{"ImageSize", " ", "->", " ", 
+           RowBox[{"{", 
+            RowBox[{"10", ",", " ", "10"}], "}"}]}], ",", " ", 
+          RowBox[{"Appearance", "->", "\"\<Frameless\>\""}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"graybtn", "[", 
+         RowBox[{"x_", ",", " ", "y_"}], "]"}], " ", ":=", " ", 
+        RowBox[{"Button", "[", 
+         RowBox[{
+          RowBox[{"Graphics", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Darker", "[", 
+              RowBox[{"Gray", ",", " ", "0.5"}], "]"}], ",", " ", 
+             RowBox[{"Circle", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"0", ",", " ", "0"}], "}"}], ",", " ", "15"}], "]"}], 
+             ",", " ", 
+             RowBox[{"Opacity", "[", "0.4", "]"}], ",", " ", 
+             RowBox[{"Disk", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"0", ",", " ", "0"}], "}"}], ",", " ", "15"}], 
+              "]"}]}], "}"}], "]"}], ",", " ", 
+          RowBox[{"destroyTile", "[", 
+           RowBox[{"x", ",", " ", "y"}], "]"}], ",", " ", 
+          RowBox[{"Method", "->", "\"\<Queued\>\""}], ",", " ", 
+          RowBox[{"ImageSize", " ", "->", " ", 
+           RowBox[{"{", 
+            RowBox[{"10", ",", " ", "10"}], "}"}]}], ",", " ", 
+          RowBox[{"Appearance", "->", "\"\<Frameless\>\""}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"bluebtn", "[", 
+         RowBox[{"x_", ",", " ", "y_"}], "]"}], " ", ":=", " ", 
+        RowBox[{"Button", "[", 
+         RowBox[{
+          RowBox[{"Graphics", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Darker", "[", 
+              RowBox[{"Blue", ",", " ", "0.5"}], "]"}], ",", " ", 
+             RowBox[{"Circle", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"0", ",", " ", "0"}], "}"}], ",", " ", "15"}], "]"}], 
+             ",", " ", 
+             RowBox[{"Opacity", "[", "0.4", "]"}], ",", " ", 
+             RowBox[{"Disk", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"0", ",", " ", "0"}], "}"}], ",", " ", "15"}], 
+              "]"}]}], "}"}], "]"}], ",", " ", 
+          RowBox[{"moveBlue", "[", 
+           RowBox[{"x", ",", " ", "y"}], "]"}], ",", " ", 
+          RowBox[{"Method", "->", "\"\<Queued\>\""}], ",", " ", 
+          RowBox[{"ImageSize", " ", "->", " ", 
+           RowBox[{"{", 
+            RowBox[{"10", ",", " ", "10"}], "}"}]}], ",", " ", 
+          RowBox[{"Appearance", "->", "\"\<Frameless\>\""}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"redbtn", "[", 
+         RowBox[{"x_", ",", "y_"}], "]"}], " ", ":=", " ", 
+        RowBox[{"Button", "[", 
+         RowBox[{
+          RowBox[{"Graphics", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Darker", "[", 
+              RowBox[{"Red", ",", " ", "0.5"}], "]"}], ",", " ", 
+             RowBox[{"Circle", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"0", ",", " ", "0"}], "}"}], ",", " ", "15"}], "]"}], 
+             ",", " ", 
+             RowBox[{"Opacity", "[", "0.4", "]"}], ",", " ", 
+             RowBox[{"Disk", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"0", ",", " ", "0"}], "}"}], ",", " ", "15"}], 
+              "]"}]}], "}"}], "]"}], ",", " ", 
+          RowBox[{"moveRed", "[", 
+           RowBox[{"x", ",", " ", "y"}], "]"}], ",", " ", 
+          RowBox[{"Method", "->", "\"\<Queued\>\""}], ",", " ", 
+          RowBox[{"ImageSize", " ", "->", " ", 
+           RowBox[{"{", 
+            RowBox[{"10", ",", " ", "10"}], "}"}]}], ",", " ", 
+          RowBox[{"Appearance", "->", "\"\<Frameless\>\""}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", "*)"}], "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"moveRed", "[", 
+         RowBox[{"x_", ",", " ", "y_"}], "]"}], " ", ":=", " ", 
+        RowBox[{"(", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"Print", "[", "\"\<red\>\"", "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"position", "[", 
+            RowBox[{"[", "2", "]"}], "]"}], " ", "=", " ", 
+           RowBox[{"{", 
+            RowBox[{"x", ",", " ", "y"}], "}"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"updateMatrix", "[", "]"}], ";"}], "\[IndentingNewLine]", 
+         ")"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"moveBlue", "[", 
+         RowBox[{"x_", ",", " ", "y_"}], "]"}], " ", ":=", " ", 
+        RowBox[{"(", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"position", "[", 
+            RowBox[{"[", "1", "]"}], "]"}], " ", "=", " ", 
+           RowBox[{"{", 
+            RowBox[{"x", ",", " ", "y"}], "}"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"updateMatrix", "[", "]"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"Print", "[", "terrainMatrix", "]"}], ";"}], 
+         "\[IndentingNewLine]", ")"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"destroyTile", "[", 
+         RowBox[{"x_", ",", " ", "y_"}], "]"}], " ", ":=", " ", 
+        RowBox[{"(", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"Print", "[", "\"\<destroy\>\"", "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"floor", "[", 
+            RowBox[{"[", 
+             RowBox[{"x", ",", " ", "y"}], "]"}], "]"}], "=", "0"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"updateMatrix", "[", "]"}], ";"}], "\[IndentingNewLine]", 
+         ")"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"(*", "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"(*", "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"--", 
+          RowBox[{"--", 
+           RowBox[{"--", 
+            RowBox[{"--", 
+             RowBox[{"--", 
+              RowBox[{"--", 
+               RowBox[{"--", 
+                RowBox[{"--", 
+                 RowBox[{"--", 
+                  RowBox[{"--", 
+                   RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"MATRICES", "--"}], "--"}], "--"}], 
+                    "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}], 
+         RowBox[{"--", 
+          RowBox[{"--", 
+           RowBox[{"--", 
+            RowBox[{"--", 
+             RowBox[{"--", 
+              RowBox[{"--", 
+               RowBox[{"--", 
+                RowBox[{"--", 
+                 RowBox[{"--", 
+                  RowBox[{"--", 
+                   RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{
+                    "--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}], 
+        "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"simplerMatrix", " ", ":=", 
+        RowBox[{"terrainMatrix", "/.", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"-", "1"}], "|", "1"}], " ", "->", " ", "0"}], ",", " ", 
+           
+           RowBox[{
+            RowBox[{"0", "|", "2", "|", "3"}], " ", "->", " ", "infinity"}]}],
+           "}"}]}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"terrainGrid", " ", ":=", " ", 
+        RowBox[{"terrainMatrix", " ", "/.", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "1"}], " ", "->", " ", 
+            RowBox[{"Lighter", "[", 
+             RowBox[{"Yellow", ",", " ", "0.5"}], "]"}]}], ",", 
+           RowBox[{"0", "->", "Black"}], ",", 
+           RowBox[{"1", "->", 
+            RowBox[{"Lighter", "[", 
+             RowBox[{"Orange", ",", " ", "0.5"}], "]"}]}], ",", 
+           RowBox[{"2", "->", "Null"}], ",", 
+           RowBox[{"3", "->", "Null"}]}], "}"}]}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"destroyMatrix", " ", ":=", " ", 
+        RowBox[{"terrainMatrix", "/.", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"-", "1"}], "|", "1"}], " ", "->", " ", 
+            RowBox[{"graybtn", "[", "]"}]}], ",", " ", 
+           RowBox[{
+            RowBox[{"0", "|", "2", "|", "3"}], " ", "->", " ", "Null"}]}], 
+          "}"}]}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"preMoveMatrixRed", " ", ":=", " ", 
+        RowBox[{"distanceMatrixRed", "/.", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"1", "->", " ", 
+            RowBox[{"redbtn", "[", "]"}]}], ",", " ", 
+           RowBox[{
+            RowBox[{"x_", "/;", 
+             RowBox[{"x", ">", "1"}]}], " ", "->", " ", "Null"}]}], "}"}]}]}],
+        ";", "\[IndentingNewLine]", 
+       RowBox[{"moveMatrixRed", " ", ":=", " ", 
+        RowBox[{"MapThread", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"MapThread", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"If", "[", 
+               RowBox[{
+                RowBox[{"#2", "===", "Null"}], ",", "Null", ",", "#1"}], 
+               "]"}], "&"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"#1", ",", "#2"}], "}"}]}], "]"}], "&"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"allRedMatrix", ",", "preMoveMatrixRed"}], "}"}]}], 
+         "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"preMoveMatrixBlue", " ", ":=", " ", 
+        RowBox[{"distanceMatrixBlue", "/.", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"1", "->", " ", 
+            RowBox[{"bluebtn", "[", "]"}]}], ",", 
+           RowBox[{
+            RowBox[{"x_", "/;", 
+             RowBox[{"x", ">", "1"}]}], " ", "->", " ", "Null"}]}], "}"}]}]}],
+        ";", "\[IndentingNewLine]", 
+       RowBox[{"moveMatrixBlue", " ", ":=", " ", 
+        RowBox[{"MapThread", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"MapThread", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"If", "[", 
+               RowBox[{
+                RowBox[{"#2", "===", "Null"}], ",", "Null", ",", "#1"}], 
+               "]"}], "&"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"#1", ",", "#2"}], "}"}]}], "]"}], "&"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"allBlueMatrix", ",", " ", "preMoveMatrixBlue"}], "}"}]}], 
+         "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"updateDistances", " ", ":=", " ", 
+        RowBox[{"(", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"distanceMatrixRed", ":=", " ", "simplerMatrix"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"distanceMatrixRed", " ", "=", " ", 
+           RowBox[{"Table", "[", 
+            RowBox[{
+             RowBox[{"Table", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"distanceMatrixRed", "[", 
+                 RowBox[{"[", 
+                  RowBox[{"j", ",", "i"}], "]"}], "]"}], "+", 
+                RowBox[{"Max", "[", 
+                 RowBox[{
+                  RowBox[{"Abs", "[", 
+                   RowBox[{
+                    RowBox[{"position", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"2", ",", " ", "1"}], "]"}], "]"}], " ", "-", " ",
+                     "j"}], "]"}], ",", 
+                  RowBox[{"Abs", "[", 
+                   RowBox[{
+                    RowBox[{"position", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"2", ",", " ", "2"}], "]"}], "]"}], " ", "-", " ",
+                     "i"}], "]"}]}], "]"}]}], ",", " ", 
+               RowBox[{"{", 
+                RowBox[{"i", ",", " ", "gridY"}], "}"}]}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"j", ",", " ", "gridX"}], "}"}]}], "]"}]}], ";", 
+          "\[IndentingNewLine]", "\[IndentingNewLine]", 
+          RowBox[{"distanceMatrixBlue", ":=", " ", "simplerMatrix"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"distanceMatrixBlue", " ", "=", " ", 
+           RowBox[{"Table", "[", 
+            RowBox[{
+             RowBox[{"Table", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"distanceMatrixBlue", "[", 
+                 RowBox[{"[", 
+                  RowBox[{"j", ",", "i"}], "]"}], "]"}], "+", 
+                RowBox[{"Max", "[", 
+                 RowBox[{
+                  RowBox[{"Abs", "[", 
+                   RowBox[{
+                    RowBox[{"position", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"1", ",", " ", "1"}], "]"}], "]"}], " ", "-", " ",
+                     "j"}], "]"}], ",", 
+                  RowBox[{"Abs", "[", 
+                   RowBox[{
+                    RowBox[{"position", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"1", ",", " ", "2"}], "]"}], "]"}], " ", "-", " ",
+                     "i"}], "]"}]}], "]"}]}], ",", " ", 
+               RowBox[{"{", 
+                RowBox[{"i", ",", " ", "gridY"}], "}"}]}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"j", ",", " ", "gridX"}], "}"}]}], "]"}]}], ";"}], 
+         "\[IndentingNewLine]", ")"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{"<<", 
+         RowBox[{"<", 
+          RowBox[{"--", 
+           RowBox[{"--", 
+            RowBox[{"--", 
+             RowBox[{"--", 
+              RowBox[{"--", 
+               RowBox[{"--", 
+                RowBox[{"--", 
+                 RowBox[{"--", 
+                  RowBox[{"--", 
+                   RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", "<<"}]}]}]}]}]}]}]}]}]}]}]}]}], "<"}]}], 
+        "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"displayGrid", "[", "]"}], " ", ":=", " ", 
+        RowBox[{"Grid", "[", 
+         RowBox[{"terrainGrid", ",", " ", 
+          RowBox[{"Frame", "->", "None"}], ",", "  ", 
+          RowBox[{"Alignment", "->", 
+           RowBox[{"{", 
+            RowBox[{"Center", ",", " ", "Center"}], "}"}]}], ",", " ", 
+          RowBox[{"ItemSize", "->", 
+           RowBox[{"{", 
+            RowBox[{"5", ",", " ", "5"}], "}"}]}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"displayBlueGrid", "[", "]"}], " ", ":=", " ", 
+        RowBox[{"Grid", "[", 
+         RowBox[{"distanceMatrixBlue", ",", " ", 
+          RowBox[{"Frame", "->", "None"}], ",", "  ", 
+          RowBox[{"Alignment", "->", 
+           RowBox[{"{", 
+            RowBox[{"Center", ",", " ", "Center"}], "}"}]}], ",", " ", 
+          RowBox[{"ItemSize", "->", 
+           RowBox[{"{", 
+            RowBox[{"5", ",", " ", "5"}], "}"}]}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"displayRedGrid", "[", "]"}], " ", ":=", " ", 
+        RowBox[{"Grid", "[", 
+         RowBox[{"distanceMatrixRed", ",", " ", 
+          RowBox[{"Frame", "->", "None"}], ",", "  ", 
+          RowBox[{"Alignment", "->", 
+           RowBox[{"{", 
+            RowBox[{"Center", ",", " ", "Center"}], "}"}]}], ",", " ", 
+          RowBox[{"ItemSize", "->", 
+           RowBox[{"{", 
+            RowBox[{"5", ",", " ", "5"}], "}"}]}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"graphDestroyGrid", "[", "]"}], " ", ":=", " ", 
+        RowBox[{"GraphicsGrid", "[", 
+         RowBox[{"destroyMatrix", ",", " ", "\[IndentingNewLine]", 
+          RowBox[{"Frame", "->", "None"}], ",", "  ", 
+          RowBox[{"Alignment", "->", 
+           RowBox[{"{", 
+            RowBox[{"Center", ",", " ", "Center"}], "}"}]}], ",", " ", 
+          "\[IndentingNewLine]", 
+          RowBox[{"ItemAspectRatio", "->", "1"}]}], " ", 
+         RowBox[{"(*", 
+          RowBox[{"ImageSize", "->", " ", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"gridX", "*", "cellSize"}], ",", " ", 
+             RowBox[{"gridY", " ", "*", " ", "cellSize"}]}], "}"}]}], "*)"}], 
+         "\[IndentingNewLine]", "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"graphRedGrid", "[", "]"}], " ", ":=", " ", 
+        RowBox[{"GraphicsGrid", "[", 
+         RowBox[{"moveMatrixRed", ",", " ", "\[IndentingNewLine]", 
+          RowBox[{"Frame", "->", "None"}], ",", "  ", 
+          RowBox[{"Alignment", "->", 
+           RowBox[{"{", 
+            RowBox[{"Center", ",", " ", "Center"}], "}"}]}], ",", " ", 
+          "\[IndentingNewLine]", 
+          RowBox[{"ItemAspectRatio", "->", "1"}]}], " ", 
+         RowBox[{"(*", 
+          RowBox[{"ImageSize", "->", " ", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"gridX", "*", "cellSize"}], ",", " ", 
+             RowBox[{"gridY", " ", "*", " ", "cellSize"}]}], "}"}]}], "*)"}], 
+         "\[IndentingNewLine]", "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"graphBlueGrid", "[", "]"}], " ", ":=", " ", 
+        RowBox[{"GraphicsGrid", "[", 
+         RowBox[{"moveMatrixBlue", ",", " ", "\[IndentingNewLine]", 
+          RowBox[{"Frame", "->", "None"}], ",", "  ", 
+          RowBox[{"Alignment", "->", 
+           RowBox[{"{", 
+            RowBox[{"Center", ",", " ", "Center"}], "}"}]}], ",", " ", 
+          "\[IndentingNewLine]", 
+          RowBox[{"ItemAspectRatio", "->", "1"}]}], " ", 
+         RowBox[{"(*", 
+          RowBox[{"ImageSize", "->", " ", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"gridX", "*", "cellSize"}], ",", " ", 
+             RowBox[{"gridY", " ", "*", " ", "cellSize"}]}], "}"}]}], "*)"}], 
+         "\[IndentingNewLine]", "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"displayMatrix", "[", "]"}], " ", ":=", " ", 
+        RowBox[{"MatrixPlot", "[", 
+         RowBox[{"terrainMatrix", ",", " ", 
+          RowBox[{"Frame", "->", "None"}], ",", " ", 
+          RowBox[{"ColorRules", "->", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"-", "1"}], " ", "->", " ", 
+              RowBox[{"Lighter", "[", 
+               RowBox[{"Yellow", ",", " ", "0.5"}], "]"}]}], ",", 
+             RowBox[{"0", "->", "Black"}], ",", 
+             RowBox[{"1", "->", 
+              RowBox[{"Lighter", "[", 
+               RowBox[{"Orange", ",", " ", "0.5"}], "]"}]}], ",", 
+             RowBox[{"2", "->", "Blue"}], ",", 
+             RowBox[{"3", "->", "Red"}]}], "}"}]}], ",", " ", 
+          RowBox[{"Background", "->", "LightBlue"}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"position", "[", 
+           RowBox[{"[", 
+            RowBox[{"1", ",", " ", "1"}], "]"}], "]"}], " ", "=", " ", "2"}], 
+         ";", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"position", "[", 
+           RowBox[{"[", 
+            RowBox[{"2", ",", " ", "1"}], "]"}], "]"}], " ", "=", " ", "4"}], 
+         ";", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"position", "[", 
+           RowBox[{"[", 
+            RowBox[{"2", ",", " ", "2"}], "]"}], "]"}], " ", "=", " ", "3"}], 
+         ";", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"floor", "[", 
+           RowBox[{"[", 
+            RowBox[{"3", ",", " ", "3"}], "]"}], "]"}], " ", "=", " ", "0"}], 
+         ";", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"floor", "[", 
+           RowBox[{"[", 
+            RowBox[{"3", ",", " ", "2"}], "]"}], "]"}], " ", "=", " ", "0"}], 
+         ";"}], "\[IndentingNewLine]", "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"updateMatrix", "[", "]"}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Dynamic", "@", 
+        RowBox[{"Overlay", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"displayMatrix", "[", "]"}], ",", " ", 
+            RowBox[{"graphBlueGrid", "[", "]"}]}], "}"}], ",", " ", "None", 
+          ",", " ", "2"}], "]"}]}]}]}], "\[IndentingNewLine]", "]"}]}], 
+   ";"}]}]], "Input",
+ CellChangeTimes->{{3.930652489967638*^9, 
+  3.9306524904543266`*^9}},ExpressionUUID->"787a1dec-04df-1447-baf7-\
+2032e6037300"]
 },
-WindowSize->{949, 526.5},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
-FrontEndVersion->"14.0 for Microsoft Windows (64-bit) (December 12, 2023)",
+WindowSize->{1280, 652},
+WindowMargins->{{-5.5, Automatic}, {Automatic, -5.5}},
+FrontEndVersion->"14.0 pour Microsoft Windows (64-bit) (December 12, 2023)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"2b726db7-8516-2f4d-a988-4673c169b7b8"
 ]
@@ -6071,26 +6899,30 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 352099, 5795, 339, "Input",ExpressionUUID->"81f5e1b5-230e-594f-b690-4ad1af6ecd22"],
+Cell[558, 20, 352095, 5795, 339, "Input",ExpressionUUID->"81f5e1b5-230e-594f-b690-4ad1af6ecd22"],
 Cell[CellGroupData[{
-Cell[352682, 5819, 930, 25, 67, "Input",ExpressionUUID->"b980c6d5-cd3f-454c-804f-ea2e6b8bfa9f"],
-Cell[353615, 5846, 2306, 52, 376, "Output",ExpressionUUID->"00f00f45-079a-c34d-8073-a73702e77202"]
+Cell[352678, 5819, 930, 25, 83, "Input",ExpressionUUID->"b980c6d5-cd3f-454c-804f-ea2e6b8bfa9f"],
+Cell[353611, 5846, 2306, 52, 376, "Output",ExpressionUUID->"00f00f45-079a-c34d-8073-a73702e77202"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[355958, 5903, 154, 3, 28, "Input",ExpressionUUID->"75565aec-2541-ec47-b30d-3c9e3319e330"],
-Cell[356115, 5908, 483, 10, 28, "Message",ExpressionUUID->"7c5cfa96-c5e2-4d49-a39a-f9578f27a9c1"]
+Cell[355954, 5903, 154, 3, 28, "Input",ExpressionUUID->"75565aec-2541-ec47-b30d-3c9e3319e330"],
+Cell[356111, 5908, 483, 10, 28, "Message",ExpressionUUID->"7c5cfa96-c5e2-4d49-a39a-f9578f27a9c1"]
 }, Open  ]],
-Cell[356613, 5921, 1777, 52, 200, "Input",ExpressionUUID->"f0bd3a2d-0dec-8043-9d62-b43a5d210489"],
+Cell[356609, 5921, 1779, 53, 249, "Input",ExpressionUUID->"f0bd3a2d-0dec-8043-9d62-b43a5d210489"],
 Cell[CellGroupData[{
-Cell[358415, 5977, 350, 6, 67, "Input",ExpressionUUID->"70ae3e8c-3659-2c4d-aae4-b7fcda9b3db1"],
-Cell[358768, 5985, 573, 13, 32, "Output",ExpressionUUID->"2d259c84-e130-bd41-be5e-0ce319c8858f"],
-Cell[359344, 6000, 579, 14, 32, "Output",ExpressionUUID->"edec9f0f-4b5e-8a44-a280-43c5fbce8a36"],
-Cell[359926, 6016, 589, 14, 32, "Output",ExpressionUUID->"84b529e6-1cfd-8646-ad6d-04c3f2ee7b7d"]
+Cell[358413, 5978, 350, 6, 67, "Input",ExpressionUUID->"70ae3e8c-3659-2c4d-aae4-b7fcda9b3db1"],
+Cell[358766, 5986, 573, 13, 32, "Output",ExpressionUUID->"2d259c84-e130-bd41-be5e-0ce319c8858f"],
+Cell[359342, 6001, 579, 14, 32, "Output",ExpressionUUID->"edec9f0f-4b5e-8a44-a280-43c5fbce8a36"],
+Cell[359924, 6017, 589, 14, 32, "Output",ExpressionUUID->"84b529e6-1cfd-8646-ad6d-04c3f2ee7b7d"]
 }, Open  ]],
-Cell[360530, 6033, 348, 6, 28, "Input",ExpressionUUID->"c35dce63-e2a1-1b40-bb30-b873df812e82"],
-Cell[360881, 6041, 154, 3, 28, "Input",ExpressionUUID->"ba64fddb-b8a6-1547-8098-76c7c66940db"],
-Cell[361038, 6046, 154, 3, 28, "Input",ExpressionUUID->"431ae75c-343a-b945-95cb-6ad885c48547"],
-Cell[361195, 6051, 154, 3, 28, "Input",ExpressionUUID->"dd9c1a88-34b3-1540-8e0e-b3b901371faf"]
+Cell[360528, 6034, 348, 6, 28, "Input",ExpressionUUID->"c35dce63-e2a1-1b40-bb30-b873df812e82"],
+Cell[360879, 6042, 154, 3, 28, "Input",ExpressionUUID->"ba64fddb-b8a6-1547-8098-76c7c66940db"],
+Cell[CellGroupData[{
+Cell[361058, 6049, 629, 18, 43, "Input",ExpressionUUID->"431ae75c-343a-b945-95cb-6ad885c48547"],
+Cell[361690, 6069, 355, 10, 32, "Output",ExpressionUUID->"95ee5b24-a84d-0d4e-8e46-597635f1eba5"]
+}, Open  ]],
+Cell[362060, 6082, 154, 3, 28, "Input",ExpressionUUID->"dd9c1a88-34b3-1540-8e0e-b3b901371faf"],
+Cell[362217, 6087, 33695, 795, 3238, "Input",ExpressionUUID->"787a1dec-04df-1447-baf7-2032e6037300"]
 }
 ]
 *)

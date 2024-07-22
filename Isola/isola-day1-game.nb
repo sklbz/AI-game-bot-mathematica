@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     73844,       1911]
-NotebookOptionsPosition[     72029,       1870]
-NotebookOutlinePosition[     72797,       1895]
-CellTagsIndexPosition[     72754,       1892]
+NotebookDataLength[     91109,       2454]
+NotebookOptionsPosition[     88492,       2404]
+NotebookOutlinePosition[     89174,       2427]
+CellTagsIndexPosition[     89131,       2424]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -83,8 +83,10 @@ Cell[BoxData[{
        ",", "\[IndentingNewLine]", "updateMatrix", ",", "\[IndentingNewLine]",
         "graybtn", ",", " ", "redbtn", ",", " ", "bluebtn", ",", 
        "\[IndentingNewLine]", "allBlueMatrix", ",", " ", "allRedMatrix", ",", 
-       " ", "allBlackMatrix"}], "\[IndentingNewLine]", "}"}], ",", 
-     "\[IndentingNewLine]", 
+       " ", "allBlackMatrix", ",", "preMoveMatrixRed", ",", 
+       "preMoveMatrixBlue", ",", "\[IndentingNewLine]", "moveRed", ",", " ", 
+       "moveBlue", ",", " ", "destroyTile", ",", " ", "preDestroyMatrix"}], 
+      "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
      RowBox[{"(*", "variables", "*)"}], "\[IndentingNewLine]", 
      RowBox[{
       RowBox[{"changeTurn", " ", ":=", " ", 
@@ -206,11 +208,11 @@ Cell[BoxData[{
             RowBox[{"{", 
              RowBox[{"j", ",", " ", "gridX"}], "}"}]}], "]"}]}], ";"}], 
         "\[IndentingNewLine]", ")"}]}], ";", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"terrainMatrix", " ", "/;", " ", "0"}], " ", "->", " ", 
-       RowBox[{"init", "[", "]"}]}], ";", "\[IndentingNewLine]", 
       "\[IndentingNewLine]", 
-      RowBox[{"updateMatrix", ":=", 
+      RowBox[{"init", "[", "]"}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"updateMatrix", "[", "]"}], ":=", 
        RowBox[{"(", "\[IndentingNewLine]", 
         RowBox[{
          RowBox[{"terrainMatrix", " ", "=", " ", "floor"}], ";", 
@@ -241,8 +243,9 @@ Cell[BoxData[{
                RowBox[{"[", "2", "]"}], "]"}], "[", 
               RowBox[{"[", "2", "]"}], "]"}]}], "]"}], "]"}], " ", "=", " ", 
           "3"}], ";", "\[IndentingNewLine]", 
-         RowBox[{"updateDistances", "[", "]"}], ";"}], "\[IndentingNewLine]", 
-        ")"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"updateDistances", "[", "]"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"Print", "[", "\"\<update\>\"", "]"}]}], 
+        "\[IndentingNewLine]", ")"}]}], ";", "\[IndentingNewLine]", 
       RowBox[{"(*", "*)"}], "\[IndentingNewLine]", 
       RowBox[{"(*", "*)"}], "\[IndentingNewLine]", 
       RowBox[{
@@ -347,10 +350,8 @@ Cell[BoxData[{
               RowBox[{"{", 
                RowBox[{"0", ",", " ", "0"}], "}"}], ",", " ", "15"}], "]"}]}],
             "}"}], "]"}], ",", " ", 
-         RowBox[{
-          RowBox[{"floor", "[", 
-           RowBox[{"[", 
-            RowBox[{"x", ",", " ", "y"}], "]"}], "]"}], "=", "0"}], ",", " ", 
+         RowBox[{"destroyTile", "[", 
+          RowBox[{"x", ",", " ", "y"}], "]"}], ",", " ", 
          RowBox[{"Method", "->", "\"\<Queued\>\""}], ",", " ", 
          RowBox[{"ImageSize", " ", "->", " ", 
           RowBox[{"{", 
@@ -378,11 +379,8 @@ Cell[BoxData[{
               RowBox[{"{", 
                RowBox[{"0", ",", " ", "0"}], "}"}], ",", " ", "15"}], "]"}]}],
             "}"}], "]"}], ",", " ", 
-         RowBox[{
-          RowBox[{"position", "[", 
-           RowBox[{"[", "1", "]"}], "]"}], " ", "=", " ", 
-          RowBox[{"{", 
-           RowBox[{"x", ",", " ", "y"}], "}"}]}], ",", " ", 
+         RowBox[{"moveBlue", "[", 
+          RowBox[{"x", ",", " ", "y"}], "]"}], ",", " ", 
          RowBox[{"Method", "->", "\"\<Queued\>\""}], ",", " ", 
          RowBox[{"ImageSize", " ", "->", " ", 
           RowBox[{"{", 
@@ -410,17 +408,57 @@ Cell[BoxData[{
               RowBox[{"{", 
                RowBox[{"0", ",", " ", "0"}], "}"}], ",", " ", "15"}], "]"}]}],
             "}"}], "]"}], ",", " ", 
-         RowBox[{
-          RowBox[{"position", "[", 
-           RowBox[{"[", "1", "]"}], "]"}], " ", "=", " ", 
-          RowBox[{"{", 
-           RowBox[{"x", ",", " ", "y"}], "}"}]}], ",", " ", 
+         RowBox[{"moveRed", "[", 
+          RowBox[{"x", ",", " ", "y"}], "]"}], ",", " ", 
          RowBox[{"Method", "->", "\"\<Queued\>\""}], ",", " ", 
          RowBox[{"ImageSize", " ", "->", " ", 
           RowBox[{"{", 
            RowBox[{"10", ",", " ", "10"}], "}"}]}], ",", " ", 
          RowBox[{"Appearance", "->", "\"\<Frameless\>\""}]}], "]"}]}], ";", 
       "\[IndentingNewLine]", 
+      RowBox[{"(*", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"moveRed", "[", 
+        RowBox[{"x_", ",", " ", "y_"}], "]"}], " ", ":=", " ", 
+       RowBox[{"(", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Print", "[", "\"\<red\>\"", "]"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"position", "[", 
+           RowBox[{"[", "2", "]"}], "]"}], " ", "=", " ", 
+          RowBox[{"{", 
+           RowBox[{"x", ",", " ", "y"}], "}"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"updateMatrix", "[", "]"}], ";"}], "\[IndentingNewLine]", 
+        ")"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"moveBlue", "[", 
+        RowBox[{"x_", ",", " ", "y_"}], "]"}], " ", ":=", " ", 
+       RowBox[{"(", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"position", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], " ", "=", " ", 
+          RowBox[{"{", 
+           RowBox[{"x", ",", " ", "y"}], "}"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"updateMatrix", "[", "]"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"Print", "[", "terrainMatrix", "]"}], ";"}], 
+        "\[IndentingNewLine]", ")"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"destroyTile", "[", 
+        RowBox[{"x_", ",", " ", "y_"}], "]"}], " ", ":=", " ", 
+       RowBox[{"(", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Print", "[", "\"\<destroy\>\"", "]"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"floor", "[", 
+           RowBox[{"[", 
+            RowBox[{"x", ",", " ", "y"}], "]"}], "]"}], "=", "0"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"updateMatrix", "[", "]"}], ";"}], "\[IndentingNewLine]", 
+        ")"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"(*", "*)"}], "\[IndentingNewLine]", 
       RowBox[{"(*", "*)"}], "\[IndentingNewLine]", 
       RowBox[{"(*", 
        RowBox[{
@@ -490,7 +528,7 @@ Cell[BoxData[{
           RowBox[{"2", "->", "Null"}], ",", 
           RowBox[{"3", "->", "Null"}]}], "}"}]}]}], ";", 
       "\[IndentingNewLine]", 
-      RowBox[{"destroyMatrix", " ", ":=", " ", 
+      RowBox[{"preDestroyMatrix", " ", ":=", " ", 
        RowBox[{"terrainMatrix", "/.", 
         RowBox[{"{", 
          RowBox[{
@@ -501,7 +539,23 @@ Cell[BoxData[{
           RowBox[{
            RowBox[{"0", "|", "2", "|", "3"}], " ", "->", " ", "Null"}]}], 
          "}"}]}]}], ";", "\[IndentingNewLine]", 
-      RowBox[{"moveMatrixRed", " ", ":=", " ", 
+      RowBox[{"destroyMatrix", " ", ":=", " ", 
+       RowBox[{"MapThread", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"MapThread", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{"#2", "===", "Null"}], ",", "Null", ",", "#1"}], "]"}],
+              "&"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"#1", ",", "#2"}], "}"}]}], "]"}], "&"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"allBlackMatrix", ",", "preDestroyMatrix"}], "}"}]}], 
+        "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"preMoveMatrixRed", " ", ":=", " ", 
        RowBox[{"distanceMatrixRed", "/.", 
         RowBox[{"{", 
          RowBox[{
@@ -511,7 +565,23 @@ Cell[BoxData[{
            RowBox[{"x_", "/;", 
             RowBox[{"x", ">", "1"}]}], " ", "->", " ", "Null"}]}], "}"}]}]}], 
       ";", "\[IndentingNewLine]", 
-      RowBox[{"moveMatrixBlue", " ", ":=", " ", 
+      RowBox[{"moveMatrixRed", " ", ":=", " ", 
+       RowBox[{"MapThread", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"MapThread", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{"#2", "===", "Null"}], ",", "Null", ",", "#1"}], "]"}],
+              "&"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"#1", ",", "#2"}], "}"}]}], "]"}], "&"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"allRedMatrix", ",", "preMoveMatrixRed"}], "}"}]}], "]"}]}],
+       ";", "\[IndentingNewLine]", 
+      RowBox[{"preMoveMatrixBlue", " ", ":=", " ", 
        RowBox[{"distanceMatrixBlue", "/.", 
         RowBox[{"{", 
          RowBox[{
@@ -521,6 +591,22 @@ Cell[BoxData[{
            RowBox[{"x_", "/;", 
             RowBox[{"x", ">", "1"}]}], " ", "->", " ", "Null"}]}], "}"}]}]}], 
       ";", "\[IndentingNewLine]", 
+      RowBox[{"moveMatrixBlue", " ", ":=", " ", 
+       RowBox[{"MapThread", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"MapThread", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{"#2", "===", "Null"}], ",", "Null", ",", "#1"}], "]"}],
+              "&"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"#1", ",", "#2"}], "}"}]}], "]"}], "&"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"allBlueMatrix", ",", " ", "preMoveMatrixBlue"}], "}"}]}], 
+        "]"}]}], ";", "\[IndentingNewLine]", 
       RowBox[{"updateDistances", " ", ":=", " ", 
        RowBox[{"(", "\[IndentingNewLine]", 
         RowBox[{
@@ -708,31 +794,33 @@ Cell[BoxData[{
             RowBox[{"3", "->", "Red"}]}], "}"}]}], ",", " ", 
          RowBox[{"Background", "->", "LightBlue"}]}], "]"}]}], ";", 
       "\[IndentingNewLine]", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"position", "[", 
-        RowBox[{"[", 
-         RowBox[{"1", ",", " ", "1"}], "]"}], "]"}], " ", "=", " ", "2"}], 
-      ";", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"position", "[", 
-        RowBox[{"[", 
-         RowBox[{"2", ",", " ", "1"}], "]"}], "]"}], " ", "=", " ", "4"}], 
-      ";", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"position", "[", 
-        RowBox[{"[", 
-         RowBox[{"2", ",", " ", "2"}], "]"}], "]"}], " ", "=", " ", "3"}], 
-      ";", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"floor", "[", 
-        RowBox[{"[", 
-         RowBox[{"3", ",", " ", "3"}], "]"}], "]"}], " ", "=", " ", "0"}], 
-      ";", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"floor", "[", 
-        RowBox[{"[", 
-         RowBox[{"3", ",", " ", "2"}], "]"}], "]"}], " ", "=", " ", "0"}], 
-      ";", "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"position", "[", 
+          RowBox[{"[", 
+           RowBox[{"1", ",", " ", "1"}], "]"}], "]"}], " ", "=", " ", "2"}], 
+        ";", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"position", "[", 
+          RowBox[{"[", 
+           RowBox[{"2", ",", " ", "1"}], "]"}], "]"}], " ", "=", " ", "4"}], 
+        ";", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"position", "[", 
+          RowBox[{"[", 
+           RowBox[{"2", ",", " ", "2"}], "]"}], "]"}], " ", "=", " ", "3"}], 
+        ";", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"floor", "[", 
+          RowBox[{"[", 
+           RowBox[{"3", ",", " ", "3"}], "]"}], "]"}], " ", "=", " ", "0"}], 
+        ";", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"floor", "[", 
+          RowBox[{"[", 
+           RowBox[{"3", ",", " ", "2"}], "]"}], "]"}], " ", "=", " ", "0"}], 
+        ";"}], "\[IndentingNewLine]", "*)"}], "\[IndentingNewLine]", 
       RowBox[{"updateMatrix", "[", "]"}], ";", "\[IndentingNewLine]", 
       "\[IndentingNewLine]", 
       RowBox[{"Dynamic", "@", 
@@ -741,46 +829,1099 @@ Cell[BoxData[{
          RowBox[{"{", 
           RowBox[{
            RowBox[{"displayMatrix", "[", "]"}], ",", " ", 
-           RowBox[{"graphBlueGrid", "[", "]"}]}], "}"}], ",", " ", "None", 
+           RowBox[{"graphDestroyGrid", "[", "]"}]}], "}"}], ",", " ", "None", 
          ",", " ", "2"}], "]"}]}]}]}], "\[IndentingNewLine]", "]"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{"Isola", "[", "]"}]}], "Input",
  CellChangeTimes->CompressedData["
-1:eJwl0XlM02cYB/AGgYEpE6UIBUaAdFsncloGIZWh1nHYOLaB4lLuEssGtdxl
-oCg2s5ISisCQw1EJl4AOJsgNJchANhFnCfcogW2VY0yFcdi48X3945dPnvd9
-jvf9vbaRF76I1qFQKHG7H2zjLDmY+K0ek1xXOkJpd9cRyDLrYkGGwj8Y6r7f
-L4CU+jPpkBn6pBay56N+hGXjJhooyOJswco9F/Vou3J7PjaGVAsHU8hrKTwM
-xaqrjlAuakmBSbEbl6HHZu01KD2uXwI5JwzLoXN3VjucWLrUC2mRiYNQ4ma5
-CWur3LdhW8cBQ9NdlVnDJlARVUqH4eeCrKH2+aNDUP38gD0cffe+E+Qm8n1I
-/pHGQNg2lXMG/sMSRUBvq9W3ct7EwMXBg/GQHXo8GVK6K1MhrX7jEhTUbVyB
-DUeFOZAlGSYasMVlMJDWQ2RW/1UFZauzNVDewbsLVYqUFpLnpNdJ1vfdfkLy
-WBVjxADBJOkv8p0jfTI/J7aZBi1A3/HqV5C3eHILar6b3SbnyHbVObjr5Z4C
-ou70WX3IuCMlUg0fUKFN5rgt9O3f9wH0mEyxJ/HAay9Y25J2AgaXWPtBjXTp
-FAy4sRJA+jVyBWS/5V4KlN89nUrmDltfgmKHrCy4OB8lhdKROhmpfzp7Cxp8
-EnIPygZZ7WS/j9cJ+cV/TsHGnfszpH9y3yYUSFK15HyuG3pmJB6nwmadlv1Q
-RdWYwYztJC/IfKE+DWk6xUFwxjwsAq5UJNrSd42tX7WDkrEPD8Gb3BI3yJz8
-1QcO/Vt6DqqDOsPhll52FMn79GgqlKV9LYbU3/ObYEZ9bi+kTX3bDxuMro1A
-QUmICjr7C4kcSfYs5NLtFkj9V5bLUOHD/Bvy2z1fv63n0y3wDpNyOziTv0bU
-tmrcIG8ozgN6VPH9YIFTaBCkNQmi4WEX8/OQX3chDirF4nTobHrxCtQUa25A
-+bR+MYmf7f8BbkX2V0DfFy6VMFax0QHbMnp6yfyXRsNknlD2FHJdeKswQF2u
-a7mraDnAEM4s84hKuqcJnHDPsIAMxyAbWPBm/SPo/GDBFTKLqtkwXFtzEnrc
-fPwZWW/24pG6b17FQO+zzkLIujieQPp+v/cxVNcMjMAyYfEUNFBRZkn+o515
-aH49cg3qNritQ0Vt4RbUcOO10DjsPN0K/29ZaAPLuHs9YKUqmg2HbvV7w4z8
-UC50zssjWlEbAyDXvigQyowMeJCaoBNL8leuiuFiq8FVaE7/LQfqto/lQd+m
-iTuQ00ztgtLMpD7YMJA8DLU7Tc+ggi6ahM0/3Z6Dap+5P6Dy57A1GJ625yVk
-ZL6zBds8Q4jejiv/kfuYpzu8h3eJy3OFD9cL2VAk9zsBWQ52HKj0NcuBamFw
-LpSL3YpITAkpgY1FuQ8hsyt2FGqyEyfg6DZ7Ghq7l1Oscf6aUh0oUy15Q3F/
-wjFoPsLwh6LepVNQ9xfll5C5HRcBKbFGMVDLb42DBk0MMamLt5TA/wFJYAOz
-
+1:eJwl031Q0nccB3AOkWmHyxIT1Jl6bmOVRoaLGTUrnFhcs0172KGZ4oWbEkUp
+LsNSWuThxB5mmi1qmpTWNLWwTOnIZS6tFp3PRZdb5MN60tLi2nx/++N3r/t8
+v5+H7/f3u19A0pZvUqgUCkU99UCTcCjYI3p0mWa/OQRqrzQthDyvJh4MMqxc
+D2kfW2SQUrV2J+Qk3DJCwcPk32FZl4cdynKFE7DcaZczc0px8+fukOEd7Akl
+DYfnQZU1LwTqFQ0ZcHva+G7If23cB7XL6aVQuML1OOReyW2E3UPqFshMUl6H
+mjCf19BYsWgSmi7NdPWc0pzb7gENyUfZMHFDnB90PLkxB9qezJwLb39YNx+K
+ldIokr+wJhaaegvWwmc8xSYY4Tv6XuG7VDh4fdZWKEhYvgNSrpRnQmbVuBrK
+zozvgdVL5AWQp2knughUZTCW2UzknHpcAXWjA5VQf0lyFloNGQ0kb77zZbI+
+/cQtksc7eY8YI+sh/RWiB6RPzhqiyTPuERR1nXoJJYORE9D+08AkOUd+KHXW
+lLubDxFpfevoMOi0lshwvcCA/jldAVBkmf4J5PdkzCVx69ul0NiQtQKuL/WL
+hnbt0CoYc2AkhvSrEcvIfsO5DKg/uzqTzG33U0NVcG4uHHyYrIXazjM6Un9n
+4Bh0+TL+HNRd5zWS/auSy1Ba8k8vrHlT10/677j6Gso0mQ5yvtBxZy8SdzFg
+PbVhBrQy7F4we3L7Ush5blsNmdSSONjP2rgJjpxUBrCnTKsaDYSae5/OgUfE
+pWGQ03MzCra9OroB2uIuJ8IJ5/xkkvfVkkyoy/peBRn3D9bC7KrCFsjs/dEC
+q932dUJZabwVclfKiUJN/gAUswMfkfrvfIahIYrzL5Q2hr99Xy9le+M79OgD
+Yf/Bp0THRXsYlLSl8yG/QhoND81PiIPMWlkKnLeAtRlKz2xJh2aVaifkeu7a
+A+0l9gNQ30cvIfHdGb/CiSTLSSh6vqAcphnGL0FTdnMLmf/CrZ3Mk+vuQPEC
+ySiMsR2n+UypGI5xhf3DEqKZHe4Buxdle8OgkDh/eOjd2GeQe+FRKOQUnxLA
+REdlJOQf6fiarNcvlZC6H16mwoh1XDnk7eraRvr+Mq0D2ipbO2GZvKQXulgp
+AyT/xpuHkLU/6SmkVYeNQYPx8AS0i7c6oPvGzWxfvL9huT8sE0/jw3JrigC2
+HbNEwOyDCWLILSoi+jJqYqB4bnEs1Lm5SCBjGzWN5I/kqeDgRZc8yGL/VQBp
+jfeKoKi2+zQU1jOaoDZn+1VY3bqjHTre1N6FBraiB9afP/EA2qIe/A3Nf2x8
+ChOznF7AoJwPJqApPJ4YETLyH7kPa2fwR/gu6UWh8NrYYQFU6KNXQF5woBCa
+RV4F0CZfXwj1qrBiElPiS2FNceE1yGlKuw3t+cpueHtS0AfdFx2n+OH8lUep
+UGcdioAqy7ZlkNUZtBIqWoZWQdqf5m8hZzJ9E6SkuaVCh/RiOnSpDVKRuq0+
+GmilC0Szcd9c41oo086Mh+LWACWJ855lQPNv2Vmzyf9A2w3rU+h74LwvjHuh
+/xqqFmpXC36GAk5kIclXvjpC6k2RpZDvu7gO0pzaiVyWuhHqw++3QM155Q1Y
+HV7xXqeWDjhW0Ua0v/K5S+bUqa2kjzurnzjUNwAdHQufw2625QW8ubjTQc75
+WP0OxqZOo/vjfhmbGZBCd/KCQuFbb/g/vdl57Q==
   "],
+ CellLabel->"In[15]:=",ExpressionUUID->"752338eb-bfa3-cb42-8321-7806585fa5b3"],
+
+Cell[BoxData["\<\"update\"\>"], "Print",
+ CellChangeTimes->{
+  3.930652570059923*^9, {3.93065264885734*^9, 3.930652660880554*^9}, 
+   3.930652772499613*^9, {3.930652876505457*^9, 3.9306528893413124`*^9}},
  CellLabel->
-  "In[655]:=",ExpressionUUID->"752338eb-bfa3-cb42-8321-7806585fa5b3"],
+  "Lors de l\[CloseCurlyQuote]\[EAcute]valuation de \
+In[15]:=",ExpressionUUID->"4243f812-0bd7-d549-9941-2e0c9f46243b"],
 
 Cell[BoxData[
  DynamicModuleBox[{$CellContext`infinity$$ = 
   1000, $CellContext`displayGrid$$, $CellContext`graphDestroyGrid$$, \
 $CellContext`displayMatrix$$, $CellContext`gridX$$ = 5, $CellContext`gridY$$ =
    5, $CellContext`cellSize$$ = 73, $CellContext`destroyMatrix$$ = {{
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[1, 1], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[1, 2], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[1, 3], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[1, 4], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[1, 5], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"]}, {
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[2, 1], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[2, 2], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[2, 3], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[2, 4], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[2, 5], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"]}, {Null, 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[3, 2], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[3, 3], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[3, 4], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], Null}, {
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[4, 1], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[4, 2], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[4, 3], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[4, 4], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[4, 5], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"]}, {
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[5, 1], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[5, 2], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[5, 3], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[5, 4], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[5, 5], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> 
+     "Frameless"]}}, $CellContext`distanceMatrixRed$$ = {{4, 3, 2, 2, 2}, {4, 
+  3, 2, 1, 1}, {1004, 3, 2, 1, 1000}, {4, 3, 2, 1, 1}, {4, 3, 2, 2, 
+  2}}, $CellContext`distanceMatrixBlue$$ = {{2, 2, 2, 3, 4}, {1, 1, 2, 3, 
+  4}, {1000, 1, 2, 3, 1004}, {1, 1, 2, 3, 4}, {2, 2, 2, 3, 
+  4}}, $CellContext`moveMatrixRed$$ = {{Null, Null, Null, Null, Null}, {
+   Null, Null, Null, 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveRed$$[2, 4], Method -> "Queued", ImageSize -> {10, 10}, 
+     Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveRed$$[2, 5], Method -> "Queued", ImageSize -> {10, 10}, 
+     Appearance -> "Frameless"]}, {Null, Null, Null, 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveRed$$[3, 4], Method -> "Queued", ImageSize -> {10, 10}, 
+     Appearance -> "Frameless"], Null}, {Null, Null, Null, 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveRed$$[4, 4], Method -> "Queued", ImageSize -> {10, 10}, 
+     Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveRed$$[4, 5], Method -> "Queued", ImageSize -> {10, 10}, 
+     Appearance -> "Frameless"]}, {
+   Null, Null, Null, Null, Null}}, $CellContext`moveMatrixBlue$$ = {{
+   Null, Null, Null, Null, Null}, {
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveBlue$$[2, 1], Method -> "Queued", ImageSize -> {10, 10},
+      Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveBlue$$[2, 2], Method -> "Queued", ImageSize -> {10, 10},
+      Appearance -> "Frameless"], Null, Null, Null}, {Null, 
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveBlue$$[3, 2], Method -> "Queued", ImageSize -> {10, 10},
+      Appearance -> "Frameless"], Null, Null, Null}, {
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveBlue$$[4, 1], Method -> "Queued", ImageSize -> {10, 10},
+      Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveBlue$$[4, 2], Method -> "Queued", ImageSize -> {10, 10},
+      Appearance -> "Frameless"], Null, Null, Null}, {
+   Null, Null, Null, Null, Null}}, $CellContext`simplerMatrix$$ = {{0, 0, 0, 
+  0, 0}, {0, 0, 0, 0, 0}, {1000, 0, 0, 0, 1000}, {0, 0, 0, 0, 0}, {0, 0, 0, 0,
+   0}}, $CellContext`displayRedGrid$$, $CellContext`displayBlueGrid$$, \
+$CellContext`graphBlueGrid$$, $CellContext`graphRedGrid$$, \
+$CellContext`updateDistances$$ = Null, $CellContext`terrainMatrix$$ = {{-1, 
+  1, -1, 1, -1}, {1, -1, 1, -1, 1}, {2, 1, 0, 0, 3}, {1, -1, 0, -1, 1}, {-1, 
+  1, 0, 1, -1}}, $CellContext`floor$$ = {{-1, 1, -1, 1, -1}, {1, -1, 1, -1, 
+  1}, {-1, 1, 0, 0, -1}, {1, -1, 0, -1, 1}, {-1, 1, 0, 
+  1, -1}}, $CellContext`terrainGrid$$ = {{
+    RGBColor[1., 1., 0.5], 
+    RGBColor[1., 0.75, 0.5], 
+    RGBColor[1., 1., 0.5], 
+    RGBColor[1., 0.75, 0.5], 
+    RGBColor[1., 1., 0.5]}, {
+    RGBColor[1., 0.75, 0.5], 
+    RGBColor[1., 1., 0.5], 
+    RGBColor[1., 0.75, 0.5], 
+    RGBColor[1., 1., 0.5], 
+    RGBColor[1., 0.75, 0.5]}, {Null, 
+    RGBColor[1., 0.75, 0.5], 
+    RGBColor[1., 1., 0.5], 
+    RGBColor[1., 0.75, 0.5], Null}, {
+    RGBColor[1., 0.75, 0.5], 
+    RGBColor[1., 1., 0.5], 
+    RGBColor[1., 0.75, 0.5], 
+    RGBColor[1., 1., 0.5], 
+    RGBColor[1., 0.75, 0.5]}, {
+    RGBColor[1., 1., 0.5], 
+    RGBColor[1., 0.75, 0.5], 
+    RGBColor[1., 1., 0.5], 
+    RGBColor[1., 0.75, 0.5], 
+    RGBColor[1., 1., 0.5]}}, $CellContext`gridRules$$ = <|-1 -> "floor1", 0 -> 
+   "void", 1 -> "floor2", 2 -> "player1", 3 -> 
+   "player2"|>, $CellContext`playingTurnRules$$ = <|
+  0 -> "blue", 1 -> "red"|>, $CellContext`playingActionRules$$ = <|
+  0 -> "move", 1 -> 
+   "destroy"|>, $CellContext`getTerrain$$, $CellContext`centerX$$ = 
+  3, $CellContext`centerY$$ = 3, $CellContext`whoIsPlaying$$ = 
+  0, $CellContext`currentAction$$ = 0, $CellContext`changeTurn$$ = 
+  False, $CellContext`changeAction$$, $CellContext`position$$ = {{3, 1}, {3, 
+  5}}, $CellContext`init$$ = 
+  Null, $CellContext`updateMatrix$$, $CellContext`graybtn$$, \
+$CellContext`redbtn$$, $CellContext`bluebtn$$, $CellContext`allBlueMatrix$$ = \
+{{
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveBlue$$[1, 1], Method -> "Queued", ImageSize -> {10, 10},
+      Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveBlue$$[1, 2], Method -> "Queued", ImageSize -> {10, 10},
+      Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveBlue$$[1, 3], Method -> "Queued", ImageSize -> {10, 10},
+      Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveBlue$$[1, 4], Method -> "Queued", ImageSize -> {10, 10},
+      Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveBlue$$[1, 5], Method -> "Queued", ImageSize -> {10, 10},
+      Appearance -> "Frameless"]}, {
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveBlue$$[2, 1], Method -> "Queued", ImageSize -> {10, 10},
+      Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveBlue$$[2, 2], Method -> "Queued", ImageSize -> {10, 10},
+      Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveBlue$$[2, 3], Method -> "Queued", ImageSize -> {10, 10},
+      Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveBlue$$[2, 4], Method -> "Queued", ImageSize -> {10, 10},
+      Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveBlue$$[2, 5], Method -> "Queued", ImageSize -> {10, 10},
+      Appearance -> "Frameless"]}, {
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveBlue$$[3, 1], Method -> "Queued", ImageSize -> {10, 10},
+      Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveBlue$$[3, 2], Method -> "Queued", ImageSize -> {10, 10},
+      Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveBlue$$[3, 3], Method -> "Queued", ImageSize -> {10, 10},
+      Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveBlue$$[3, 4], Method -> "Queued", ImageSize -> {10, 10},
+      Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveBlue$$[3, 5], Method -> "Queued", ImageSize -> {10, 10},
+      Appearance -> "Frameless"]}, {
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveBlue$$[4, 1], Method -> "Queued", ImageSize -> {10, 10},
+      Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveBlue$$[4, 2], Method -> "Queued", ImageSize -> {10, 10},
+      Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveBlue$$[4, 3], Method -> "Queued", ImageSize -> {10, 10},
+      Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveBlue$$[4, 4], Method -> "Queued", ImageSize -> {10, 10},
+      Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveBlue$$[4, 5], Method -> "Queued", ImageSize -> {10, 10},
+      Appearance -> "Frameless"]}, {
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveBlue$$[5, 1], Method -> "Queued", ImageSize -> {10, 10},
+      Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveBlue$$[5, 2], Method -> "Queued", ImageSize -> {10, 10},
+      Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveBlue$$[5, 3], Method -> "Queued", ImageSize -> {10, 10},
+      Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveBlue$$[5, 4], Method -> "Queued", ImageSize -> {10, 10},
+      Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveBlue$$[5, 5], Method -> "Queued", ImageSize -> {10, 10},
+      Appearance -> "Frameless"]}}, $CellContext`allRedMatrix$$ = {{
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveRed$$[1, 1], Method -> "Queued", ImageSize -> {10, 10}, 
+     Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveRed$$[1, 2], Method -> "Queued", ImageSize -> {10, 10}, 
+     Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveRed$$[1, 3], Method -> "Queued", ImageSize -> {10, 10}, 
+     Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveRed$$[1, 4], Method -> "Queued", ImageSize -> {10, 10}, 
+     Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveRed$$[1, 5], Method -> "Queued", ImageSize -> {10, 10}, 
+     Appearance -> "Frameless"]}, {
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveRed$$[2, 1], Method -> "Queued", ImageSize -> {10, 10}, 
+     Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveRed$$[2, 2], Method -> "Queued", ImageSize -> {10, 10}, 
+     Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveRed$$[2, 3], Method -> "Queued", ImageSize -> {10, 10}, 
+     Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveRed$$[2, 4], Method -> "Queued", ImageSize -> {10, 10}, 
+     Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveRed$$[2, 5], Method -> "Queued", ImageSize -> {10, 10}, 
+     Appearance -> "Frameless"]}, {
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveRed$$[3, 1], Method -> "Queued", ImageSize -> {10, 10}, 
+     Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveRed$$[3, 2], Method -> "Queued", ImageSize -> {10, 10}, 
+     Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveRed$$[3, 3], Method -> "Queued", ImageSize -> {10, 10}, 
+     Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveRed$$[3, 4], Method -> "Queued", ImageSize -> {10, 10}, 
+     Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveRed$$[3, 5], Method -> "Queued", ImageSize -> {10, 10}, 
+     Appearance -> "Frameless"]}, {
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveRed$$[4, 1], Method -> "Queued", ImageSize -> {10, 10}, 
+     Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveRed$$[4, 2], Method -> "Queued", ImageSize -> {10, 10}, 
+     Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveRed$$[4, 3], Method -> "Queued", ImageSize -> {10, 10}, 
+     Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveRed$$[4, 4], Method -> "Queued", ImageSize -> {10, 10}, 
+     Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveRed$$[4, 5], Method -> "Queued", ImageSize -> {10, 10}, 
+     Appearance -> "Frameless"]}, {
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveRed$$[5, 1], Method -> "Queued", ImageSize -> {10, 10}, 
+     Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveRed$$[5, 2], Method -> "Queued", ImageSize -> {10, 10}, 
+     Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveRed$$[5, 3], Method -> "Queued", ImageSize -> {10, 10}, 
+     Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveRed$$[5, 4], Method -> "Queued", ImageSize -> {10, 10}, 
+     Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`moveRed$$[5, 5], Method -> "Queued", ImageSize -> {10, 10}, 
+     Appearance -> "Frameless"]}}, $CellContext`allBlackMatrix$$ = {{
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[1, 1], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[1, 2], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[1, 3], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[1, 4], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[1, 5], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"]}, {
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[2, 1], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[2, 2], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[2, 3], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[2, 4], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[2, 5], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"]}, {
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[3, 1], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[3, 2], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[3, 3], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[3, 4], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[3, 5], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"]}, {
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[4, 1], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[4, 2], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[4, 3], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[4, 4], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[4, 5], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"]}, {
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[5, 1], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[5, 2], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[5, 3], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[5, 4], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     $CellContext`destroyTile$$[5, 5], Method -> "Queued", 
+     ImageSize -> {10, 10}, Appearance -> 
+     "Frameless"]}}, $CellContext`preMoveMatrixRed$$ = {{
+   Null, Null, Null, Null, Null}, {Null, Null, Null, 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
+     "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
+     "Frameless"]}, {Null, Null, Null, 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
+     "Frameless"], Null}, {Null, Null, Null, 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
+     "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
+     "Frameless"]}, {
+   Null, Null, Null, Null, Null}}, $CellContext`preMoveMatrixBlue$$ = {{
+   Null, Null, Null, Null, Null}, {
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
+     "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
+     "Frameless"], Null, Null, Null}, {Null, 
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
+     "Frameless"], Null, Null, Null}, {
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
+     "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0., 0., 0.5], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
+     "Frameless"], Null, Null, Null}, {
+   Null, Null, Null, Null, 
+    Null}}, $CellContext`moveRed$$, $CellContext`moveBlue$$, \
+$CellContext`destroyTile$$, $CellContext`preDestroyMatrix$$ = {{
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
+     "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
+     "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
+     "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
+     "Frameless"], 
+    Button[
+     Graphics[{
+       RGBColor[0.25, 0.25, 0.25], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
+     "Frameless"]}, {
     Button[
      Graphics[{
        RGBColor[0.25, 0.25, 0.25], 
@@ -844,23 +1985,7 @@ $CellContext`displayMatrix$$, $CellContext`gridX$$ = 5, $CellContext`gridY$$ =
        Opacity[0.4], 
        Disk[{0, 0}, 15]}], 
      Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
-     "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.25, 0.25, 0.25], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], 
-     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
-     "Frameless"]}, {
-    Button[
-     Graphics[{
-       RGBColor[0.25, 0.25, 0.25], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], 
-     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
-     "Frameless"], Null, Null, 
+     "Frameless"], Null}, {
     Button[
      Graphics[{
        RGBColor[0.25, 0.25, 0.25], 
@@ -876,14 +2001,6 @@ $CellContext`displayMatrix$$, $CellContext`gridX$$ = 5, $CellContext`gridY$$ =
        Opacity[0.4], 
        Disk[{0, 0}, 15]}], 
      Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
-     "Frameless"]}, {
-    Button[
-     Graphics[{
-       RGBColor[0.25, 0.25, 0.25], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], 
-     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
      "Frameless"], 
     Button[
      Graphics[{
@@ -892,7 +2009,7 @@ $CellContext`displayMatrix$$, $CellContext`gridX$$ = 5, $CellContext`gridY$$ =
        Opacity[0.4], 
        Disk[{0, 0}, 15]}], 
      Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
-     "Frameless"], Null, 
+     "Frameless"], 
     Button[
      Graphics[{
        RGBColor[0.25, 0.25, 0.25], 
@@ -948,666 +2065,11 @@ $CellContext`displayMatrix$$, $CellContext`gridX$$ = 5, $CellContext`gridY$$ =
        Opacity[0.4], 
        Disk[{0, 0}, 15]}], 
      Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
-     "Frameless"]}}, $CellContext`distanceMatrixRed$$ = {{3, 3, 3, 3, 3}, {
-  1002, 2, 2, 2, 2}, {2, 1001, 1001, 1, 2}, {2, 1, 1000, 1, 2}, {2, 1, 1, 1, 
-  2}}, $CellContext`distanceMatrixBlue$$ = {{1, 1, 2, 3, 4}, {1000, 1, 2, 3, 
-  4}, {1, 1001, 1002, 3, 4}, {2, 2, 1002, 3, 4}, {3, 3, 3, 3, 
-  4}}, $CellContext`moveMatrixRed$$ = {{Null, Null, Null, Null, Null}, {
-   Null, Null, Null, Null, Null}, {Null, Null, Null, 
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], 
-     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
-     "Frameless"], Null}, {Null, 
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], 
-     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
-     "Frameless"], Null, 
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], 
-     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
-     "Frameless"], Null}, {Null, 
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], 
-     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
-     "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], 
-     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
-     "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], 
-     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
-     "Frameless"], Null}}, $CellContext`moveMatrixBlue$$ = {{
-    Button[
-     Graphics[{
-       RGBColor[0., 0., 0.5], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], 
-     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
-     "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0., 0., 0.5], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], 
-     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
-     "Frameless"], Null, Null, Null}, {Null, 
-    Button[
-     Graphics[{
-       RGBColor[0., 0., 0.5], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], 
-     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
-     "Frameless"], Null, Null, Null}, {
-    Button[
-     Graphics[{
-       RGBColor[0., 0., 0.5], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], 
-     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
-     "Frameless"], Null, Null, Null, Null}, {Null, Null, Null, Null, Null}, {
-   Null, Null, Null, Null, Null}}, $CellContext`simplerMatrix$$ = {{0, 0, 0, 
-  0, 0}, {1000, 0, 0, 0, 0}, {0, 1000, 1000, 0, 0}, {0, 0, 1000, 0, 0}, {0, 0,
-   0, 0, 0}}, $CellContext`displayRedGrid$$, $CellContext`displayBlueGrid$$, \
-$CellContext`graphBlueGrid$$, $CellContext`graphRedGrid$$, \
-$CellContext`updateDistances$$ = Null, $CellContext`terrainMatrix$$ = {{-1, 
-  1, -1, 1, -1}, {2, -1, 1, -1, 1}, {-1, 0, 0, 1, -1}, {1, -1, 3, -1, 1}, {-1,
-   1, -1, 1, -1}}, $CellContext`floor$$ = {{-1, 1, -1, 1, -1}, {1, -1, 1, -1, 
-  1}, {-1, 0, 0, 1, -1}, {1, -1, 1, -1, 1}, {-1, 1, -1, 
-  1, -1}}, $CellContext`terrainGrid$$ = {{
-    RGBColor[1., 1., 0.5], 
-    RGBColor[1., 0.75, 0.5], 
-    RGBColor[1., 1., 0.5], 
-    RGBColor[1., 0.75, 0.5], 
-    RGBColor[1., 1., 0.5]}, {Null, 
-    RGBColor[1., 1., 0.5], 
-    RGBColor[1., 0.75, 0.5], 
-    RGBColor[1., 1., 0.5], 
-    RGBColor[1., 0.75, 0.5]}, {
-    RGBColor[1., 1., 0.5], 
-    GrayLevel[0], 
-    GrayLevel[0], 
-    RGBColor[1., 0.75, 0.5], 
-    RGBColor[1., 1., 0.5]}, {
-    RGBColor[1., 0.75, 0.5], 
-    RGBColor[1., 1., 0.5], Null, 
-    RGBColor[1., 1., 0.5], 
-    RGBColor[1., 0.75, 0.5]}, {
-    RGBColor[1., 1., 0.5], 
-    RGBColor[1., 0.75, 0.5], 
-    RGBColor[1., 1., 0.5], 
-    RGBColor[1., 0.75, 0.5], 
-    RGBColor[1., 1., 0.5]}}, $CellContext`gridRules$$ = <|-1 -> "floor1", 0 -> 
-   "void", 1 -> "floor2", 2 -> "player1", 3 -> 
-   "player2"|>, $CellContext`playingTurnRules$$ = <|
-  0 -> "blue", 1 -> "red"|>, $CellContext`playingActionRules$$ = <|
-  0 -> "move", 1 -> 
-   "destroy"|>, $CellContext`getTerrain$$, $CellContext`centerX$$ = 
-  3, $CellContext`centerY$$ = 3, $CellContext`whoIsPlaying$$ = 
-  0, $CellContext`currentAction$$ = 0, $CellContext`changeTurn$$ = 
-  False, $CellContext`changeAction$$, $CellContext`position$$ = {{2, 1}, {4, 
-  3}}, $CellContext`init$$ = Null, $CellContext`updateMatrix$$ = 
-  Null, $CellContext`graybtn$$, $CellContext`redbtn$$, \
-$CellContext`bluebtn$$, $CellContext`allBlueMatrix$$ = {{
-    Button[
-     Graphics[{
-       RGBColor[0., 0., 0.5], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {1, 1}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0., 0., 0.5], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {1, 2}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0., 0., 0.5], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {1, 3}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0., 0., 0.5], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {1, 4}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0., 0., 0.5], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {1, 5}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"]}, {
-    Button[
-     Graphics[{
-       RGBColor[0., 0., 0.5], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {2, 1}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0., 0., 0.5], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {2, 2}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0., 0., 0.5], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {2, 3}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0., 0., 0.5], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {2, 4}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0., 0., 0.5], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {2, 5}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"]}, {
-    Button[
-     Graphics[{
-       RGBColor[0., 0., 0.5], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {3, 1}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0., 0., 0.5], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {3, 2}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0., 0., 0.5], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {3, 3}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0., 0., 0.5], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {3, 4}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0., 0., 0.5], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {3, 5}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"]}, {
-    Button[
-     Graphics[{
-       RGBColor[0., 0., 0.5], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {4, 1}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0., 0., 0.5], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {4, 2}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0., 0., 0.5], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {4, 3}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0., 0., 0.5], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {4, 4}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0., 0., 0.5], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {4, 5}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"]}, {
-    Button[
-     Graphics[{
-       RGBColor[0., 0., 0.5], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {5, 1}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0., 0., 0.5], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {5, 2}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0., 0., 0.5], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {5, 3}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0., 0., 0.5], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {5, 4}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0., 0., 0.5], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {5, 5}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> 
-     "Frameless"]}}, $CellContext`allRedMatrix$$ = {{
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {1, 1}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {1, 2}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {1, 3}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {1, 4}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {1, 5}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"]}, {
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {2, 1}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {2, 2}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {2, 3}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {2, 4}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {2, 5}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"]}, {
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {3, 1}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {3, 2}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {3, 3}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {3, 4}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {3, 5}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"]}, {
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {4, 1}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {4, 2}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {4, 3}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {4, 4}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {4, 5}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"]}, {
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {5, 1}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {5, 2}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {5, 3}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {5, 4}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`position$$, 1] = {5, 5}, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> 
-     "Frameless"]}}, $CellContext`allBlackMatrix$$ = {{
-    Button[
-     Graphics[{
-       RGBColor[0.25, 0.25, 0.25], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`floor$$, 1, 1] = 0, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.25, 0.25, 0.25], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`floor$$, 1, 2] = 0, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.25, 0.25, 0.25], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`floor$$, 1, 3] = 0, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.25, 0.25, 0.25], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`floor$$, 1, 4] = 0, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.25, 0.25, 0.25], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`floor$$, 1, 5] = 0, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"]}, {
-    Button[
-     Graphics[{
-       RGBColor[0.25, 0.25, 0.25], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`floor$$, 2, 1] = 0, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.25, 0.25, 0.25], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`floor$$, 2, 2] = 0, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.25, 0.25, 0.25], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`floor$$, 2, 3] = 0, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.25, 0.25, 0.25], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`floor$$, 2, 4] = 0, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.25, 0.25, 0.25], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`floor$$, 2, 5] = 0, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"]}, {
-    Button[
-     Graphics[{
-       RGBColor[0.25, 0.25, 0.25], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`floor$$, 3, 1] = 0, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.25, 0.25, 0.25], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`floor$$, 3, 2] = 0, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.25, 0.25, 0.25], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`floor$$, 3, 3] = 0, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.25, 0.25, 0.25], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`floor$$, 3, 4] = 0, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.25, 0.25, 0.25], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`floor$$, 3, 5] = 0, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"]}, {
-    Button[
-     Graphics[{
-       RGBColor[0.25, 0.25, 0.25], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`floor$$, 4, 1] = 0, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.25, 0.25, 0.25], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`floor$$, 4, 2] = 0, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.25, 0.25, 0.25], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`floor$$, 4, 3] = 0, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.25, 0.25, 0.25], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`floor$$, 4, 4] = 0, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.25, 0.25, 0.25], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`floor$$, 4, 5] = 0, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"]}, {
-    Button[
-     Graphics[{
-       RGBColor[0.25, 0.25, 0.25], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`floor$$, 5, 1] = 0, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.25, 0.25, 0.25], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`floor$$, 5, 2] = 0, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.25, 0.25, 0.25], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`floor$$, 5, 3] = 0, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.25, 0.25, 0.25], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`floor$$, 5, 4] = 0, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.25, 0.25, 0.25], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], Part[$CellContext`floor$$, 5, 5] = 0, Method -> 
-     "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"]}}}, 
+     "Frameless"]}}}, 
   DynamicBox[ToBoxes[
     Overlay[{
       $CellContext`displayMatrix$$[], 
-      $CellContext`graphBlueGrid$$[]}, None, 2], StandardForm],
+      $CellContext`graphDestroyGrid$$[]}, None, 2], StandardForm],
    ImageSizeCache->{360., {177.634033203125, 183.365966796875}}],
   DynamicModuleValues:>{{DownValues[$CellContext`displayGrid$$] = {HoldPattern[
          $CellContext`displayGrid$$[]] :> 
@@ -1639,6 +2101,19 @@ $CellContext`bluebtn$$, $CellContext`allBlueMatrix$$ = {{
          $CellContext`graphRedGrid$$[]] :> 
        GraphicsGrid[$CellContext`moveMatrixRed$$, Frame -> None, 
          Alignment -> {Center, Center}, ItemAspectRatio -> 1]}}, {
+    DownValues[$CellContext`updateMatrix$$] = {HoldPattern[
+         $CellContext`updateMatrix$$[]] :> ($CellContext`terrainMatrix$$ = \
+$CellContext`floor$$; Part[$CellContext`terrainMatrix$$, 
+           Part[
+            Part[$CellContext`position$$, 1], 1], 
+           Part[
+            Part[$CellContext`position$$, 1], 2]] = 2; 
+        Part[$CellContext`terrainMatrix$$, 
+           Part[
+            Part[$CellContext`position$$, 2], 1], 
+           Part[
+            Part[$CellContext`position$$, 2], 2]] = 
+         3; $CellContext`updateDistances$$[]; Print["update"])}}, {
     DownValues[$CellContext`graybtn$$] = {HoldPattern[
          $CellContext`graybtn$$[]] :> Button[
          Graphics[{
@@ -1658,9 +2133,9 @@ $CellContext`bluebtn$$, $CellContext`allBlueMatrix$$ = {{
            Circle[{0, 0}, 15], 
            Opacity[0.4], 
            Disk[{0, 0}, 15]}], 
-         Part[$CellContext`floor$$, $CellContext`x$, $CellContext`y$] = 0, 
-         Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
-         "Frameless"]}}, {DownValues[$CellContext`redbtn$$] = {HoldPattern[
+         $CellContext`destroyTile$$[$CellContext`x$, $CellContext`y$], Method -> 
+         "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"]}}, {
+    DownValues[$CellContext`redbtn$$] = {HoldPattern[
          $CellContext`redbtn$$[]] :> Button[
          Graphics[{
            Darker[Red, 0.5], 
@@ -1679,9 +2154,8 @@ $CellContext`bluebtn$$, $CellContext`allBlueMatrix$$ = {{
            Circle[{0, 0}, 15], 
            Opacity[0.4], 
            Disk[{0, 0}, 15]}], 
-         Part[$CellContext`position$$, 
-           1] = {$CellContext`x$, $CellContext`y$}, Method -> "Queued", 
-         ImageSize -> {10, 10}, Appearance -> "Frameless"]}}, {
+         $CellContext`moveRed$$[$CellContext`x$, $CellContext`y$], Method -> 
+         "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"]}}, {
     DownValues[$CellContext`bluebtn$$] = {HoldPattern[
          $CellContext`bluebtn$$[]] :> Button[
          Graphics[{
@@ -1701,15 +2175,75 @@ $CellContext`bluebtn$$, $CellContext`allBlueMatrix$$ = {{
            Circle[{0, 0}, 15], 
            Opacity[0.4], 
            Disk[{0, 0}, 15]}], 
-         Part[$CellContext`position$$, 
-           1] = {$CellContext`x$, $CellContext`y$}, Method -> "Queued", 
-         ImageSize -> {10, 10}, Appearance -> "Frameless"]}}}]], "Output",
+         $CellContext`moveBlue$$[$CellContext`x$, $CellContext`y$], Method -> 
+         "Queued", ImageSize -> {10, 10}, Appearance -> "Frameless"]}}, {
+    DownValues[$CellContext`moveRed$$] = {HoldPattern[
+         $CellContext`moveRed$$[
+          Pattern[$CellContext`x$, 
+           Blank[]], 
+          Pattern[$CellContext`y$, 
+           Blank[]]]] :> (Print["red"]; 
+        Part[$CellContext`position$$, 
+           2] = {$CellContext`x$, $CellContext`y$}; \
+$CellContext`updateMatrix$$[]; Null)}}, {
+    DownValues[$CellContext`moveBlue$$] = {HoldPattern[
+         $CellContext`moveBlue$$[
+          Pattern[$CellContext`x$, 
+           Blank[]], 
+          Pattern[$CellContext`y$, 
+           Blank[]]]] :> (
+        Part[$CellContext`position$$, 
+           1] = {$CellContext`x$, $CellContext`y$}; \
+$CellContext`updateMatrix$$[]; Print[$CellContext`terrainMatrix$$]; Null)}}, {
+    DownValues[$CellContext`destroyTile$$] = {HoldPattern[
+         $CellContext`destroyTile$$[
+          Pattern[$CellContext`x$, 
+           Blank[]], 
+          Pattern[$CellContext`y$, 
+           Blank[]]]] :> (Print["destroy"]; 
+        Part[$CellContext`floor$$, $CellContext`x$, $CellContext`y$] = 
+         0; $CellContext`updateMatrix$$[]; Null)}}}]], "Output",
  CellChangeTimes->{
-  3.9306481961064453`*^9, {3.930648237938526*^9, 3.9306482825429707`*^9}, {
-   3.9306485699217854`*^9, 3.9306485983512936`*^9}, 3.930648763421509*^9, 
-   3.9306491846729393`*^9, {3.930649626703882*^9, 3.930649634166893*^9}},
- CellLabel->
-  "Out[656]=",ExpressionUUID->"d28778be-db4e-3c4b-a9b4-ead2fdd8cb8d"]
+  3.930652194331396*^9, 3.9306522402009315`*^9, {3.9306523147853127`*^9, 
+   3.930652317251644*^9}, 3.9306523942888384`*^9, {3.9306525445213547`*^9, 
+   3.9306525700869217`*^9}, {3.930652648884924*^9, 3.9306526609086533`*^9}, 
+   3.9306527725306473`*^9, {3.930652876536455*^9, 3.93065288937331*^9}},
+ CellLabel->"Out[16]=",ExpressionUUID->"0822abd5-ecae-c642-80bd-2b25935ab87b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"destroy\"\>"], "Print",
+ CellChangeTimes->{3.9306528920604553`*^9},
+ CellLabel->"",ExpressionUUID->"2e4954eb-884a-694f-94c4-92a598d39b3b"],
+
+Cell[BoxData["\<\"update\"\>"], "Print",
+ CellChangeTimes->{3.93065289206345*^9},
+ CellLabel->"",ExpressionUUID->"5af00778-75e2-934a-b068-e98571bf8950"],
+
+Cell[BoxData["\<\"destroy\"\>"], "Print",
+ CellChangeTimes->{3.930652894720726*^9},
+ CellLabel->"",ExpressionUUID->"4efb1446-ee4e-c143-b7f5-118038301b46"],
+
+Cell[BoxData["\<\"update\"\>"], "Print",
+ CellChangeTimes->{3.9306528947227287`*^9},
+ CellLabel->"",ExpressionUUID->"fdb945fd-ad1d-084e-a04b-bce562c7c88d"],
+
+Cell[BoxData["\<\"destroy\"\>"], "Print",
+ CellChangeTimes->{3.930652897796051*^9},
+ CellLabel->"",ExpressionUUID->"a2727c05-9f53-4743-ad4e-009f86a565cb"],
+
+Cell[BoxData["\<\"update\"\>"], "Print",
+ CellChangeTimes->{3.9306528977970505`*^9},
+ CellLabel->"",ExpressionUUID->"b16b8bd0-969d-4a4e-820d-ee0d35487689"],
+
+Cell[BoxData["\<\"destroy\"\>"], "Print",
+ CellChangeTimes->{3.930652899944166*^9},
+ CellLabel->"",ExpressionUUID->"d45e5c13-1ffb-7c44-805f-42316366d4ff"],
+
+Cell[BoxData["\<\"update\"\>"], "Print",
+ CellChangeTimes->{3.930652899946167*^9},
+ CellLabel->"",ExpressionUUID->"2e50ffe7-cff7-9e43-a641-1640e9802610"]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1869,16 +2403,14 @@ Cell[BoxData[
   "In[679]:=",ExpressionUUID->"2582d819-9198-1847-897a-ea25e0bf3ca0"]
 },
 NotebookEventActions->None,
-WindowSize->{1269, 646.5},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowSize->{1280, 652},
+WindowMargins->{{-5.5, Automatic}, {Automatic, -5.5}},
 FrontEndVersion->"14.0 pour Microsoft Windows (64-bit) (December 12, 2023)",
 StyleDefinitions->Notebook[{
    Cell[
     StyleData[StyleDefinitions -> "Default.nb"]], 
    Cell[
-    StyleData[All]]}, WindowSize -> {1280, 652}, 
-  WindowMargins -> {{-5.5, Automatic}, {Automatic, -5.5}}, Visible -> False, 
-  FrontEndVersion -> 
+    StyleData[All]]}, Visible -> False, FrontEndVersion -> 
   "14.0 pour Microsoft Windows (64-bit) (December 12, 2023)", 
   StyleDefinitions -> "PrivateStylesheetFormatting.nb"],
 ExpressionUUID->"1448735b-bc87-d441-9c5b-9aa1a90d3c89"
@@ -1896,23 +2428,34 @@ CellTagsIndex->{}
 Notebook[{
 Cell[558, 20, 154, 3, 28, "Input",ExpressionUUID->"513c7ea4-1003-fe41-a552-b94b4681cb80"],
 Cell[CellGroupData[{
-Cell[737, 27, 31399, 749, 2741, "Input",ExpressionUUID->"752338eb-bfa3-cb42-8321-7806585fa5b3"],
-Cell[32139, 778, 34514, 933, 380, "Output",ExpressionUUID->"d28778be-db4e-3c4b-a9b4-ead2fdd8cb8d"]
+Cell[737, 27, 35374, 839, 3312, "Input",ExpressionUUID->"752338eb-bfa3-cb42-8321-7806585fa5b3"],
+Cell[36114, 868, 337, 6, 22, "Print",ExpressionUUID->"4243f812-0bd7-d549-9941-2e0c9f46243b"],
+Cell[36454, 876, 45371, 1334, 380, "Output",ExpressionUUID->"0822abd5-ecae-c642-80bd-2b25935ab87b"],
+Cell[CellGroupData[{
+Cell[81850, 2214, 156, 2, 22, "Print",ExpressionUUID->"2e4954eb-884a-694f-94c4-92a598d39b3b"],
+Cell[82009, 2218, 152, 2, 22, "Print",ExpressionUUID->"5af00778-75e2-934a-b068-e98571bf8950"],
+Cell[82164, 2222, 154, 2, 22, "Print",ExpressionUUID->"4efb1446-ee4e-c143-b7f5-118038301b46"],
+Cell[82321, 2226, 155, 2, 22, "Print",ExpressionUUID->"fdb945fd-ad1d-084e-a04b-bce562c7c88d"],
+Cell[82479, 2230, 154, 2, 22, "Print",ExpressionUUID->"a2727c05-9f53-4743-ad4e-009f86a565cb"],
+Cell[82636, 2234, 155, 2, 22, "Print",ExpressionUUID->"b16b8bd0-969d-4a4e-820d-ee0d35487689"],
+Cell[82794, 2238, 154, 2, 22, "Print",ExpressionUUID->"d45e5c13-1ffb-7c44-805f-42316366d4ff"],
+Cell[82951, 2242, 153, 2, 22, "Print",ExpressionUUID->"2e50ffe7-cff7-9e43-a641-1640e9802610"]
+}, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[66690, 1716, 538, 14, 62, "Input",ExpressionUUID->"d024b61a-6b7b-5f41-b4de-5e7072ed45c0"],
-Cell[67231, 1732, 273, 6, 32, "Output",ExpressionUUID->"9435d452-c0f4-454a-9aba-1661ffab49ac"]
+Cell[83153, 2250, 538, 14, 62, "Input",ExpressionUUID->"d024b61a-6b7b-5f41-b4de-5e7072ed45c0"],
+Cell[83694, 2266, 273, 6, 32, "Output",ExpressionUUID->"9435d452-c0f4-454a-9aba-1661ffab49ac"]
 }, Open  ]],
-Cell[67519, 1741, 156, 3, 28, "Input",ExpressionUUID->"e1f83b29-f6a5-cb45-b1a9-ca992a088c1b"],
+Cell[83982, 2275, 156, 3, 28, "Input",ExpressionUUID->"e1f83b29-f6a5-cb45-b1a9-ca992a088c1b"],
 Cell[CellGroupData[{
-Cell[67700, 1748, 2848, 77, 152, "Input",ExpressionUUID->"3b88997e-283a-0241-9439-58eb47f3da5f"],
-Cell[70551, 1827, 667, 14, 32, "Output",ExpressionUUID->"62ff2615-2bec-9f48-903c-93c602a67e85"]
+Cell[84163, 2282, 2848, 77, 152, "Input",ExpressionUUID->"3b88997e-283a-0241-9439-58eb47f3da5f"],
+Cell[87014, 2361, 667, 14, 32, "Output",ExpressionUUID->"62ff2615-2bec-9f48-903c-93c602a67e85"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[71255, 1846, 243, 5, 62, "Input",ExpressionUUID->"0ca6ece1-d77e-5b4e-a188-61716780a96b"],
-Cell[71501, 1853, 181, 3, 32, "Output",ExpressionUUID->"101cdb03-3869-cf4e-acab-578a750d6a62"]
+Cell[87718, 2380, 243, 5, 62, "Input",ExpressionUUID->"0ca6ece1-d77e-5b4e-a188-61716780a96b"],
+Cell[87964, 2387, 181, 3, 32, "Output",ExpressionUUID->"101cdb03-3869-cf4e-acab-578a750d6a62"]
 }, Open  ]],
-Cell[71697, 1859, 328, 9, 28, "Input",ExpressionUUID->"2582d819-9198-1847-897a-ea25e0bf3ca0"]
+Cell[88160, 2393, 328, 9, 28, "Input",ExpressionUUID->"2582d819-9198-1847-897a-ea25e0bf3ca0"]
 }
 ]
 *)
