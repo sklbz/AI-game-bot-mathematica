@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      1399,         48]
-NotebookOptionsPosition[       954,         33]
-NotebookOutlinePosition[      1358,         49]
-CellTagsIndexPosition[      1315,         46]
+NotebookDataLength[      6377,        163]
+NotebookOptionsPosition[      5800,        145]
+NotebookOutlinePosition[      6204,        161]
+CellTagsIndexPosition[      6161,        158]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -23,13 +23,125 @@ Cell[BoxData[""], "Input",
   3.9306247141939735`*^9}},ExpressionUUID->"513c7ea4-1003-fe41-a552-\
 b94b4681cb80"],
 
-Cell[BoxData[
+Cell[CellGroupData[{
+
+Cell[BoxData[{
  RowBox[{
-  RowBox[{"Isola", "[", "]"}], " ", ":=", " ", 
-  RowBox[{"[", "]"}]}]], "Input",
- CellChangeTimes->{{3.9306264153208885`*^9, 
-  3.9306264220167866`*^9}},ExpressionUUID->"752338eb-bfa3-cb42-8321-\
-7806585fa5b3"]
+  RowBox[{
+   RowBox[{"Isola", "[", "]"}], " ", ":=", " ", 
+   RowBox[{"DynamicModule", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{"displayGrid", ",", " ", 
+       RowBox[{"gridX", " ", "=", " ", "5"}], ",", " ", 
+       RowBox[{"gridY", " ", "=", " ", "5"}], ",", "\[IndentingNewLine]", 
+       "initTerrain", ",", " ", 
+       RowBox[{"terrainMatrix", " ", "=", " ", "0"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"gridRules", " ", "=", " ", 
+        RowBox[{"AssociationThread", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", ",", " ", "1", ",", " ", "2", ",", " ", "3"}], "}"}], 
+          ",", " ", 
+          RowBox[{"{", 
+           RowBox[{
+           "\"\<void\>\"", ",", " ", "\"\<floor\>\"", ",", " ", 
+            "\"\<player1\>\"", ",", " ", "\"\<player2\>\""}], "}"}]}], 
+         "]"}]}], ",", "\[IndentingNewLine]", "centerX", ",", " ", 
+       "centerY"}], "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"centerX", " ", "=", " ", 
+       RowBox[{"Ceiling", "@", 
+        FractionBox["gridX", "2"]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"centerY", " ", "=", " ", 
+       RowBox[{"Ceiling", "@", 
+        FractionBox["gridY", "2"]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"terrainMatrix", " ", "==", " ", "0"}], ",", " ", 
+        RowBox[{
+         RowBox[{"terrainMatrix", " ", "=", " ", 
+          RowBox[{"Table", "[", 
+           RowBox[{
+            RowBox[{"Table", "[", 
+             RowBox[{"1", ",", " ", "gridX"}], "]"}], ",", " ", "gridY"}], 
+           "]"}]}], ";", " ", 
+         RowBox[{
+          RowBox[{"terrainMatrix", "[", 
+           RowBox[{"[", 
+            RowBox[{"centerX", ",", " ", "1"}], "]"}], "]"}], " ", "=", " ", 
+          "2"}], ";", " ", 
+         RowBox[{
+          RowBox[{"terrainMatrix", "[", 
+           RowBox[{"[", 
+            RowBox[{"centerX", ",", " ", "gridY"}], "]"}], "]"}], " ", "=", 
+          " ", "3"}], ";"}]}], "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"displayGrid", "[", "]"}], " ", ":=", " ", 
+       RowBox[{"Grid", "[", 
+        RowBox[{"terrainMatrix", ",", " ", 
+         RowBox[{"Frame", "->", "All"}], ",", " ", 
+         RowBox[{"ItemSize", "->", 
+          RowBox[{"{", 
+           RowBox[{"5", ",", " ", "5"}], "}"}]}], ",", " ", 
+         RowBox[{"Alignment", "->", 
+          RowBox[{"{", 
+           RowBox[{"Center", ",", " ", "Center"}], "}"}]}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"displayGrid", "[", "]"}]}]}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Isola", "[", "]"}]}], "Input",
+ CellChangeTimes->{{3.9306264153208885`*^9, 3.9306264220167866`*^9}, {
+  3.930626461898136*^9, 3.9306264698778324`*^9}, {3.9306267543320484`*^9, 
+  3.9306268860982685`*^9}, {3.930627034708374*^9, 3.9306273984802437`*^9}, {
+  3.9306274511212444`*^9, 
+  3.9306279046200695`*^9}},ExpressionUUID->"752338eb-bfa3-cb42-8321-\
+7806585fa5b3"],
+
+Cell[BoxData[
+ DynamicModuleBox[{$CellContext`displayGrid$$, $CellContext`gridX$$ = 
+  5, $CellContext`gridY$$ = 
+  5, $CellContext`initTerrain$$, $CellContext`terrainMatrix$$ = {{1, 1, 1, 1, 
+   1}, {1, 1, 1, 1, 1}, 
+   2[1, 1, 1, 1, 3], {1, 1, 1, 1, 1}, {1, 1, 1, 1, 
+   1}}, $CellContext`gridRules$$ = <|
+  0 -> "void", 1 -> "floor", 2 -> "player1", 3 -> 
+   "player2"|>, $CellContext`centerX$$ = 3, $CellContext`centerY$$ = 3}, 
+  RowBox[{"Grid", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"1", ",", "1", ",", "1", ",", "1", ",", "1"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "1", ",", "1", ",", "1", ",", "1"}], "}"}], ",", 
+      RowBox[{"2", "[", 
+       RowBox[{"1", ",", "1", ",", "1", ",", "1", ",", "3"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "1", ",", "1", ",", "1", ",", "1"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "1", ",", "1", ",", "1", ",", "1"}], "}"}]}], "}"}], 
+    ",", 
+    RowBox[{"Frame", "\[Rule]", "All"}], ",", 
+    RowBox[{"ItemSize", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"5", ",", "5"}], "}"}]}], ",", 
+    RowBox[{"Alignment", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"Center", ",", "Center"}], "}"}]}]}], "]"}],
+  DynamicModuleValues:>{{DownValues[$CellContext`displayGrid$$] = {HoldPattern[
+         $CellContext`displayGrid$$[]] :> 
+       Grid[$CellContext`terrainMatrix$$, Frame -> All, ItemSize -> {5, 5}, 
+         Alignment -> {Center, Center}]}}}]], "Output",
+ CellChangeTimes->{
+  3.93062712758436*^9, {3.9306271721674194`*^9, 3.9306271927670326`*^9}, {
+   3.930627261063038*^9, 3.930627275073818*^9}, 3.930627313490427*^9, {
+   3.9306275098825855`*^9, 3.9306275415531483`*^9}, 3.930627607789812*^9, {
+   3.9306277275023193`*^9, 3.930627753434057*^9}, {3.930627846544119*^9, 
+   3.93062789061561*^9}},
+ CellLabel->"Out[55]=",ExpressionUUID->"176b3adb-a139-4b49-bef7-10bb315603aa"]
+}, Open  ]]
 },
 WindowSize->{1269, 646.5},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
@@ -49,7 +161,10 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[558, 20, 154, 3, 28, "Input",ExpressionUUID->"513c7ea4-1003-fe41-a552-b94b4681cb80"],
-Cell[715, 25, 235, 6, 28, "Input",ExpressionUUID->"752338eb-bfa3-cb42-8321-7806585fa5b3"]
+Cell[CellGroupData[{
+Cell[737, 27, 3109, 72, 430, "Input",ExpressionUUID->"752338eb-bfa3-cb42-8321-7806585fa5b3"],
+Cell[3849, 101, 1935, 41, 32, "Output",ExpressionUUID->"176b3adb-a139-4b49-bef7-10bb315603aa"]
+}, Open  ]]
 }
 ]
 *)
