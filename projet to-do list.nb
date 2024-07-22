@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      1663,         49]
-NotebookOptionsPosition[      1306,         35]
-NotebookOutlinePosition[      1712,         51]
-CellTagsIndexPosition[      1669,         48]
+NotebookDataLength[      7772,        250]
+NotebookOptionsPosition[      6827,        228]
+NotebookOutlinePosition[      7229,        244]
+CellTagsIndexPosition[      7186,        241]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -21,20 +21,213 @@ Notebook[{
 Cell[TextData[{
  StyleBox["To-Do List:",
   FontVariations->{"Underline"->True}],
- "\n-Grid de depart(initialisation)\n-Fonction pour deplacer le pion du \
-joueur\n-Fonction pour detruire une case\n-Fonction qui verifie si le joueur \
-peut se deplacer(et donc si victoire ou pas)\n-Graphisme pions et cases \
-detruites\n-Mettre le tout dans un dynamique module\n-IA\n-Faire le machine \
+ "\n-Fonction pour deplacer le pion du joueur\n-Fonction pour detruire une \
+case\n-Fonction qui verifie si le joueur peut se deplacer(et donc si victoire \
+ou pas)\n-Mettre le tout dans un dynamique module\n-IA\n-Faire le machine \
 Learning\n-Boutons pour jouer contre humain ou machine etc...\n"
 }], "Text",
- CellChangeTimes->{{3.9306253281739902`*^9, 3.9306254773455467`*^9}, {
-  3.930625796362833*^9, 3.9306258132895412`*^9}, {3.9306258483830776`*^9, 
-  3.930625848743946*^9}, {3.9306258836388073`*^9, 
-  3.9306258837286816`*^9}},ExpressionUUID->"d97be080-36f2-724b-971d-\
-0c11b2d1de96"]
+ CellChangeTimes->{{3.93062532817399*^9, 3.9306254773455467`*^9}, {
+  3.930625796362833*^9, 3.9306258132895403`*^9}, {3.9306258483830776`*^9, 
+  3.930625848743946*^9}, {3.930625883638807*^9, 3.9306258837286806`*^9}, {
+  3.930643588416998*^9, 
+  3.9306436152989025`*^9}},ExpressionUUID->"d97be080-36f2-724b-971d-\
+0c11b2d1de96"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.9306269804448605`*^9, 
+  3.930627065676689*^9}},ExpressionUUID->"fa032bd5-5d6c-fc41-ac1e-\
+ac8c6be79151"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.930631341060734*^9, 
+  3.9306313474534206`*^9}},ExpressionUUID->"4aea36f6-ce83-8c45-821a-\
+dcd61052f230"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\n", "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.930631067346365*^9, 
+  3.930631108145281*^9}},ExpressionUUID->"47d95863-b8fa-bf4e-90f6-\
+aaf1ac203415"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]]},
+    {
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]]},
+    {
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]]},
+    {
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]]},
+    {
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]]},
+    {
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]]},
+    {
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]], 
+     StyleBox["\<\" \"\>",
+      StripOnInput->False,
+      Background->GrayLevel[1]]}
+   },
+   AutoDelete->False,
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+   GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{1}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{3.9306310736389847`*^9},
+ CellLabel->"Out[16]=",ExpressionUUID->"771cfb9d-2b1f-cf46-bc26-0c19759feb14"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.930631353499283*^9, 
+  3.9306313578650856`*^9}},ExpressionUUID->"bc6e5949-70ed-2e45-887d-\
+29117def46c6"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.930631364820509*^9, 
+  3.930631372372324*^9}},ExpressionUUID->"67f4d4da-20a1-0e48-96a0-\
+bcfdde307aac"]
 },
-WindowSize->{960, 532},
-WindowMargins->{{-5.5, Automatic}, {Automatic, -5.5}},
+WindowSize->{949, 526.5},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"14.0 for Microsoft Windows (64-bit) (December 12, 2023)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"e3b15000-e2ad-1146-9c1d-69f186928ac6"
@@ -50,7 +243,15 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 744, 13, 265, "Text",ExpressionUUID->"d97be080-36f2-724b-971d-0c11b2d1de96"]
+Cell[558, 20, 718, 13, 219, "Text",ExpressionUUID->"d97be080-36f2-724b-971d-0c11b2d1de96"],
+Cell[1279, 35, 154, 3, 28, "Input",ExpressionUUID->"fa032bd5-5d6c-fc41-ac1e-ac8c6be79151"],
+Cell[1436, 40, 154, 3, 28, "Input",ExpressionUUID->"4aea36f6-ce83-8c45-821a-dcd61052f230"],
+Cell[CellGroupData[{
+Cell[1615, 47, 189, 4, 67, "Input",ExpressionUUID->"47d95863-b8fa-bf4e-90f6-aaf1ac203415"],
+Cell[1807, 53, 4692, 162, 178, "Output",ExpressionUUID->"771cfb9d-2b1f-cf46-bc26-0c19759feb14"]
+}, Open  ]],
+Cell[6514, 218, 154, 3, 28, "Input",ExpressionUUID->"bc6e5949-70ed-2e45-887d-29117def46c6"],
+Cell[6671, 223, 152, 3, 28, "Input",ExpressionUUID->"67f4d4da-20a1-0e48-96a0-bcfdde307aac"]
 }
 ]
 *)
