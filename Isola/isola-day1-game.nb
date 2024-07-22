@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      1074,         39]
-NotebookOptionsPosition[       716,         25]
-NotebookOutlinePosition[      1124,         41]
-CellTagsIndexPosition[      1081,         38]
+NotebookDataLength[      1399,         48]
+NotebookOptionsPosition[       954,         33]
+NotebookOutlinePosition[      1358,         49]
+CellTagsIndexPosition[      1315,         46]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -21,10 +21,18 @@ Notebook[{
 Cell[BoxData[""], "Input",
  CellChangeTimes->{{3.930624713106695*^9, 
   3.9306247141939735`*^9}},ExpressionUUID->"513c7ea4-1003-fe41-a552-\
-b94b4681cb80"]
+b94b4681cb80"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Isola", "[", "]"}], " ", ":=", " ", 
+  RowBox[{"[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.9306264153208885`*^9, 
+  3.9306264220167866`*^9}},ExpressionUUID->"752338eb-bfa3-cb42-8321-\
+7806585fa5b3"]
 },
-WindowSize->{1280, 652},
-WindowMargins->{{-5.5, Automatic}, {Automatic, -5.5}},
+WindowSize->{1269, 646.5},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"14.0 pour Microsoft Windows (64-bit) (December 12, 2023)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"1448735b-bc87-d441-9c5b-9aa1a90d3c89"
@@ -40,7 +48,8 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 154, 3, 28, "Input",ExpressionUUID->"513c7ea4-1003-fe41-a552-b94b4681cb80"]
+Cell[558, 20, 154, 3, 28, "Input",ExpressionUUID->"513c7ea4-1003-fe41-a552-b94b4681cb80"],
+Cell[715, 25, 235, 6, 28, "Input",ExpressionUUID->"752338eb-bfa3-cb42-8321-7806585fa5b3"]
 }
 ]
 *)
