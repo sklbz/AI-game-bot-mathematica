@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      6377,        163]
-NotebookOptionsPosition[      5800,        145]
-NotebookOutlinePosition[      6204,        161]
-CellTagsIndexPosition[      6161,        158]
+NotebookDataLength[     18274,        419]
+NotebookOptionsPosition[     17034,        391]
+NotebookOutlinePosition[     17499,        409]
+CellTagsIndexPosition[     17456,        406]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -32,13 +32,24 @@ Cell[BoxData[{
    RowBox[{"DynamicModule", "[", "\[IndentingNewLine]", 
     RowBox[{
      RowBox[{"{", "\[IndentingNewLine]", 
-      RowBox[{"displayGrid", ",", " ", 
+      RowBox[{"displayGrid", ",", " ", "displayMatrix", ",", " ", 
        RowBox[{"gridX", " ", "=", " ", "5"}], ",", " ", 
        RowBox[{"gridY", " ", "=", " ", "5"}], ",", "\[IndentingNewLine]", 
-       "initTerrain", ",", " ", 
-       RowBox[{"terrainMatrix", " ", "=", " ", "0"}], ",", 
+       RowBox[{"terrainMatrix", " ", "=", " ", "0"}], ",", "floor", ",", 
        "\[IndentingNewLine]", 
        RowBox[{"gridRules", " ", "=", " ", 
+        RowBox[{"AssociationThread", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "1"}], ",", " ", "0", ",", " ", "1", ",", " ", "2", 
+            ",", " ", "3"}], "}"}], ",", " ", 
+          RowBox[{"{", 
+           RowBox[{
+           "\"\<floor1\>\"", ",", " ", "\"\<void\>\"", ",", " ", 
+            "\"\<floor2\>\"", ",", " ", "\"\<player1\>\"", ",", " ", 
+            "\"\<player2\>\""}], "}"}]}], "]"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"matrixToTerrain", " ", "=", " ", 
         RowBox[{"AssociationThread", "[", 
          RowBox[{
           RowBox[{"{", 
@@ -46,37 +57,144 @@ Cell[BoxData[{
           ",", " ", 
           RowBox[{"{", 
            RowBox[{
-           "\"\<void\>\"", ",", " ", "\"\<floor\>\"", ",", " ", 
-            "\"\<player1\>\"", ",", " ", "\"\<player2\>\""}], "}"}]}], 
-         "]"}]}], ",", "\[IndentingNewLine]", "centerX", ",", " ", 
-       "centerY"}], "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+            RowBox[{"Graphics", "[", 
+             RowBox[{"{", 
+              RowBox[{"Black", ",", " ", "S"}], "}"}], "]"}], ",", " ", 
+            "\"\<floor\>\"", ",", " ", "\"\<player1\>\"", ",", " ", 
+            "\"\<player2\>\""}], "}"}]}], "]"}]}], ",", "\[IndentingNewLine]",
+        "getTerrain", ",", "\[IndentingNewLine]", "centerX", ",", " ", 
+       "centerY", ",", "\[IndentingNewLine]", 
+       RowBox[{"whoIsPlaying", " ", "=", " ", "0"}], ",", " ", "changeTurn", 
+       ",", "\[IndentingNewLine]", "position", ",", "\[IndentingNewLine]", 
+       "init", ",", "\[IndentingNewLine]", "updateMatrix", ",", 
+       "\[IndentingNewLine]", "display", ",", "\[IndentingNewLine]", 
+       "displayBtn"}], "\[IndentingNewLine]", "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", "variables", "*)"}], "\[IndentingNewLine]", 
      RowBox[{
+      RowBox[{"changeTurn", " ", ":=", " ", 
+       RowBox[{"(", 
+        RowBox[{"whoIsPlaying", " ", "==", " ", 
+         RowBox[{"Mod", "[", 
+          RowBox[{
+           RowBox[{"whoIsPlaying", " ", "+", " ", "1"}], ",", " ", "2"}], 
+          "]"}]}], ")"}]}], ";", "\[IndentingNewLine]", 
       RowBox[{"centerX", " ", "=", " ", 
        RowBox[{"Ceiling", "@", 
         FractionBox["gridX", "2"]}]}], ";", "\[IndentingNewLine]", 
       RowBox[{"centerY", " ", "=", " ", 
        RowBox[{"Ceiling", "@", 
         FractionBox["gridY", "2"]}]}], ";", "\[IndentingNewLine]", 
-      RowBox[{"If", "[", 
-       RowBox[{
-        RowBox[{"terrainMatrix", " ", "==", " ", "0"}], ",", " ", 
+      RowBox[{"position", " ", "=", " ", 
+       RowBox[{"{", 
         RowBox[{
+         RowBox[{"{", 
+          RowBox[{"centerX", ",", " ", "1"}], "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"centerX", ",", " ", "gridY"}], "}"}]}], "}"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", "functions", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"init", " ", ":=", " ", 
+       RowBox[{"(", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"floor", " ", "=", " ", 
+          RowBox[{
+           RowBox[{"Table", "[", 
+            RowBox[{
+             RowBox[{"Table", "[", 
+              RowBox[{
+               RowBox[{"Mod", "[", 
+                RowBox[{
+                 RowBox[{"i", "+", "j"}], ",", " ", "2"}], "]"}], ",", " ", 
+               RowBox[{"{", 
+                RowBox[{"i", ",", "gridX"}], "}"}]}], "]"}], ",", " ", 
+             RowBox[{"{", 
+              RowBox[{"j", ",", " ", "gridY"}], "}"}]}], "]"}], "/.", 
+           RowBox[{"{", 
+            RowBox[{"0", "->", " ", 
+             RowBox[{"-", "1"}]}], "}"}]}]}], ";", "\[IndentingNewLine]", 
          RowBox[{"terrainMatrix", " ", "=", " ", 
-          RowBox[{"Table", "[", 
-           RowBox[{
-            RowBox[{"Table", "[", 
-             RowBox[{"1", ",", " ", "gridX"}], "]"}], ",", " ", "gridY"}], 
-           "]"}]}], ";", " ", 
+          RowBox[{
+           RowBox[{"Table", "[", 
+            RowBox[{
+             RowBox[{"Table", "[", 
+              RowBox[{
+               RowBox[{"Mod", "[", 
+                RowBox[{
+                 RowBox[{"i", "+", "j"}], ",", " ", "2"}], "]"}], ",", " ", 
+               RowBox[{"{", 
+                RowBox[{"i", ",", "gridX"}], "}"}]}], "]"}], ",", " ", 
+             RowBox[{"{", 
+              RowBox[{"j", ",", " ", "gridY"}], "}"}]}], "]"}], "/.", 
+           RowBox[{"{", 
+            RowBox[{"0", "->", " ", 
+             RowBox[{"-", "1"}]}], "}"}]}]}], ";", "\[IndentingNewLine]", 
          RowBox[{
           RowBox[{"terrainMatrix", "[", 
            RowBox[{"[", 
-            RowBox[{"centerX", ",", " ", "1"}], "]"}], "]"}], " ", "=", " ", 
-          "2"}], ";", " ", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"position", "[", 
+               RowBox[{"[", "1", "]"}], "]"}], "[", 
+              RowBox[{"[", "1", "]"}], "]"}], ",", 
+             RowBox[{
+              RowBox[{"position", "[", 
+               RowBox[{"[", "1", "]"}], "]"}], "[", 
+              RowBox[{"[", "2", "]"}], "]"}]}], "]"}], "]"}], " ", "=", " ", 
+          "2"}], ";", "\[IndentingNewLine]", 
          RowBox[{
           RowBox[{"terrainMatrix", "[", 
            RowBox[{"[", 
-            RowBox[{"centerX", ",", " ", "gridY"}], "]"}], "]"}], " ", "=", 
-          " ", "3"}], ";"}]}], "]"}], ";", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"position", "[", 
+               RowBox[{"[", "2", "]"}], "]"}], "[", 
+              RowBox[{"[", "1", "]"}], "]"}], ",", 
+             RowBox[{
+              RowBox[{"position", "[", 
+               RowBox[{"[", "2", "]"}], "]"}], "[", 
+              RowBox[{"[", "2", "]"}], "]"}]}], "]"}], "]"}], " ", "=", " ", 
+          "3"}], ";"}], "\[IndentingNewLine]", ")"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"terrainMatrix", " ", "/;", " ", "0"}], " ", "->", " ", 
+       RowBox[{"init", "[", "]"}]}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"updateMatrix", ":=", 
+       RowBox[{"(", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"terrainMatrix", " ", "=", " ", "floor"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"terrainMatrix", "[", 
+           RowBox[{"[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"position", "[", 
+               RowBox[{"[", "1", "]"}], "]"}], "[", 
+              RowBox[{"[", "1", "]"}], "]"}], ",", 
+             RowBox[{
+              RowBox[{"position", "[", 
+               RowBox[{"[", "1", "]"}], "]"}], "[", 
+              RowBox[{"[", "2", "]"}], "]"}]}], "]"}], "]"}], " ", "=", " ", 
+          "2"}], ";", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"terrainMatrix", "[", 
+           RowBox[{"[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"position", "[", 
+               RowBox[{"[", "2", "]"}], "]"}], "[", 
+              RowBox[{"[", "1", "]"}], "]"}], ",", 
+             RowBox[{
+              RowBox[{"position", "[", 
+               RowBox[{"[", "2", "]"}], "]"}], "[", 
+              RowBox[{"[", "2", "]"}], "]"}]}], "]"}], "]"}], " ", "=", " ", 
+          "3"}], ";"}], "\[IndentingNewLine]", ")"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"(*", "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"(*", "*)"}], "\[IndentingNewLine]", 
       RowBox[{
        RowBox[{"displayGrid", "[", "]"}], " ", ":=", " ", 
        RowBox[{"Grid", "[", 
@@ -89,62 +207,192 @@ Cell[BoxData[{
           RowBox[{"{", 
            RowBox[{"Center", ",", " ", "Center"}], "}"}]}]}], "]"}]}], ";", 
       "\[IndentingNewLine]", 
-      RowBox[{"displayGrid", "[", "]"}]}]}], "\[IndentingNewLine]", "]"}]}], 
+      RowBox[{
+       RowBox[{"displayMatrix", "[", "]"}], " ", ":=", " ", 
+       RowBox[{"MatrixPlot", "[", 
+        RowBox[{"terrainMatrix", ",", " ", 
+         RowBox[{"Frame", "->", "None"}], ",", " ", 
+         RowBox[{"ColorRules", "->", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"-", "1"}], " ", "->", " ", 
+             RowBox[{"Lighter", "[", 
+              RowBox[{"Yellow", ",", " ", "0.5"}], "]"}]}], ",", 
+            RowBox[{"0", "->", "Black"}], ",", 
+            RowBox[{"1", "->", 
+             RowBox[{"Lighter", "[", 
+              RowBox[{"Orange", ",", " ", "0.5"}], "]"}]}], ",", 
+            RowBox[{"2", "->", "Blue"}], ",", 
+            RowBox[{"3", "->", "Red"}]}], "}"}]}], ",", " ", 
+         RowBox[{"Background", "->", "LightBlue"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"displayBtn", "[", "]"}], " ", ":=", " ", 
+       RowBox[{"Button", "[", 
+        RowBox[{"\"\<qlhik klyq\>\"", ",", " ", 
+         RowBox[{"Print", "[", "\"\<click\>\"", "]"}], ",", " ", 
+         RowBox[{"Method", "->", "\"\<Queued\>\""}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"display", " ", ":=", " ", 
+       RowBox[{"Show", "[", 
+        RowBox[{"displayMatrix", "[", "]"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"position", "[", 
+        RowBox[{"[", 
+         RowBox[{"1", ",", " ", "1"}], "]"}], "]"}], " ", "=", " ", "2"}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"position", "[", 
+        RowBox[{"[", 
+         RowBox[{"2", ",", " ", "1"}], "]"}], "]"}], " ", "=", " ", "4"}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"floor", "[", 
+        RowBox[{"[", 
+         RowBox[{"3", ",", " ", "3"}], "]"}], "]"}], " ", "=", " ", "0"}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"floor", "[", 
+        RowBox[{"[", 
+         RowBox[{"3", ",", " ", "2"}], "]"}], "]"}], " ", "=", " ", "0"}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"updateMatrix", "[", "]"}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Dynamic", "[", 
+       RowBox[{"Graphics", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"displayMatrix", "[", "]"}], ",", " ", 
+          RowBox[{"Inset", "[", 
+           RowBox[{"displayBtn", "[", "]"}], "]"}]}], "}"}], "]"}], "]"}]}]}],
+     "\[IndentingNewLine]", "\[IndentingNewLine]", "]"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{"Isola", "[", "]"}]}], "Input",
- CellChangeTimes->{{3.9306264153208885`*^9, 3.9306264220167866`*^9}, {
-  3.930626461898136*^9, 3.9306264698778324`*^9}, {3.9306267543320484`*^9, 
-  3.9306268860982685`*^9}, {3.930627034708374*^9, 3.9306273984802437`*^9}, {
-  3.9306274511212444`*^9, 
-  3.9306279046200695`*^9}},ExpressionUUID->"752338eb-bfa3-cb42-8321-\
-7806585fa5b3"],
+ CellChangeTimes->CompressedData["
+1:eJwlzm1IU1EYB/CxnDi4ZLnN9cZIsBjZtPRWflhWumjWkBXODJalM7hB1ELd
+FtW0NeoWE0bUB81ohdrStIHdmC9bisRoH7JgsTRHSqPmaFDEmCuJ9j99OPx4
+zvOc/3kKmi4cO8Pn8Xg7Mwd6VXGFqDpxwH5rshiyvokySEsnaFjoOlwPs7ZM
+M5A3WHcZyhtm3FC5aHgOe8KiGGRsqmXYu+qqQJxR49+9BlIbFBKo5+5th5bQ
+9WLoNHIm2Hou2QHLU+6bkK3M7oaqKuFDuMNnG4Uf49ZXUNzUEoD2XRtT0N23
+Jw29Y3lCScZJW1AEXYb76+HpEzoZXFl6sw0uLOUVwXerR0qgpqX5EJkv89RC
+71xnHfxBGxvh/k2J/6r+noXRQP5FqGyobIM8X68ZigeTVsgMJK/BZ3vPd0La
+HiTmKC09sFbsJ8r7v/VBRyLyBDrH9EMw5DJxZK5EME7ucx/NkDn68Qeilpkl
++Ub1Z5LTfpTolei+QHW4/xfURw8uw9iNSJrscbuUn5+xw3+XmPXpeDYsfMoS
+KeFLCm5uDxdA9XTuVlg+ayoi9es/FdDNXaqC9d2yahhj40eg9s53LcnzaBjS
+54ZN0DlUYyb/BmVWaFHYbDC6aGAh+3bAQd6/jzyAOftODkNHgB4l/Sn9OGzu
++joHPb9H5kl+21QKMnbzCtmvNCmQkjpMwRd8bi0MUTEpvJJurYDynws1UMzv
+0sH5daca4T/4d1hF
+  "],
+ CellLabel->
+  "In[250]:=",ExpressionUUID->"752338eb-bfa3-cb42-8321-7806585fa5b3"],
 
 Cell[BoxData[
- DynamicModuleBox[{$CellContext`displayGrid$$, $CellContext`gridX$$ = 
-  5, $CellContext`gridY$$ = 
-  5, $CellContext`initTerrain$$, $CellContext`terrainMatrix$$ = {{1, 1, 1, 1, 
-   1}, {1, 1, 1, 1, 1}, 
-   2[1, 1, 1, 1, 3], {1, 1, 1, 1, 1}, {1, 1, 1, 1, 
-   1}}, $CellContext`gridRules$$ = <|
-  0 -> "void", 1 -> "floor", 2 -> "player1", 3 -> 
-   "player2"|>, $CellContext`centerX$$ = 3, $CellContext`centerY$$ = 3}, 
-  RowBox[{"Grid", "[", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{"1", ",", "1", ",", "1", ",", "1", ",", "1"}], "}"}], ",", 
-      RowBox[{"{", 
-       RowBox[{"1", ",", "1", ",", "1", ",", "1", ",", "1"}], "}"}], ",", 
-      RowBox[{"2", "[", 
-       RowBox[{"1", ",", "1", ",", "1", ",", "1", ",", "3"}], "]"}], ",", 
-      RowBox[{"{", 
-       RowBox[{"1", ",", "1", ",", "1", ",", "1", ",", "1"}], "}"}], ",", 
-      RowBox[{"{", 
-       RowBox[{"1", ",", "1", ",", "1", ",", "1", ",", "1"}], "}"}]}], "}"}], 
-    ",", 
-    RowBox[{"Frame", "\[Rule]", "All"}], ",", 
-    RowBox[{"ItemSize", "\[Rule]", 
-     RowBox[{"{", 
-      RowBox[{"5", ",", "5"}], "}"}]}], ",", 
-    RowBox[{"Alignment", "\[Rule]", 
-     RowBox[{"{", 
-      RowBox[{"Center", ",", "Center"}], "}"}]}]}], "]"}],
+ DynamicModuleBox[{$CellContext`displayGrid$$, $CellContext`displayMatrix$$, \
+$CellContext`gridX$$ = 5, $CellContext`gridY$$ = 
+  5, $CellContext`terrainMatrix$$ = {{-1, 1, -1, 1, -1}, {2, -1, 1, -1, 
+  1}, {-1, 0, 0, 1, -1}, {1, -1, 1, -1, 3}, {-1, 1, -1, 
+  1, -1}}, $CellContext`floor$$ = {{-1, 1, -1, 1, -1}, {1, -1, 1, -1, 1}, {-1,
+   0, 0, 1, -1}, {1, -1, 1, -1, 1}, {-1, 1, -1, 
+  1, -1}}, $CellContext`gridRules$$ = <|-1 -> "floor1", 0 -> "void", 1 -> 
+   "floor2", 2 -> "player1", 3 -> 
+   "player2"|>, $CellContext`matrixToTerrain$$ = <|0 -> Graphics[{
+      GrayLevel[0], $CellContext`S}], 1 -> "floor", 2 -> "player1", 3 -> 
+   "player2"|>, $CellContext`getTerrain$$, $CellContext`centerX$$ = 
+  3, $CellContext`centerY$$ = 3, $CellContext`whoIsPlaying$$ = 
+  0, $CellContext`changeTurn$$ = False, $CellContext`position$$ = {{2, 1}, {4,
+   5}}, $CellContext`init$$ = Null, $CellContext`updateMatrix$$ = 
+  Null, $CellContext`display$$ = Graphics[
+   Raster[CompressedData["
+1:eJxTTMoPSmVmYGBghWIQGwI+2KPSD9D4L3CIDxX16GCg3EPIHUMlPAmrBwD0
+hlQD
+    "], {{0, 0}, {5, 5}}, {0, 1}], {
+   Background -> RGBColor[0.87, 0.94, 1], Frame -> None, 
+    FrameLabel -> {None, None}, 
+    FrameTicks -> {{{{4.5, 1}, {3.5, 2}, {2.5, 3}, {1.5, 4}, {0.5, 5}}, {{
+        4.5, 1}, {3.5, 2}, {2.5, 3}, {1.5, 4}, {0.5, 5}}}, {{{0.5, 1}, {
+        1.5, 2}, {2.5, 3}, {3.5, 4}, {4.5, 5}}, {{0.5, 1}, {1.5, 2}, {
+        2.5, 3}, {3.5, 4}, {4.5, 5}}}}, GridLinesStyle -> Directive[
+      GrayLevel[0.5, 0.4]], 
+    Method -> {
+     "GridLinesInFront" -> True, "AxisPadding" -> Scaled[0.02], 
+      "DefaultBoundaryStyle" -> Automatic, 
+      "DefaultGraphicsInteraction" -> {
+       "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+        "Effects" -> {
+         "Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> {"ratio" -> 2}, 
+          "Droplines" -> {
+           "freeformCursorMode" -> True, 
+            "placement" -> {"x" -> "All", "y" -> "None"}}}}, 
+      "DefaultPlotStyle" -> Automatic, "DomainPadding" -> Scaled[0.02], 
+      "RangePadding" -> Scaled[0.05]}}], $CellContext`displayBtn$$}, 
+  DynamicBox[ToBoxes[
+    Graphics[{
+      $CellContext`displayMatrix$$[], 
+      Inset[
+       $CellContext`displayBtn$$[]]}], StandardForm],
+   ImageSizeCache->{360., {177., 182.42399999999998`}}],
   DynamicModuleValues:>{{DownValues[$CellContext`displayGrid$$] = {HoldPattern[
          $CellContext`displayGrid$$[]] :> 
        Grid[$CellContext`terrainMatrix$$, Frame -> All, ItemSize -> {5, 5}, 
-         Alignment -> {Center, Center}]}}}]], "Output",
- CellChangeTimes->{
-  3.93062712758436*^9, {3.9306271721674194`*^9, 3.9306271927670326`*^9}, {
-   3.930627261063038*^9, 3.930627275073818*^9}, 3.930627313490427*^9, {
-   3.9306275098825855`*^9, 3.9306275415531483`*^9}, 3.930627607789812*^9, {
-   3.9306277275023193`*^9, 3.930627753434057*^9}, {3.930627846544119*^9, 
-   3.93062789061561*^9}},
- CellLabel->"Out[55]=",ExpressionUUID->"176b3adb-a139-4b49-bef7-10bb315603aa"]
+         Alignment -> {Center, Center}]}}, {
+    DownValues[$CellContext`displayMatrix$$] = {HoldPattern[
+         $CellContext`displayMatrix$$[]] :> 
+       MatrixPlot[$CellContext`terrainMatrix$$, Frame -> None, 
+         ColorRules -> {-1 -> Lighter[Yellow, 0.5], 0 -> Black, 1 -> 
+           Lighter[Orange, 0.5], 2 -> Blue, 3 -> Red}, Background -> 
+         LightBlue]}}, {DownValues[$CellContext`displayBtn$$] = {HoldPattern[
+         $CellContext`displayBtn$$[]] :> Button["qlhik klyq", 
+         Print["click"], Method -> "Queued"]}}}]], "Output",
+ CellChangeTimes->{{3.93063116354957*^9, 3.9306311912919064`*^9}, 
+   3.930631279410839*^9, {3.9306314882960167`*^9, 3.930631509934408*^9}, 
+   3.9306315769820404`*^9, 3.9306318550513268`*^9, 3.9306319312245026`*^9, {
+   3.930632032337902*^9, 3.9306320940776615`*^9}, {3.93063213648225*^9, 
+   3.93063214387846*^9}, {3.930632375851404*^9, 3.9306324032245827`*^9}, {
+   3.9306324636080875`*^9, 3.9306325404459343`*^9}, 3.9306328660253067`*^9, 
+   3.9306329898339806`*^9, 3.930633027962616*^9, 3.9306331470546684`*^9, 
+   3.930633236671831*^9, {3.930633481688057*^9, 3.9306334931408215`*^9}, {
+   3.930633526949299*^9, 3.9306335711537304`*^9}, {3.930633683202301*^9, 
+   3.9306336917953014`*^9}, {3.93063395168816*^9, 3.9306339584094105`*^9}, {
+   3.9306341837963753`*^9, 3.930634213148924*^9}, 3.9306343452234535`*^9, {
+   3.930634422279812*^9, 3.9306344323090916`*^9}, 3.930634892809366*^9, {
+   3.930634925602127*^9, 3.930635019735203*^9}, 3.930635055631529*^9},
+ CellLabel->
+  "Out[251]=",ExpressionUUID->"c702525d-8f22-be47-ba5d-d88e1a557fe7"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"click\"\>"], "Print",
+ CellChangeTimes->{3.9306350580221195`*^9},
+ CellLabel->"",ExpressionUUID->"c0481109-2553-664c-9d26-4fd649060f0c"],
+
+Cell[BoxData["\<\"click\"\>"], "Print",
+ CellChangeTimes->{3.9306350585578747`*^9},
+ CellLabel->"",ExpressionUUID->"e6550e29-b14e-7b44-95f7-326552888144"],
+
+Cell[BoxData["\<\"click\"\>"], "Print",
+ CellChangeTimes->{3.930635059036909*^9},
+ CellLabel->"",ExpressionUUID->"1279e9d8-73e9-864a-ab91-5f0b7597e1f4"],
+
+Cell[BoxData["\<\"click\"\>"], "Print",
+ CellChangeTimes->{3.9306350595019817`*^9},
+ CellLabel->"",ExpressionUUID->"a3f2715d-4921-2449-81c2-6d9da220c4f3"],
+
+Cell[BoxData["\<\"click\"\>"], "Print",
+ CellChangeTimes->{3.9306350600024185`*^9},
+ CellLabel->"",ExpressionUUID->"4e4f911b-5c8e-5948-b853-89541cf7fe5a"],
+
+Cell[BoxData["\<\"click\"\>"], "Print",
+ CellChangeTimes->{3.930635060483757*^9},
+ CellLabel->"",ExpressionUUID->"15143ea6-3f5e-b342-aad8-e3f300cc06b8"]
+}, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1269, 646.5},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
+NotebookEventActions->None,
+WindowSize->{1280, 652},
+WindowMargins->{{-5.5, Automatic}, {Automatic, -5.5}},
+Magnification:>1. Inherited,
 FrontEndVersion->"14.0 pour Microsoft Windows (64-bit) (December 12, 2023)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"1448735b-bc87-d441-9c5b-9aa1a90d3c89"
@@ -162,8 +410,16 @@ CellTagsIndex->{}
 Notebook[{
 Cell[558, 20, 154, 3, 28, "Input",ExpressionUUID->"513c7ea4-1003-fe41-a552-b94b4681cb80"],
 Cell[CellGroupData[{
-Cell[737, 27, 3109, 72, 430, "Input",ExpressionUUID->"752338eb-bfa3-cb42-8321-7806585fa5b3"],
-Cell[3849, 101, 1935, 41, 32, "Output",ExpressionUUID->"176b3adb-a139-4b49-bef7-10bb315603aa"]
+Cell[737, 27, 11185, 261, 1340, "Input",ExpressionUUID->"752338eb-bfa3-cb42-8321-7806585fa5b3"],
+Cell[11925, 290, 4121, 71, 376, "Output",ExpressionUUID->"c702525d-8f22-be47-ba5d-d88e1a557fe7"],
+Cell[CellGroupData[{
+Cell[16071, 365, 154, 2, 22, "Print",ExpressionUUID->"c0481109-2553-664c-9d26-4fd649060f0c"],
+Cell[16228, 369, 154, 2, 22, "Print",ExpressionUUID->"e6550e29-b14e-7b44-95f7-326552888144"],
+Cell[16385, 373, 152, 2, 22, "Print",ExpressionUUID->"1279e9d8-73e9-864a-ab91-5f0b7597e1f4"],
+Cell[16540, 377, 154, 2, 22, "Print",ExpressionUUID->"a3f2715d-4921-2449-81c2-6d9da220c4f3"],
+Cell[16697, 381, 154, 2, 22, "Print",ExpressionUUID->"4e4f911b-5c8e-5948-b853-89541cf7fe5a"],
+Cell[16854, 385, 152, 2, 22, "Print",ExpressionUUID->"15143ea6-3f5e-b342-aad8-e3f300cc06b8"]
+}, Open  ]]
 }, Open  ]]
 }
 ]

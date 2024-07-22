@@ -1,5 +1,5 @@
 TODO
-- [/] grid
+- [x] grid
 - [] deplacement
 - [] detruire case 
 - [] possibilité deplacement 
