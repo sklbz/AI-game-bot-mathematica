@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    642221,      11069]
-NotebookOptionsPosition[    641028,      11040]
-NotebookOutlinePosition[    641740,      11064]
-CellTagsIndexPosition[    641697,      11061]
+NotebookDataLength[    642068,      11062]
+NotebookOptionsPosition[    640875,      11033]
+NotebookOutlinePosition[    641587,      11057]
+CellTagsIndexPosition[    641544,      11054]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -6933,9 +6933,7 @@ Cell[BoxData[{
          "\[IndentingNewLine]", 
          RowBox[{"If", "[", 
           RowBox[{
-           RowBox[{
-            RowBox[{"whoIsPlaying", " ", "==", "1"}], "&&", 
-            RowBox[{"currentAction", "==", "0"}]}], ",", 
+           RowBox[{"whoIsPlaying", " ", "==", "1"}], ",", 
            "\[IndentingNewLine]", 
            RowBox[{
             RowBox[{"distanceMatrixRed", " ", "=", " ", 
@@ -7292,8 +7290,11 @@ Cell[BoxData[{
    3.9307178136182613`*^9, 3.930717816665188*^9}, {3.93071784909305*^9, 
    3.930717864570898*^9}, {3.9307179101451015`*^9, 3.930717912732321*^9}, {
    3.9307179531068115`*^9, 3.930717964288719*^9}, {3.93071808379982*^9, 
-   3.9307180908068027`*^9}},
- CellLabel->"In[92]:=",ExpressionUUID->"752338eb-bfa3-cb42-8321-7806585fa5b3"],
+   3.9307180908068027`*^9}, {3.93071819285878*^9, 3.930718288137825*^9}, {
+   3.9307183502840576`*^9, 3.9307183556198215`*^9}, {3.930718396163805*^9, 
+   3.930718415141947*^9}},
+ CellLabel->
+  "In[106]:=",ExpressionUUID->"752338eb-bfa3-cb42-8321-7806585fa5b3"],
 
 Cell[BoxData[
  DynamicModuleBox[{$CellContext`infinity$$ = 
@@ -7341,8 +7342,8 @@ $CellContext`displayMatrix$$, $CellContext`gridX$$ = 3, $CellContext`gridY$$ =
        Disk[{0, 0}, 15]}], 
      $CellContext`destroyTile$$[3, 3], Method -> "Queued", 
      ImageSize -> {10, 10}, Appearance -> 
-     "Frameless"]}}, $CellContext`distanceMatrixRed$$ = {{1000, 1000, 0}, {
-  1000, 1000, 0}, {0, 0, 0}}, $CellContext`distanceMatrixBlue$$ = {{1000, 
+     "Frameless"]}}, $CellContext`distanceMatrixRed$$ = {{1001, 1000, 1}, {
+  1001, 1001, 1}, {2, 2, 2}}, $CellContext`distanceMatrixBlue$$ = {{1000, 
   1001, 2}, {1001, 1001, 2}, {2, 2, 
   2}}, $CellContext`moveMatrixRed$$ = {{Null, Null, 
     Button[
@@ -7361,33 +7362,9 @@ $CellContext`displayMatrix$$, $CellContext`gridX$$ = 3, $CellContext`gridY$$ =
        Disk[{0, 0}, 15]}], 
      $CellContext`moveRed$$[2, 3], Method -> "Queued", ImageSize -> {10, 10}, 
      Appearance -> "Frameless"]}, {
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], 
-     $CellContext`moveRed$$[3, 1], Method -> "Queued", ImageSize -> {10, 10}, 
-     Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], 
-     $CellContext`moveRed$$[3, 2], Method -> "Queued", ImageSize -> {10, 10}, 
-     Appearance -> "Frameless"], 
-    Button[
-     Graphics[{
-       RGBColor[0.5, 0., 0.], 
-       Circle[{0, 0}, 15], 
-       Opacity[0.4], 
-       Disk[{0, 0}, 15]}], 
-     $CellContext`moveRed$$[3, 3], Method -> "Queued", ImageSize -> {10, 10}, 
-     Appearance -> "Frameless"]}}, $CellContext`moveMatrixBlue$$ = {{
-   Null, Null, Null}, {Null, Null, Null}, {
-   Null, Null, Null}}, $CellContext`simplerMatrix$$ = {{1000, 1000, 0}, {1000,
-   1000, 0}, {0, 0, 
+   Null, Null, Null}}, $CellContext`moveMatrixBlue$$ = {{Null, Null, Null}, {
+   Null, Null, Null}, {Null, Null, Null}}, $CellContext`simplerMatrix$$ = {{
+  1000, 1000, 0}, {1000, 1000, 0}, {0, 0, 
   0}}, $CellContext`displayRedGrid$$, $CellContext`displayBlueGrid$$, \
 $CellContext`graphBlueGrid$$, $CellContext`graphRedGrid$$, \
 $CellContext`updateDistances$$, $CellContext`terrainMatrix$$ = {{2, 3, -1}, {
@@ -7628,8 +7605,23 @@ $CellContext`allBlueMatrix$$ = {{
        Disk[{0, 0}, 15]}], 
      $CellContext`destroyTile$$[3, 3], Method -> "Queued", 
      ImageSize -> {10, 10}, Appearance -> 
-     "Frameless"]}}, $CellContext`preMoveMatrixRed$$ = {{Null, Null, 0}, {
-   Null, Null, 0}, {0, 0, 0}}, $CellContext`preMoveMatrixBlue$$ = {{
+     "Frameless"]}}, $CellContext`preMoveMatrixRed$$ = {{Null, Null, 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
+     "Frameless"]}, {Null, Null, 
+    Button[
+     Graphics[{
+       RGBColor[0.5, 0., 0.], 
+       Circle[{0, 0}, 15], 
+       Opacity[0.4], 
+       Disk[{0, 0}, 15]}], 
+     Print["click"], Method -> "Queued", ImageSize -> {10, 10}, Appearance -> 
+     "Frameless"]}, {Null, Null, Null}}, $CellContext`preMoveMatrixBlue$$ = {{
    Null, Null, Null}, {Null, Null, Null}, {
    Null, Null, 
     Null}}, $CellContext`moveRed$$, $CellContext`moveBlue$$, \
@@ -10801,11 +10793,10 @@ DofD4XA4HA6Hw+FwOBwOh8PhcDgcDofD4XA4HA6Hw+FwOBwOh8PhcDgcDofD
            Alternatives[-1, 1] -> 0, 
             Alternatives[
              0, 2, 3] -> $CellContext`infinity$$}]; \
-$CellContext`distanceMatrixRed$$ = $CellContext`simplerMatrix$$; If[
-          
-          And[$CellContext`whoIsPlaying$$ == 1, $CellContext`currentAction$$ == 
-           0], $CellContext`distanceMatrixRed$$ = \
-$CellContext`simplerMatrix$$ + Table[
+$CellContext`distanceMatrixRed$$ = $CellContext`simplerMatrix$$; 
+        If[$CellContext`whoIsPlaying$$ == 
+          1, $CellContext`distanceMatrixRed$$ = $CellContext`simplerMatrix$$ + 
+            Table[
               Table[
                Max[
                 Abs[Part[$CellContext`position$$, 2, 1] - $CellContext`j], 
@@ -11030,12 +11021,14 @@ $CellContext`currentAction$$}, {{
    3.9307167076063633`*^9}, 3.9307167618055935`*^9, 3.930717498938776*^9, 
    3.930717543997019*^9, 3.930717718733219*^9, 3.9307177726928425`*^9, 
    3.9307178199377403`*^9, 3.9307178654674683`*^9, 3.9307179149091854`*^9, 
-   3.930717966785986*^9, 3.9307180924619484`*^9},
- CellLabel->"Out[93]=",ExpressionUUID->"b708e978-a39c-a444-841e-6758ef5aab23"],
+   3.930717966785986*^9, {3.9307182709104843`*^9, 3.930718316739689*^9}, 
+   3.9307183570698547`*^9, 3.930718416600996*^9},
+ CellLabel->
+  "Out[107]=",ExpressionUUID->"26c7ba6f-9595-9c47-b79e-c63f13576c09"],
 
 Cell[BoxData["\<\"red win\"\>"], "Print",
- CellChangeTimes->{3.930718103886503*^9},
- CellLabel->"",ExpressionUUID->"b7955374-38cc-5440-aba7-58e9a80953f6"]
+ CellChangeTimes->{3.930718429463667*^9},
+ CellLabel->"",ExpressionUUID->"ecaead86-937e-1640-b8ae-5da6fbc4ceb6"]
 }, Open  ]]
 },
 NotebookEventActions->None,
@@ -11067,9 +11060,9 @@ Cell[558, 20, 154, 3, 31, "Input",ExpressionUUID->"513c7ea4-1003-fe41-a552-b94b4
 Cell[715, 25, 376568, 6183, 159, "Input",ExpressionUUID->"43f0a178-f15a-8348-adbd-59f8a576b097"],
 Cell[377286, 6210, 147, 2, 31, "Input",ExpressionUUID->"bb10f299-af48-6b47-bf09-a1c51f09a291"],
 Cell[CellGroupData[{
-Cell[377458, 6216, 48922, 1079, 4454, "Input",ExpressionUUID->"752338eb-bfa3-cb42-8321-7806585fa5b3"],
-Cell[426383, 7297, 214472, 3736, 417, "Output",ExpressionUUID->"b708e978-a39c-a444-841e-6758ef5aab23"],
-Cell[640858, 11035, 154, 2, 24, "Print",ExpressionUUID->"b7955374-38cc-5440-aba7-58e9a80953f6"]
+Cell[377458, 6216, 48995, 1080, 4454, "Input",ExpressionUUID->"752338eb-bfa3-cb42-8321-7806585fa5b3"],
+Cell[426456, 7298, 214246, 3728, 417, "Output",ExpressionUUID->"26c7ba6f-9595-9c47-b79e-c63f13576c09"],
+Cell[640705, 11028, 154, 2, 24, "Print",ExpressionUUID->"ecaead86-937e-1640-b8ae-5da6fbc4ceb6"]
 }, Open  ]]
 }
 ]
