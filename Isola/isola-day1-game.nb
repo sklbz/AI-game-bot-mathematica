@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    453087,       7959]
-NotebookOptionsPosition[    451901,       7930]
-NotebookOutlinePosition[    452609,       7954]
-CellTagsIndexPosition[    452566,       7951]
+NotebookDataLength[    453232,       7961]
+NotebookOptionsPosition[    452046,       7932]
+NotebookOutlinePosition[    452754,       7956]
+CellTagsIndexPosition[    452711,       7953]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -7162,7 +7162,8 @@ Cell[BoxData[{
          RowBox[{"{", 
           RowBox[{
            RowBox[{"displayMatrix", "[", "]"}], ",", " ", 
-           RowBox[{"btnOverlay", "[", "]"}]}], "}"}], ",", " ", "None", ",", 
+           RowBox[{"btnOverlay", "[", "]"}], ",", " ", 
+           RowBox[{"winScreen", "[", "]"}]}], "}"}], ",", " ", "None", ",", 
          " ", "2"}], "]"}]}]}]}], "\[IndentingNewLine]", "]"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{"Isola", "[", "]"}]}], "Input",
@@ -7274,8 +7275,9 @@ Cell[BoxData[{
    3.930717813618261*^9, 3.930717816665188*^9}, {3.93071784909305*^9, 
    3.930717864570898*^9}, {3.930717910145101*^9, 3.930717912732321*^9}, {
    3.930717953106811*^9, 3.930717964288719*^9}, {3.93071808379982*^9, 
-   3.9307180908068027`*^9}, {3.9307194502290535`*^9, 3.930719480915941*^9}},
- CellLabel->"In[7]:=",ExpressionUUID->"752338eb-bfa3-cb42-8321-7806585fa5b3"],
+   3.9307180908068027`*^9}, {3.9307194502290535`*^9, 3.930719480915941*^9}, {
+   3.930719670126932*^9, 3.9307196718553505`*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"752338eb-bfa3-cb42-8321-7806585fa5b3"],
 
 Cell[BoxData[
  DynamicModuleBox[{$CellContext`infinity$$ = 
@@ -7657,7 +7659,8 @@ $CellContext`blueLose$$ = True, $CellContext`redLose$$ =
   DynamicBox[ToBoxes[
     Overlay[{
       $CellContext`displayMatrix$$[], 
-      $CellContext`btnOverlay$$[]}, None, 2], StandardForm],
+      $CellContext`btnOverlay$$[], 
+      $CellContext`winScreen$$[]}, None, 2], StandardForm],
    ImageSizeCache->{397., {195.34743648138829`, 201.65256351861171`}}],
   DynamicModuleValues:>{{DownValues[$CellContext`displayGrid$$] = {HoldPattern[
          $CellContext`displayGrid$$[]] :> 
@@ -7701,7 +7704,6 @@ $CellContext`distanceMatrixRed$$ = $CellContext`simplerMatrix$$ + Table[
               Abs[Part[$CellContext`position$$, 2, 1] - $CellContext`j], 
               Abs[
               Part[$CellContext`position$$, 2, 
-                 
                  2] - $CellContext`i]], {$CellContext`i, \
 $CellContext`gridY$$}], {$CellContext`j, $CellContext`gridX$$}]; \
 $CellContext`distanceMatrixBlue$$ = $CellContext`simplerMatrix$$ + Table[
@@ -7920,12 +7922,12 @@ $CellContext`currentAction$$}, {{
    3.930717543997019*^9, 3.930717718733219*^9, 3.930717772692843*^9, 
    3.9307178199377403`*^9, 3.9307178654674687`*^9, 3.930717914909185*^9, 
    3.930717966785986*^9, 3.9307180924619484`*^9, 3.9307194253392715`*^9, {
-   3.9307194603007736`*^9, 3.9307194816075916`*^9}},
- CellLabel->"Out[8]=",ExpressionUUID->"ad2de510-5b93-334b-bc83-3b20d2ea02ae"],
+   3.9307194603007736`*^9, 3.9307194816075916`*^9}, 3.930719673255802*^9},
+ CellLabel->"Out[10]=",ExpressionUUID->"d0024361-a6bf-3241-8c9c-f5d2281a1936"],
 
 Cell[BoxData["\<\"red win\"\>"], "Print",
- CellChangeTimes->{3.9307194929199104`*^9},
- CellLabel->"",ExpressionUUID->"3f737230-1149-8249-abd8-081146ad3b3d"]
+ CellChangeTimes->{3.930719685982445*^9},
+ CellLabel->"",ExpressionUUID->"a23f44e2-f19d-b14b-b425-60440598223a"]
 }, Open  ]]
 },
 NotebookEventActions->None,
@@ -7957,9 +7959,9 @@ Cell[558, 20, 154, 3, 31, "Input",ExpressionUUID->"513c7ea4-1003-fe41-a552-b94b4
 Cell[715, 25, 376568, 6183, 159, "Input",ExpressionUUID->"43f0a178-f15a-8348-adbd-59f8a576b097"],
 Cell[377286, 6210, 147, 2, 31, "Input",ExpressionUUID->"bb10f299-af48-6b47-bf09-a1c51f09a291"],
 Cell[CellGroupData[{
-Cell[377458, 6216, 48088, 1061, 4331, "Input",ExpressionUUID->"752338eb-bfa3-cb42-8321-7806585fa5b3"],
-Cell[425549, 7279, 26177, 644, 417, "Output",ExpressionUUID->"ad2de510-5b93-334b-bc83-3b20d2ea02ae"],
-Cell[451729, 7925, 156, 2, 24, "Print",ExpressionUUID->"3f737230-1149-8249-abd8-081146ad3b3d"]
+Cell[377458, 6216, 48195, 1063, 4331, "Input",ExpressionUUID->"752338eb-bfa3-cb42-8321-7806585fa5b3"],
+Cell[425656, 7281, 26217, 644, 417, "Output",ExpressionUUID->"d0024361-a6bf-3241-8c9c-f5d2281a1936"],
+Cell[451876, 7927, 154, 2, 24, "Print",ExpressionUUID->"a23f44e2-f19d-b14b-b425-60440598223a"]
 }, Open  ]]
 }
 ]
