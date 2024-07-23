@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    642148,      11068]
-NotebookOptionsPosition[    640955,      11039]
-NotebookOutlinePosition[    641667,      11063]
-CellTagsIndexPosition[    641624,      11060]
+NotebookDataLength[    642221,      11069]
+NotebookOptionsPosition[    641028,      11040]
+NotebookOutlinePosition[    641740,      11064]
+CellTagsIndexPosition[    641697,      11061]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -6445,8 +6445,8 @@ Cell[BoxData[{
                RowBox[{"[", "2", "]"}], "]"}], "[", 
               RowBox[{"[", "2", "]"}], "]"}]}], "]"}], "]"}], " ", "=", " ", 
           "3"}], ";", "\[IndentingNewLine]", 
-         RowBox[{"matrices", "[", "]"}], ";", "\[IndentingNewLine]", 
          RowBox[{"updateDistances", "[", "]"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"matrices", "[", "]"}], ";", "\[IndentingNewLine]", 
          RowBox[{"(*", 
           RowBox[{
            RowBox[{"matrices", "[", "]"}], ";"}], "*)"}], 
@@ -7291,8 +7291,9 @@ Cell[BoxData[{
    3.9307177168242264`*^9}, {3.930717756032364*^9, 3.9307177647021446`*^9}, {
    3.9307178136182613`*^9, 3.930717816665188*^9}, {3.93071784909305*^9, 
    3.930717864570898*^9}, {3.9307179101451015`*^9, 3.930717912732321*^9}, {
-   3.9307179531068115`*^9, 3.930717964288719*^9}},
- CellLabel->"In[90]:=",ExpressionUUID->"752338eb-bfa3-cb42-8321-7806585fa5b3"],
+   3.9307179531068115`*^9, 3.930717964288719*^9}, {3.93071808379982*^9, 
+   3.9307180908068027`*^9}},
+ CellLabel->"In[92]:=",ExpressionUUID->"752338eb-bfa3-cb42-8321-7806585fa5b3"],
 
 Cell[BoxData[
  DynamicModuleBox[{$CellContext`infinity$$ = 
@@ -10840,7 +10841,7 @@ $CellContext`floor$$; Part[$CellContext`terrainMatrix$$,
             Part[$CellContext`position$$, 2], 1], 
            Part[
             Part[$CellContext`position$$, 2], 2]] = 
-         3; $CellContext`matrices$$[]; $CellContext`updateDistances$$[]; 
+         3; $CellContext`updateDistances$$[]; $CellContext`matrices$$[]; 
         If[$CellContext`currentAction$$ == 0, 
           $CellContext`checkWin$$[]]; Null)}}, {
     DownValues[$CellContext`matrices$$] = {HoldPattern[
@@ -11029,12 +11030,12 @@ $CellContext`currentAction$$}, {{
    3.9307167076063633`*^9}, 3.9307167618055935`*^9, 3.930717498938776*^9, 
    3.930717543997019*^9, 3.930717718733219*^9, 3.9307177726928425`*^9, 
    3.9307178199377403`*^9, 3.9307178654674683`*^9, 3.9307179149091854`*^9, 
-   3.930717966785986*^9},
- CellLabel->"Out[91]=",ExpressionUUID->"110d4008-6996-044b-b78f-4573261ae96c"],
+   3.930717966785986*^9, 3.9307180924619484`*^9},
+ CellLabel->"Out[93]=",ExpressionUUID->"b708e978-a39c-a444-841e-6758ef5aab23"],
 
 Cell[BoxData["\<\"red win\"\>"], "Print",
- CellChangeTimes->{3.9307179784616566`*^9},
- CellLabel->"",ExpressionUUID->"953252f8-6ca8-4741-9f64-afca474fb6e4"]
+ CellChangeTimes->{3.930718103886503*^9},
+ CellLabel->"",ExpressionUUID->"b7955374-38cc-5440-aba7-58e9a80953f6"]
 }, Open  ]]
 },
 NotebookEventActions->None,
@@ -11066,9 +11067,9 @@ Cell[558, 20, 154, 3, 31, "Input",ExpressionUUID->"513c7ea4-1003-fe41-a552-b94b4
 Cell[715, 25, 376568, 6183, 159, "Input",ExpressionUUID->"43f0a178-f15a-8348-adbd-59f8a576b097"],
 Cell[377286, 6210, 147, 2, 31, "Input",ExpressionUUID->"bb10f299-af48-6b47-bf09-a1c51f09a291"],
 Cell[CellGroupData[{
-Cell[377458, 6216, 48871, 1078, 4454, "Input",ExpressionUUID->"752338eb-bfa3-cb42-8321-7806585fa5b3"],
-Cell[426332, 7296, 214448, 3736, 417, "Output",ExpressionUUID->"110d4008-6996-044b-b78f-4573261ae96c"],
-Cell[640783, 11034, 156, 2, 24, "Print",ExpressionUUID->"953252f8-6ca8-4741-9f64-afca474fb6e4"]
+Cell[377458, 6216, 48922, 1079, 4454, "Input",ExpressionUUID->"752338eb-bfa3-cb42-8321-7806585fa5b3"],
+Cell[426383, 7297, 214472, 3736, 417, "Output",ExpressionUUID->"b708e978-a39c-a444-841e-6758ef5aab23"],
+Cell[640858, 11035, 154, 2, 24, "Print",ExpressionUUID->"b7955374-38cc-5440-aba7-58e9a80953f6"]
 }, Open  ]]
 }
 ]
