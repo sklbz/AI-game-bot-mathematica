@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    340595,       5793]
-NotebookOptionsPosition[    331167,       5605]
-NotebookOutlinePosition[    335998,       5708]
-CellTagsIndexPosition[    335918,       5703]
+NotebookDataLength[    340671,       5795]
+NotebookOptionsPosition[    331243,       5607]
+NotebookOutlinePosition[    336074,       5710]
+CellTagsIndexPosition[    335994,       5705]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -5572,15 +5572,17 @@ Cell["Future Perspectives", "Section",
 Cell[TextData[StyleBox["-Make an AI that learns the best strategy through \
 machine learning and playing the game by itself instead of a bot with a \
 program\n\n-Further optimizing the code and creating custom grids with \
-various shapes and layouts for extra player entertainment",
+various shapes and layouts for extra player entertainment, as well as \
+animations??",
  FontSize->Dynamic[
   0.031200000000000002` FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]],
  FontVariations->{"Underline"->False},
  FontColor->GrayLevel[0]]], "Text",
- CellChangeTimes->{{3.9308025924401073`*^9, 3.930802641314049*^9}, {
+ CellChangeTimes->{{3.930802592440107*^9, 3.930802641314049*^9}, {
   3.930802675817692*^9, 3.930802723852457*^9}, {3.93080280765987*^9, 
-  3.930802818050953*^9}, {3.9308209842468586`*^9, 
-  3.930820991784399*^9}},ExpressionUUID->"675e70b5-fd15-ae4c-826c-\
+  3.930802818050953*^9}, {3.930820984246858*^9, 3.930820991784399*^9}, {
+  3.9308252330224133`*^9, 
+  3.9308252398312263`*^9}},ExpressionUUID->"675e70b5-fd15-ae4c-826c-\
 273a49a3cb36"]
 }, Open  ]]
 }, Open  ]],
@@ -5696,13 +5698,13 @@ CellTagsIndex->{
    CellTags->"SlideShowHeader"],
   Cell[329416, 5560, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"cba9b6df-f463-2d48-8c40-5c9b0dc6d760",
    CellTags->"SlideShowHeader"],
-  Cell[330539, 5589, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"ac12d418-18df-8349-88a8-0ab274e66fc6",
+  Cell[330615, 5591, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"ac12d418-18df-8349-88a8-0ab274e66fc6",
    CellTags->"SlideShowHeader"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"SlideShowHeader", 334582, 5681}
+ {"SlideShowHeader", 334658, 5683}
  }
 *)
 (*NotebookFileOutline
@@ -5787,13 +5789,13 @@ Cell[329416, 5560, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"cba9b6d
  CellTags->"SlideShowHeader"],
 Cell[CellGroupData[{
 Cell[329563, 5566, 201, 3, 108, "Section",ExpressionUUID->"f0496a4e-6159-254d-9447-b9535f6ac37d"],
-Cell[329767, 5571, 723, 12, 327, "Text",ExpressionUUID->"675e70b5-fd15-ae4c-826c-273a49a3cb36"]
+Cell[329767, 5571, 799, 14, 327, "Text",ExpressionUUID->"675e70b5-fd15-ae4c-826c-273a49a3cb36"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[330539, 5589, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"ac12d418-18df-8349-88a8-0ab274e66fc6",
+Cell[330615, 5591, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"ac12d418-18df-8349-88a8-0ab274e66fc6",
  CellTags->"SlideShowHeader"],
-Cell[330664, 5593, 487, 9, 287, "Title",ExpressionUUID->"239fb1a9-72d1-3f48-81a9-3026a315fd39"]
+Cell[330740, 5595, 487, 9, 287, "Title",ExpressionUUID->"239fb1a9-72d1-3f48-81a9-3026a315fd39"]
 }, Open  ]]
 }
 ]
