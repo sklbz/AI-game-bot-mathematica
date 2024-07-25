@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    802099,      14551]
-NotebookOptionsPosition[    799108,      14497]
-NotebookOutlinePosition[    799880,      14522]
-CellTagsIndexPosition[    799837,      14519]
+NotebookDataLength[    808703,      14699]
+NotebookOptionsPosition[    805179,      14639]
+NotebookOutlinePosition[    805861,      14662]
+CellTagsIndexPosition[    805818,      14659]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -14493,7 +14493,149 @@ Cell[BoxData[
  CellChangeTimes->{{3.9308941279660873`*^9, 3.9308941282884197`*^9}, {
   3.930894264873417*^9, 
   3.930894265404125*^9}},ExpressionUUID->"0eba1a2d-0a00-644f-8475-\
-2687998bb4ac"]
+2687998bb4ac"],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"untrainedNeuralNet", "=", 
+    RowBox[{"NetGraph", "[", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"\"\<dense\>\"", "->", 
+         RowBox[{"NetChain", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"LinearLayer", "[", "10", "]"}], ",", 
+            RowBox[{"ElementwiseLayer", "[", "\"\<SoftPlus\>\"", "]"}], ",", 
+            RowBox[{"LinearLayer", "[", "500", "]"}], ",", 
+            RowBox[{"ElementwiseLayer", "[", "\"\<SoftPlus\>\"", "]"}]}], 
+           "}"}], "]"}]}], ",", 
+        RowBox[{"\"\<out1\>\"", "->", 
+         RowBox[{"NetChain", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"LinearLayer", "[", "10", "]"}], ",", 
+            RowBox[{"ElementwiseLayer", "[", "\"\<SoftPlus\>\"", "]"}], ",", 
+            RowBox[{"LinearLayer", "[", "6", "]"}], ",", 
+            RowBox[{"SoftmaxLayer", "[", "]"}]}], "}"}], "]"}]}], ",", 
+        RowBox[{"\"\<out2\>\"", "->", 
+         RowBox[{"NetChain", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"LinearLayer", "[", "10", "]"}], ",", 
+            RowBox[{"ElementwiseLayer", "[", "\"\<SoftPlus\>\"", "]"}], ",", 
+            RowBox[{"LinearLayer", "[", "6", "]"}], ",", 
+            RowBox[{"SoftmaxLayer", "[", "]"}]}], "}"}], "]"}]}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"\"\<out3\>\"", "->", 
+         RowBox[{"NetChain", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"LinearLayer", "[", "10", "]"}], ",", 
+            RowBox[{"ElementwiseLayer", "[", "\"\<SoftPlus\>\"", "]"}], ",", 
+            RowBox[{"LinearLayer", "[", "6", "]"}], ",", 
+            RowBox[{"SoftmaxLayer", "[", "]"}]}], "}"}], "]"}]}], ",", 
+        RowBox[{"\"\<out4\>\"", "->", 
+         RowBox[{"NetChain", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"LinearLayer", "[", "10", "]"}], ",", 
+            RowBox[{"ElementwiseLayer", "[", "\"\<SoftPlus\>\"", "]"}], ",", 
+            RowBox[{"LinearLayer", "[", "6", "]"}], ",", 
+            RowBox[{"SoftmaxLayer", "[", "]"}]}], "}"}], "]"}]}]}], 
+       "\[IndentingNewLine]", "}"}], ",", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"NetPort", "[", "\"\<State\>\"", "]"}], "->", 
+         "\"\<dense\>\""}], ",", "\[IndentingNewLine]", 
+        RowBox[{"\"\<dense\>\"", "->", 
+         RowBox[{"\"\<out1\>\"", "->", 
+          RowBox[{"NetPort", "[", "\"\<Output1\>\"", "]"}]}]}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"\"\<dense\>\"", "->", 
+         RowBox[{"\"\<out2\>\"", "->", 
+          RowBox[{"NetPort", "[", "\"\<Output2\>\"", "]"}]}]}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"\"\<dense\>\"", "->", 
+         RowBox[{"\"\<out3\>\"", "->", 
+          RowBox[{"NetPort", "[", "\"\<Output3\>\"", "]"}]}]}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"\"\<dense\>\"", "->", 
+         RowBox[{"\"\<out4\>\"", "->", 
+          RowBox[{"NetPort", "[", "\"\<Output4\>\"", "]"}]}]}]}], 
+       "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"\"\<GameState\>\"", "->", "10"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"\"\<Output1\>\"", "->", 
+       RowBox[{"NetDecoder", "[", 
+        RowBox[{"{", 
+         RowBox[{"\"\<Class\>\"", ",", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6"}], 
+           "}"}]}], "}"}], "]"}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{"\"\<Output2\>\"", "->", 
+       RowBox[{"NetDecoder", "[", 
+        RowBox[{"{", 
+         RowBox[{"\"\<Class\>\"", ",", 
+          RowBox[{"{", 
+           RowBox[{
+           "\"\<A\>\"", ",", "\"\<B\>\"", ",", "\"\<C\>\"", ",", "\"\<D\>\"", 
+            ",", "\"\<E\>\"", ",", "\"\<F\>\""}], "}"}]}], "}"}], "]"}]}], 
+      ",", "\[IndentingNewLine]", 
+      RowBox[{"\"\<Output1\>\"", "->", 
+       RowBox[{"NetDecoder", "[", 
+        RowBox[{"{", 
+         RowBox[{"\"\<Class\>\"", ",", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6"}], 
+           "}"}]}], "}"}], "]"}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{"\"\<Output2\>\"", "->", 
+       RowBox[{"NetDecoder", "[", 
+        RowBox[{"{", 
+         RowBox[{"\"\<Class\>\"", ",", 
+          RowBox[{"{", 
+           RowBox[{
+           "\"\<A\>\"", ",", "\"\<B\>\"", ",", "\"\<C\>\"", ",", "\"\<D\>\"", 
+            ",", "\"\<E\>\"", ",", "\"\<F\>\""}], "}"}]}], "}"}], "]"}]}]}], 
+     "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "\n", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"trainedNeuralNet", "=", 
+    RowBox[{"NetTrain", "[", 
+     RowBox[{"net", ",", "dataset"}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.9309080476492615`*^9, 
+  3.930908104678406*^9}},ExpressionUUID->"19c37110-bfa6-1e44-8db9-\
+e171aeb3baa1"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"3", "^", "6"}], "\[IndentingNewLine]", 
+   RowBox[{"2", "^", "5"}], "\[IndentingNewLine]", 
+   RowBox[{"5", "^", "4"}]}]}]], "Input",
+ CellChangeTimes->{{3.930908127761278*^9, 
+  3.9309082116798096`*^9}},ExpressionUUID->"48915ffe-f32a-1c41-abe6-\
+4301d51af57f"],
+
+Cell[BoxData["729"], "Output",
+ CellChangeTimes->{{3.9309081635613384`*^9, 3.930908209400961*^9}},
+ CellLabel->"Out[62]=",ExpressionUUID->"0c41b303-c207-b14d-9448-1cdb0e618789"],
+
+Cell[BoxData["32"], "Output",
+ CellChangeTimes->{{3.9309081635613384`*^9, 3.930908209400961*^9}},
+ CellLabel->"Out[63]=",ExpressionUUID->"a5b0fbd5-8591-b940-a388-0b330bf5a813"],
+
+Cell[BoxData["625"], "Output",
+ CellChangeTimes->{{3.9309081635613384`*^9, 3.930908209400961*^9}},
+ CellLabel->"Out[64]=",ExpressionUUID->"4c739dab-e24e-b94d-9b6e-5809864e6303"],
+
+Cell[BoxData["2401"], "Output",
+ CellChangeTimes->{{3.9309081635613384`*^9, 3.930908209416628*^9}},
+ CellLabel->"Out[65]=",ExpressionUUID->"ceb7de33-07d1-dc4a-a21d-418913695838"]
+}, Open  ]]
 },
 NotebookEventActions->None,
 WindowSize->{1280, 652},
@@ -14503,9 +14645,7 @@ StyleDefinitions->Notebook[{
    Cell[
     StyleData[StyleDefinitions -> "Default.nb"]], 
    Cell[
-    StyleData[All]]}, WindowSize -> {582, 562}, 
-  WindowMargins -> {{343.5, Automatic}, {Automatic, 39.5}}, Visible -> False, 
-  FrontEndVersion -> 
+    StyleData[All]]}, Visible -> False, FrontEndVersion -> 
   "14.0 pour Microsoft Windows (64-bit) (December 12, 2023)", 
   StyleDefinitions -> "PrivateStylesheetFormatting.nb"],
 ExpressionUUID->"1448735b-bc87-d441-9c5b-9aa1a90d3c89"
@@ -14552,7 +14692,15 @@ Cell[CellGroupData[{
 Cell[794837, 14390, 263, 5, 48, "Input",ExpressionUUID->"ccd2542c-fd67-cc40-aadc-29b667dfe334"],
 Cell[795103, 14397, 180, 3, 32, "Output",ExpressionUUID->"1e1ee099-1637-4c4d-971a-66b99581c2fb"]
 }, Open  ]],
-Cell[795298, 14403, 3806, 92, 331, "Input",ExpressionUUID->"0eba1a2d-0a00-644f-8475-2687998bb4ac"]
+Cell[795298, 14403, 3806, 92, 331, "Input",ExpressionUUID->"0eba1a2d-0a00-644f-8475-2687998bb4ac"],
+Cell[799107, 14497, 4980, 111, 744, "Input",ExpressionUUID->"19c37110-bfa6-1e44-8db9-e171aeb3baa1"],
+Cell[CellGroupData[{
+Cell[804112, 14612, 331, 8, 86, "Input",ExpressionUUID->"48915ffe-f32a-1c41-abe6-4301d51af57f"],
+Cell[804446, 14622, 177, 2, 32, "Output",ExpressionUUID->"0c41b303-c207-b14d-9448-1cdb0e618789"],
+Cell[804626, 14626, 176, 2, 32, "Output",ExpressionUUID->"a5b0fbd5-8591-b940-a388-0b330bf5a813"],
+Cell[804805, 14630, 177, 2, 32, "Output",ExpressionUUID->"4c739dab-e24e-b94d-9b6e-5809864e6303"],
+Cell[804985, 14634, 178, 2, 32, "Output",ExpressionUUID->"ceb7de33-07d1-dc4a-a21d-418913695838"]
+}, Open  ]]
 }
 ]
 *)
