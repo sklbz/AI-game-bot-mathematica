@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[   2454330,      42494]
-NotebookOptionsPosition[   2443790,      42289]
-NotebookOutlinePosition[   2448746,      42393]
-CellTagsIndexPosition[   2448664,      42388]
+NotebookDataLength[   2435353,      41982]
+NotebookOptionsPosition[   2424817,      41777]
+NotebookOutlinePosition[   2429773,      41881]
+CellTagsIndexPosition[   2429691,      41876]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -5394,10 +5394,13 @@ Cell[BoxData[{
    RowBox[{
     StyleBox["DynamicModule",
      FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
+    
     StyleBox["[",
      FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
+    
     StyleBox["\[IndentingNewLine]",
      FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
+    
     RowBox[{
      StyleBox[
       RowBox[{"{", "\[IndentingNewLine]", 
@@ -5410,11 +5413,13 @@ Cell[BoxData[{
           
           FontSize->Dynamic[
            0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]]}], ",", " ", 
+        
         RowBox[{"gridY", " ", "=", " ", 
          StyleBox["5",
           
           FontSize->Dynamic[
            0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]]}], ",", " ", 
+        
         RowBox[{"cellSize", " ", "=", " ", "73"}], ",", "destroyMatrix", ",", 
         "distanceMatrixRed", ",", " ", "distanceMatrixBlue", ",", 
         "\[IndentingNewLine]", "moveMatrixRed", ",", "moveMatrixBlue", ",", 
@@ -5640,9 +5645,9 @@ Cell[BoxData[{
          0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
        FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
       StyleBox[
-       RowBox[{
+       StyleBox[
         RowBox[{
-         StyleBox[
+         RowBox[{
           StyleBox[
            StyleBox[
             StyleBox["matrices",
@@ -5654,29 +5659,10 @@ Cell[BoxData[{
              0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
            
            FontSize->Dynamic[
-            0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-          
-          FontSize->Dynamic[
-           0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-         StyleBox[
+            0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
           StyleBox[
            StyleBox[
             StyleBox["[",
-             
-             FontSize->Dynamic[
-              0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-            FontSize->Dynamic[
-             0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-           
-           FontSize->Dynamic[
-            0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-          
-          FontSize->Dynamic[
-           0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-         StyleBox[
-          StyleBox[
-           StyleBox[
-            StyleBox["]",
              
              FontSize->Dynamic[
               0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
@@ -5685,11 +5671,18 @@ Cell[BoxData[{
              0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
            
            FontSize->Dynamic[
-            0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-          
-          FontSize->Dynamic[
-           0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]]}], 
-        StyleBox[
+            0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
+          StyleBox[
+           StyleBox[
+            StyleBox["]",
+             
+             FontSize->Dynamic[
+              0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
+            FontSize->Dynamic[
+             0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
+           
+           FontSize->Dynamic[
+            0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]]}], 
          StyleBox[
           StyleBox[
            StyleBox[" ",
@@ -5701,10 +5694,7 @@ Cell[BoxData[{
             0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
           
           FontSize->Dynamic[
-           0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-         FontSize->Dynamic[
-          0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-        StyleBox[
+           0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
          StyleBox[
           StyleBox[
            StyleBox[":=",
@@ -5716,10 +5706,7 @@ Cell[BoxData[{
             0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
           
           FontSize->Dynamic[
-           0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-         FontSize->Dynamic[
-          0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-        StyleBox[
+           0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
          StyleBox[
           StyleBox[
            StyleBox[" ",
@@ -5731,11 +5718,8 @@ Cell[BoxData[{
             0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
           
           FontSize->Dynamic[
-           0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-         FontSize->Dynamic[
-          0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-        RowBox[{
-         StyleBox[
+           0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
+         RowBox[{
           StyleBox[
            StyleBox[
             StyleBox["(",
@@ -5747,11 +5731,7 @@ Cell[BoxData[{
              0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
            
            FontSize->Dynamic[
-            0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-          
-          FontSize->Dynamic[
-           0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-         StyleBox[
+            0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
           StyleBox[
            StyleBox[
             StyleBox["\[IndentingNewLine]",
@@ -5763,12 +5743,8 @@ Cell[BoxData[{
              0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
            
            FontSize->Dynamic[
-            0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-          
-          FontSize->Dynamic[
-           0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-         RowBox[{
-          StyleBox[
+            0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
+          RowBox[{
            StyleBox[
             StyleBox[
              StyleBox[
@@ -5791,14 +5767,11 @@ Cell[BoxData[{
               0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
             
             FontSize->Dynamic[
-             0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-           
-           FontSize->Dynamic[
-            0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-          StyleBox[
+             0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
            StyleBox[
             StyleBox[
              StyleBox[";",
+              
               FontSize->Dynamic[
                0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
              
@@ -5806,11 +5779,7 @@ Cell[BoxData[{
               0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
             
             FontSize->Dynamic[
-             0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-           
-           FontSize->Dynamic[
-            0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-          StyleBox[
+             0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
            StyleBox[
             StyleBox[
              StyleBox["\[IndentingNewLine]",
@@ -5822,11 +5791,7 @@ Cell[BoxData[{
               0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
             
             FontSize->Dynamic[
-             0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-           
-           FontSize->Dynamic[
-            0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-          StyleBox[
+             0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
            StyleBox[
             StyleBox[
              StyleBox[
@@ -5852,11 +5817,7 @@ Cell[BoxData[{
               0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
             
             FontSize->Dynamic[
-             0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-           
-           FontSize->Dynamic[
-            0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-          StyleBox[
+             0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
            StyleBox[
             StyleBox[
              StyleBox[";",
@@ -5868,50 +5829,10 @@ Cell[BoxData[{
               0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
             
             FontSize->Dynamic[
-             0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-           
-           FontSize->Dynamic[
-            0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-          StyleBox[
-           StyleBox[
-            StyleBox[
-             StyleBox["\[IndentingNewLine]",
-              
-              FontSize->Dynamic[
-               0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-             
-             FontSize->Dynamic[
-              0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-            
-            FontSize->Dynamic[
-             0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-           
-           FontSize->Dynamic[
-            0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-          RowBox[{
-           StyleBox[
-            StyleBox[
-             StyleBox[
-              StyleBox["If",
-               
-               FontSize->Dynamic[
-                0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-              
-              FontSize->Dynamic[
-               0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-             
-             FontSize->Dynamic[
-              0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-            
-            FontSize->Dynamic[
              0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
            StyleBox[
             StyleBox[
-             StyleBox[
-              StyleBox["[",
-               
-               FontSize->Dynamic[
-                0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
+             StyleBox["\[IndentingNewLine]",
               
               FontSize->Dynamic[
                0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
@@ -5924,12 +5845,7 @@ Cell[BoxData[{
            RowBox[{
             StyleBox[
              StyleBox[
-              StyleBox[
-               StyleBox[
-                RowBox[{"currentAction", "==", "0"}],
-                
-                FontSize->Dynamic[
-                 0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
+              StyleBox["If",
                
                FontSize->Dynamic[
                 0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
@@ -5941,27 +5857,7 @@ Cell[BoxData[{
               0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
             StyleBox[
              StyleBox[
-              StyleBox[
-               StyleBox[",",
-                
-                FontSize->Dynamic[
-                 0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-               
-               FontSize->Dynamic[
-                0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-              
-              FontSize->Dynamic[
-               0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-             
-             FontSize->Dynamic[
-              0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-            StyleBox[
-             StyleBox[
-              StyleBox[
-               StyleBox["\[IndentingNewLine]",
-                
-                FontSize->Dynamic[
-                 0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
+              StyleBox["[",
                
                FontSize->Dynamic[
                 0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
@@ -5973,6 +5869,43 @@ Cell[BoxData[{
               0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
             RowBox[{
              StyleBox[
+              StyleBox[
+               StyleBox[
+                RowBox[{"currentAction", "==", "0"}],
+                
+                FontSize->Dynamic[
+                 0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
+               
+               FontSize->Dynamic[
+                0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
+              
+              FontSize->Dynamic[
+               0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
+             StyleBox[
+              StyleBox[
+               StyleBox[",",
+                
+                FontSize->Dynamic[
+                 0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
+               
+               FontSize->Dynamic[
+                0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
+              
+              FontSize->Dynamic[
+               0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
+             StyleBox[
+              StyleBox[
+               StyleBox["\[IndentingNewLine]",
+                
+                FontSize->Dynamic[
+                 0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
+               
+               FontSize->Dynamic[
+                0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
+              
+              FontSize->Dynamic[
+               0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
+             RowBox[{
               StyleBox[
                StyleBox[
                 StyleBox[
@@ -5995,98 +5928,21 @@ Cell[BoxData[{
                  0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
                
                FontSize->Dynamic[
-                0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-              
-              FontSize->Dynamic[
-               0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-             StyleBox[
+                0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
               StyleBox[
                StyleBox[
                 StyleBox[";",
                  
                  FontSize->Dynamic[
                   0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-                
                 FontSize->Dynamic[
                  0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
                
                FontSize->Dynamic[
-                0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-              
-              FontSize->Dynamic[
-               0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-             StyleBox[
+                0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
               StyleBox[
                StyleBox[
                 StyleBox["\[IndentingNewLine]",
-                 
-                 FontSize->Dynamic[
-                  0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-                
-                FontSize->Dynamic[
-                 0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-               
-               FontSize->Dynamic[
-                0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-              
-              FontSize->Dynamic[
-               0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-             RowBox[{
-              StyleBox[
-               StyleBox[
-                StyleBox[
-                 StyleBox["destroyMatrix",
-                  
-                  FontSize->Dynamic[
-                   0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-                 
-                 FontSize->Dynamic[
-                  0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-                
-                FontSize->Dynamic[
-                 0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-               
-               FontSize->Dynamic[
-                0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-              StyleBox[
-               StyleBox[
-                StyleBox[
-                 StyleBox[" ",
-                  
-                  FontSize->Dynamic[
-                   0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-                 
-                 FontSize->Dynamic[
-                  0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-                
-                FontSize->Dynamic[
-                 0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-               
-               FontSize->Dynamic[
-                0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-              StyleBox[
-               StyleBox[
-                StyleBox[
-                 StyleBox["=",
-                  
-                  FontSize->Dynamic[
-                   0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-                 
-                 FontSize->Dynamic[
-                  0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-                
-                FontSize->Dynamic[
-                 0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-               
-               FontSize->Dynamic[
-                0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-              StyleBox[
-               StyleBox[
-                StyleBox[
-                 StyleBox[" ",
-                  
-                  FontSize->Dynamic[
-                   0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
                  
                  FontSize->Dynamic[
                   0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
@@ -6099,11 +5955,7 @@ Cell[BoxData[{
               RowBox[{
                StyleBox[
                 StyleBox[
-                 StyleBox[
-                  StyleBox["MapThread",
-                   
-                   FontSize->Dynamic[
-                    0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
+                 StyleBox["destroyMatrix",
                   
                   FontSize->Dynamic[
                    0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
@@ -6115,11 +5967,7 @@ Cell[BoxData[{
                  0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
                StyleBox[
                 StyleBox[
-                 StyleBox[
-                  StyleBox["[",
-                   
-                   FontSize->Dynamic[
-                    0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
+                 StyleBox[" ",
                   
                   FontSize->Dynamic[
                    0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
@@ -6130,6 +5978,54 @@ Cell[BoxData[{
                 FontSize->Dynamic[
                  0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
                StyleBox[
+                StyleBox[
+                 StyleBox["=",
+                  
+                  FontSize->Dynamic[
+                   0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
+                 
+                 FontSize->Dynamic[
+                  0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
+                
+                FontSize->Dynamic[
+                 0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
+               StyleBox[
+                StyleBox[
+                 StyleBox[" ",
+                  
+                  FontSize->Dynamic[
+                   0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
+                 
+                 FontSize->Dynamic[
+                  0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
+                
+                FontSize->Dynamic[
+                 0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
+               RowBox[{
+                StyleBox[
+                 StyleBox[
+                  StyleBox["MapThread",
+                   
+                   FontSize->Dynamic[
+                    0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
+                  
+                  FontSize->Dynamic[
+                   0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
+                 
+                 FontSize->Dynamic[
+                  0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
+                StyleBox[
+                 StyleBox[
+                  StyleBox["[",
+                   
+                   FontSize->Dynamic[
+                    0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
+                  
+                  FontSize->Dynamic[
+                   0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
+                 
+                 FontSize->Dynamic[
+                  0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
                 StyleBox[
                  StyleBox[
                   StyleBox[
@@ -6155,11 +6051,7 @@ Cell[BoxData[{
                    0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
                  
                  FontSize->Dynamic[
-                  0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-                
-                FontSize->Dynamic[
-                 0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-               StyleBox[
+                  0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
                 StyleBox[
                  StyleBox[
                   StyleBox["]",
@@ -6171,12 +6063,8 @@ Cell[BoxData[{
                    0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
                  
                  FontSize->Dynamic[
-                  0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-                
-                FontSize->Dynamic[
-                 0.01 FrontEnd`AbsoluteCurrentValue[{
+                  0.01 FrontEnd`AbsoluteCurrentValue[{
                     WindowSize, 1}]]]}]}]}]}], 
-           StyleBox[
             StyleBox[
              StyleBox[
               StyleBox["\[IndentingNewLine]",
@@ -6188,11 +6076,7 @@ Cell[BoxData[{
                0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
              
              FontSize->Dynamic[
-              0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-            
-            FontSize->Dynamic[
-             0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-           StyleBox[
+              0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
             StyleBox[
              StyleBox[
               StyleBox["]",
@@ -6204,15 +6088,8 @@ Cell[BoxData[{
                0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
              
              FontSize->Dynamic[
-              0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-            
-            FontSize->Dynamic[
-             0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]]}], 
-          StyleBox[";",
-           
-           FontSize->Dynamic[
-            0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]]}], 
-         StyleBox[
+              0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]]}], ";"}], 
+          
           StyleBox[
            StyleBox[
             StyleBox[
@@ -6240,10 +6117,9 @@ Cell[BoxData[{
              0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
            
            FontSize->Dynamic[
-            0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
-          
-          FontSize->Dynamic[
-           0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]]}]}],
+            0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]]}]}],
+        FontSize->Dynamic[
+         0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]],
        FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
       StyleBox[
        StyleBox[
@@ -6366,6 +6242,7 @@ Cell[BoxData[{
          0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]]}]}]}], 
     StyleBox["\[IndentingNewLine]",
      FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
+    
     StyleBox["]",
      FontSize->Dynamic[
       0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]]}]}], 
@@ -6382,12 +6259,13 @@ Cell[BoxData[{
    3.9308230960673084`*^9, 3.930823108844705*^9}, 3.9308231819021378`*^9, 
    3.930889722865959*^9, {3.930889764374731*^9, 3.930889792235224*^9}, {
    3.930889831664091*^9, 3.930889832511051*^9}, {3.9308899171160774`*^9, 
-   3.9308899440967903`*^9}, {3.930889998423174*^9, 3.9308900280674477`*^9}, {
+   3.9308899440967903`*^9}, {3.930889998423174*^9, 3.930890028067448*^9}, {
    3.93089006846245*^9, 3.930890071762945*^9}, {3.930890266355772*^9, 
    3.930890268222103*^9}, {3.930890308417204*^9, 3.9308903367465534`*^9}, {
    3.9308905303314857`*^9, 3.930890612526285*^9}, {3.930890651684883*^9, 
-   3.9308907593906937`*^9}},
- CellLabel->"In[96]:=",ExpressionUUID->"64c110db-7a88-5440-9ae5-a844acf5b729"],
+   3.930890759390694*^9}, {3.93090758423777*^9, 
+   3.930907591255478*^9}},ExpressionUUID->"64c110db-7a88-5440-9ae5-\
+a844acf5b729"],
 
 Cell[BoxData[
  DynamicModuleBox[{$CellContext`infinity$$ = 
@@ -6724,301 +6602,97 @@ turns\
 \>", "Subsubsection",
  CellChangeTimes->{{3.9308019449878883`*^9, 3.9308019460730133`*^9}, {
    3.930803123628313*^9, 3.9308032480083656`*^9}, {3.93080332145072*^9, 
-   3.9308033345623894`*^9}, {3.930813418702215*^9, 3.930813422761877*^9}, 
-   3.930822961056574*^9},ExpressionUUID->"1736f82c-25a2-4647-96f8-\
-e3b2b0a6b9ca"],
+   3.930803334562389*^9}, {3.930813418702215*^9, 3.930813422761877*^9}, 
+   3.930822961056574*^9},ExpressionUUID->"41f1bd29-b115-0a44-b0ab-\
+10997dc8cf92"],
 
-Cell[BoxData[{
- RowBox[{
-  RowBox[{"\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{
-     RowBox[{
-      StyleBox[
-       RowBox[{"s", 
-        StyleBox["implerMatrix",
-         FontSize->Dynamic[
-          0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]]}]], 
-      StyleBox[" ",
-       FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-      StyleBox["=",
-       FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-      StyleBox[
-       RowBox[{"terrainMatrix", "/.", 
-        RowBox[{"{", 
-         RowBox[{
-          RowBox[{
-           RowBox[{
-            RowBox[{"-", "1"}], "|", "1"}], " ", "->", " ", "0"}], ",", " ", 
-          RowBox[{
-           RowBox[{"0", "|", "2", "|", "3"}], " ", "->", " ", "infinity"}]}], 
-         "}"}]}],
-       FontSize->Dynamic[
-        0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]]}], 
-     StyleBox[";",
-      FontSize->Dynamic[
-       0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]]}], 
-    StyleBox["\[IndentingNewLine]",
-     FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-    StyleBox[
-     RowBox[{
-      RowBox[{"distanceMatrixRed", " ", "=", " ", 
-       RowBox[{"simplerMatrix", " ", "+", " ", 
-        RowBox[{"Table", "[", 
-         RowBox[{
-          RowBox[{"Table", "[", 
-           RowBox[{
-            RowBox[{"Max", "[", 
-             RowBox[{
-              RowBox[{"Abs", "[", 
-               RowBox[{
-                RowBox[{"position", "[", 
-                 RowBox[{"[", 
-                  RowBox[{"2", ",", " ", "1"}], "]"}], "]"}], " ", "-", " ", 
-                "j"}], "]"}], ",", 
-              RowBox[{"Abs", "[", 
-               RowBox[{
-                RowBox[{"position", "[", 
-                 RowBox[{"[", 
-                  RowBox[{"2", ",", " ", "2"}], "]"}], "]"}], " ", "-", " ", 
-                "i"}], "]"}]}], "]"}], ",", " ", 
-            RowBox[{"{", 
-             RowBox[{"i", ",", " ", "gridY"}], "}"}]}], "]"}], ",", 
-          RowBox[{"{", 
-           RowBox[{"j", ",", " ", "gridX"}], "}"}]}], "]"}]}]}], ";"}],
-     FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-    StyleBox["\[IndentingNewLine]",
-     FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-    StyleBox[
-     RowBox[{
-      RowBox[{"distanceMatrixBlue", " ", "=", " ", 
-       RowBox[{"simplerMatrix", "+", 
-        RowBox[{"Table", "[", 
-         RowBox[{
-          RowBox[{"Table", "[", 
-           RowBox[{
-            RowBox[{"Max", "[", 
-             RowBox[{
-              RowBox[{"Abs", "[", 
-               RowBox[{
-                RowBox[{"position", "[", 
-                 RowBox[{"[", 
-                  RowBox[{"1", ",", " ", "1"}], "]"}], "]"}], " ", "-", " ", 
-                "j"}], "]"}], ",", 
-              RowBox[{"Abs", "[", 
-               RowBox[{
-                RowBox[{"position", "[", 
-                 RowBox[{"[", 
-                  RowBox[{"1", ",", " ", "2"}], "]"}], "]"}], " ", "-", " ", 
-                "i"}], "]"}]}], "]"}], ",", " ", 
-            RowBox[{"{", 
-             RowBox[{"i", ",", " ", "gridY"}], "}"}]}], "]"}], ",", 
-          RowBox[{"{", 
-           RowBox[{"j", ",", " ", "gridX"}], "}"}]}], "]"}]}]}], ";"}],
-     FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-    StyleBox["\[IndentingNewLine]",
-     FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-    StyleBox[
-     RowBox[{
-      RowBox[{"preMoveMatrixRed", " ", ":=", " ", 
-       RowBox[{"distanceMatrixRed", "/.", 
-        RowBox[{"{", 
-         RowBox[{
-          RowBox[{"1", "->", " ", 
-           RowBox[{"redbtn", "[", "]"}]}], ",", " ", 
-          RowBox[{
-           RowBox[{"x_", "/;", 
-            RowBox[{"x", ">", "1"}]}], " ", "->", " ", "Null"}]}], "}"}]}]}], 
-      ";"}],
-     FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-    StyleBox["\[IndentingNewLine]",
-     FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-    StyleBox[
-     RowBox[{
-      RowBox[{"moveMatrixRed", " ", ":=", " ", 
-       RowBox[{"MapThread", "[", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"MapThread", "[", 
-           RowBox[{
-            RowBox[{
-             RowBox[{"If", "[", 
-              RowBox[{
-               RowBox[{"#2", "===", "Null"}], ",", "Null", ",", "#1"}], "]"}],
-              "&"}], ",", 
-            RowBox[{"{", 
-             RowBox[{"#1", ",", "#2"}], "}"}]}], "]"}], "&"}], ",", 
-         RowBox[{"{", 
-          RowBox[{"allRedMatrix", ",", "preMoveMatrixRed"}], "}"}]}], "]"}]}],
-       ";"}],
-     FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-    StyleBox["\[IndentingNewLine]",
-     FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-    StyleBox[
-     RowBox[{
-      RowBox[{"preMoveMatrixBlue", " ", ":=", " ", 
-       RowBox[{"distanceMatrixBlue", "/.", 
-        RowBox[{"{", 
-         RowBox[{
-          RowBox[{"1", "->", " ", 
-           RowBox[{"bluebtn", "[", "]"}]}], ",", 
-          RowBox[{
-           RowBox[{"x_", "/;", 
-            RowBox[{"x", ">", "1"}]}], " ", "->", " ", "Null"}]}], "}"}]}]}], 
-      ";"}],
-     FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-    StyleBox["\[IndentingNewLine]",
-     FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-    StyleBox[
-     RowBox[{
-      RowBox[{"moveMatrixBlue", " ", ":=", " ", 
-       RowBox[{"MapThread", "[", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"MapThread", "[", 
-           RowBox[{
-            RowBox[{
-             RowBox[{"If", "[", 
-              RowBox[{
-               RowBox[{"#2", "===", "Null"}], ",", "Null", ",", "#1"}], "]"}],
-              "&"}], ",", 
-            RowBox[{"{", 
-             RowBox[{"#1", ",", "#2"}], "}"}]}], "]"}], "&"}], ",", 
-         RowBox[{"{", 
-          RowBox[{"allBlueMatrix", ",", " ", "preMoveMatrixBlue"}], "}"}]}], 
-        "]"}]}], ";"}],
-     FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-    StyleBox["\[IndentingNewLine]",
-     FontSize->Dynamic[
-      0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]]}], 
-   StyleBox[")",
-    FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]]}], 
-  StyleBox[";",
-   FontSize->Dynamic[
-    0.01 FrontEnd`AbsoluteCurrentValue[{
-       WindowSize, 1}]]]}], "\[IndentingNewLine]", 
- RowBox[{
-  StyleBox[
-   RowBox[{
-    RowBox[{
-     RowBox[{"updateMatrix", "[", "]"}], ":=", 
-     RowBox[{"(", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"terrainMatrix", " ", "=", " ", "floor"}], ";", 
-       "\[IndentingNewLine]", 
-       RowBox[{
-        RowBox[{"terrainMatrix", "[", 
-         RowBox[{"[", 
-          RowBox[{
-           RowBox[{
-            RowBox[{"position", "[", 
-             RowBox[{"[", "1", "]"}], "]"}], "[", 
-            RowBox[{"[", "1", "]"}], "]"}], ",", 
-           RowBox[{
-            RowBox[{"position", "[", 
-             RowBox[{"[", "1", "]"}], "]"}], "[", 
-            RowBox[{"[", "2", "]"}], "]"}]}], "]"}], "]"}], " ", "=", " ", 
-        "2"}], ";", "\[IndentingNewLine]", 
-       RowBox[{
-        RowBox[{"terrainMatrix", "[", 
-         RowBox[{"[", 
-          RowBox[{
-           RowBox[{
-            RowBox[{"position", "[", 
-             RowBox[{"[", "2", "]"}], "]"}], "[", 
-            RowBox[{"[", "1", "]"}], "]"}], ",", 
-           RowBox[{
-            RowBox[{"position", "[", 
-             RowBox[{"[", "2", "]"}], "]"}], "[", 
-            RowBox[{"[", "2", "]"}], "]"}]}], "]"}], "]"}], " ", "=", " ", 
-        "3"}], ";", "\[IndentingNewLine]", 
-       RowBox[{"updateDistances", "[", "]"}], ";", "\[IndentingNewLine]", 
-       RowBox[{"matrices", "[", "]"}], ";", "\[IndentingNewLine]", 
-       "\[IndentingNewLine]", 
-       RowBox[{"If", "[", 
-        RowBox[{
-         RowBox[{"currentAction", " ", "==", "0"}], ",", 
-         RowBox[{"checkWin", "[", "]"}]}], "]"}], ";"}], 
-      "\[IndentingNewLine]", ")"}]}], ";"}],
-   FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
   StyleBox["\[IndentingNewLine]",
    FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-  StyleBox[
-   RowBox[{"(*", "*)"}],
-   FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-  StyleBox["\[IndentingNewLine]",
-   FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-  StyleBox[
-   RowBox[{"(*", "*)"}],
-   FontSize->Dynamic[
-    0.01 FrontEnd`AbsoluteCurrentValue[{
-       WindowSize, 1}]]]}], "\[IndentingNewLine]", 
- StyleBox[
   RowBox[{
-   RowBox[{
-    RowBox[{"moveRed", "[", 
-     RowBox[{"x_", ",", " ", "y_"}], "]"}], " ", ":=", " ", 
-    RowBox[{"(", "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{
-       RowBox[{"position", "[", 
-        RowBox[{"[", "2", "]"}], "]"}], " ", "=", " ", 
-       RowBox[{"{", 
-        RowBox[{"x", ",", " ", "y"}], "}"}]}], ";", "\[IndentingNewLine]", 
-      RowBox[{"updateMatrix", "[", "]"}], ";", "\[IndentingNewLine]", 
-      RowBox[{"changeAction", "[", "]"}], ";"}], "\[IndentingNewLine]", 
-     ")"}]}], ";"}],
-  FontSize->Dynamic[
-   0.01 FrontEnd`AbsoluteCurrentValue[{
-      WindowSize, 1}]]], "\[IndentingNewLine]", 
- StyleBox[
-  RowBox[{
-   RowBox[{
-    RowBox[{"moveBlue", "[", 
-     RowBox[{"x_", ",", " ", "y_"}], "]"}], " ", ":=", " ", 
-    RowBox[{"(", "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{
-       RowBox[{"position", "[", 
-        RowBox[{"[", "1", "]"}], "]"}], " ", "=", " ", 
-       RowBox[{"{", 
-        RowBox[{"x", ",", " ", "y"}], "}"}]}], ";", "\[IndentingNewLine]", 
-      RowBox[{"updateMatrix", "[", "]"}], ";", "\[IndentingNewLine]", 
-      RowBox[{"changeAction", "[", "]"}], ";"}], "\[IndentingNewLine]", 
-     ")"}]}], ";"}],
-  FontSize->Dynamic[
-   0.01 FrontEnd`AbsoluteCurrentValue[{
-      WindowSize, 1}]]], "\[IndentingNewLine]", 
- RowBox[{
-  StyleBox[
-   RowBox[{
+   StyleBox[
     RowBox[{
-     RowBox[{"destroyTile", "[", 
-      RowBox[{"x_", ",", " ", "y_"}], "]"}], " ", ":=", " ", 
-     RowBox[{"(", "\[IndentingNewLine]", 
-      RowBox[{
+     RowBox[{"moveMatrixRed", " ", ":=", " ", 
+      RowBox[{"MapThread", "[", 
        RowBox[{
-        RowBox[{"floor", "[", 
-         RowBox[{"[", 
-          RowBox[{"x", ",", " ", "y"}], "]"}], "]"}], "=", "0"}], ";", 
-       "\[IndentingNewLine]", 
-       RowBox[{"updateMatrix", "[", "]"}], ";", "\[IndentingNewLine]", 
-       RowBox[{"changeTurn", "[", "]"}], ";", "\[IndentingNewLine]", 
-       RowBox[{"changeAction", "[", "]"}], ";", "\[IndentingNewLine]", 
-       RowBox[{"checkWin", "[", "]"}], ";"}], "\[IndentingNewLine]", ")"}]}], 
-    ";"}],
-   FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-  StyleBox["\[IndentingNewLine]",
-   FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-  StyleBox[
-   RowBox[{"(*", "*)"}],
-   FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-  StyleBox["\[IndentingNewLine]",
-   FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-  StyleBox[
-   RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"MapThread", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{"#2", "===", "Null"}], ",", "Null", ",", "#1"}], "]"}], 
+            "&"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"#1", ",", "#2"}], "}"}]}], "]"}], "&"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"allRedMatrix", ",", "preMoveMatrixRed"}], "}"}]}], "]"}]}], 
+     ";"}],
+    FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
+   StyleBox["\[IndentingNewLine]",
+    FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
+   StyleBox[
     RowBox[{
-     RowBox[{"--", 
+     RowBox[{
+      RowBox[{"moveRed", "[", 
+       RowBox[{"x_", ",", " ", "y_"}], "]"}], " ", ":=", " ", 
+      RowBox[{"(", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"position", "[", 
+          RowBox[{"[", "2", "]"}], "]"}], " ", "=", " ", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", " ", "y"}], "}"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"updateMatrix", "[", "]"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"changeAction", "[", "]"}], ";"}], "\[IndentingNewLine]", 
+       ")"}]}], ";"}],
+    FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
+   "\[IndentingNewLine]", 
+   StyleBox[
+    RowBox[{
+     RowBox[{
+      RowBox[{"moveBlue", "[", 
+       RowBox[{"x_", ",", " ", "y_"}], "]"}], " ", ":=", " ", 
+      RowBox[{"(", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"position", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], " ", "=", " ", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", " ", "y"}], "}"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"updateMatrix", "[", "]"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"changeAction", "[", "]"}], ";"}], "\[IndentingNewLine]", 
+       ")"}]}], ";"}],
+    FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
+   "\[IndentingNewLine]", 
+   StyleBox[
+    RowBox[{
+     RowBox[{
+      RowBox[{"destroyTile", "[", 
+       RowBox[{"x_", ",", " ", "y_"}], "]"}], " ", ":=", " ", 
+      RowBox[{"(", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"floor", "[", 
+          RowBox[{"[", 
+           RowBox[{"x", ",", " ", "y"}], "]"}], "]"}], "=", "0"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"updateMatrix", "[", "]"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"changeTurn", "[", "]"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"changeAction", "[", "]"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"checkWin", "[", "]"}], ";"}], "\[IndentingNewLine]", ")"}]}],
+      ";"}],
+    FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
+   "\[IndentingNewLine]", 
+   StyleBox[
+    RowBox[{"(*", "*)"}],
+    FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
+   StyleBox["\[IndentingNewLine]",
+    FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
+   StyleBox[
+    RowBox[{"(*", 
+     RowBox[{
       RowBox[{"--", 
        RowBox[{"--", 
         RowBox[{"--", 
@@ -7031,12 +6705,12 @@ Cell[BoxData[{
                RowBox[{"--", 
                 RowBox[{"--", 
                  RowBox[{"--", 
-                  RowBox[{
+                  RowBox[{"--", 
                    RowBox[{
                     RowBox[{
+                    RowBox[{
                     RowBox[{"MATRICES", "--"}], "--"}], "--"}], 
-                   "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}], 
-     RowBox[{"--", 
+                    "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}], 
       RowBox[{"--", 
        RowBox[{"--", 
         RowBox[{"--", 
@@ -7056,174 +6730,32 @@ Cell[BoxData[{
                     RowBox[{"--", 
                     RowBox[{"--", 
                     RowBox[{"--", 
+                    RowBox[{"--", 
                     RowBox[{
                     "--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}], 
-    "*)"}],
-   FontSize->Dynamic[
-    0.01 FrontEnd`AbsoluteCurrentValue[{
-       WindowSize, 1}]]]}], "\[IndentingNewLine]", 
- RowBox[{
-  StyleBox[
-   RowBox[{
+     "*)"}],
+    FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
+   StyleBox["\[IndentingNewLine]",
+    FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
+   "\[IndentingNewLine]", 
+   StyleBox[
     RowBox[{
-     RowBox[{"matrices", "[", "]"}], " ", ":=", " ", 
-     RowBox[{"(", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"simplerMatrix", " ", ":=", 
-        RowBox[{"terrainMatrix", "/.", 
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{
-            RowBox[{
-             RowBox[{"-", "1"}], "|", "1"}], " ", "->", " ", "0"}], ",", " ", 
-           RowBox[{
-            RowBox[{"0", "|", "2", "|", "3"}], " ", "->", " ", "infinity"}]}],
-           "}"}]}]}], ";", "\[IndentingNewLine]", 
-       RowBox[{"terrainGrid", " ", ":=", " ", 
-        RowBox[{"terrainMatrix", " ", "/.", 
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{
-            RowBox[{"-", "1"}], " ", "->", " ", 
-            RowBox[{"Lighter", "[", 
-             RowBox[{"Yellow", ",", " ", "0.5"}], "]"}]}], ",", 
-           RowBox[{"0", "->", "Black"}], ",", 
-           RowBox[{"1", "->", 
-            RowBox[{"Lighter", "[", 
-             RowBox[{"Orange", ",", " ", "0.5"}], "]"}]}], ",", 
-           RowBox[{"2", "->", "Null"}], ",", 
-           RowBox[{"3", "->", "Null"}]}], "}"}]}]}], ";", 
-       "\[IndentingNewLine]", 
-       RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"updateDistances", "[", "]"}], " ", ":=", " ", 
+      RowBox[{"(", "\[IndentingNewLine]", 
+       RowBox[{
         RowBox[{
-         RowBox[{"currentAction", "==", "0"}], ",", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"preDestroyMatrix", " ", "=", " ", 
-           RowBox[{"terrainMatrix", "/.", 
-            RowBox[{"{", 
+         RowBox[{"simplerMatrix", " ", "=", 
+          RowBox[{"terrainMatrix", "/.", 
+           RowBox[{"{", 
+            RowBox[{
              RowBox[{
               RowBox[{
-               RowBox[{
-                RowBox[{"-", "1"}], "|", "1"}], " ", "->", " ", 
-               RowBox[{"graybtn", "[", "]"}]}], ",", " ", 
-              RowBox[{
-               RowBox[{"0", "|", "2", "|", "3"}], " ", "->", " ", "Null"}]}], 
-             "}"}]}]}], ";", "\[IndentingNewLine]", 
-          RowBox[{"destroyMatrix", " ", "=", " ", 
-           RowBox[{"MapThread", "[", 
-            RowBox[{
+               RowBox[{"-", "1"}], "|", "1"}], " ", "->", " ", "0"}], ",", 
+             " ", 
              RowBox[{
-              RowBox[{"MapThread", "[", 
-               RowBox[{
-                RowBox[{
-                 RowBox[{"If", "[", 
-                  RowBox[{
-                   RowBox[{"#2", "===", "Null"}], ",", "Null", ",", "#1"}], 
-                  "]"}], "&"}], ",", 
-                RowBox[{"{", 
-                 RowBox[{"#1", ",", "#2"}], "}"}]}], "]"}], "&"}], ",", 
-             RowBox[{"{", 
-              RowBox[{"allBlackMatrix", ",", "preDestroyMatrix"}], "}"}]}], 
-            "]"}]}]}]}], "\[IndentingNewLine]", "]"}], ";", 
-       "\[IndentingNewLine]", "\[IndentingNewLine]", 
-       RowBox[{"If", "[", 
-        RowBox[{
-         RowBox[{"currentAction", " ", "==", "1"}], ",", 
-         "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"If", "[", 
-           RowBox[{
-            RowBox[{"whoIsPlaying", " ", "==", "0"}], ",", 
-            "\[IndentingNewLine]", 
-            RowBox[{
-             RowBox[{"preMoveMatrixRed", " ", "=", " ", 
-              RowBox[{"distanceMatrixRed", "/.", 
-               RowBox[{"{", 
-                RowBox[{
-                 RowBox[{"1", "->", " ", 
-                  RowBox[{"redbtn", "[", "]"}]}], ",", " ", 
-                 RowBox[{
-                  RowBox[{"x_", "/;", 
-                   RowBox[{"x", ">", "1"}]}], " ", "->", " ", "Null"}]}], 
-                "}"}]}]}], ";", "\[IndentingNewLine]", 
-             RowBox[{"moveMatrixRed", " ", "=", " ", 
-              RowBox[{"MapThread", "[", 
-               RowBox[{
-                RowBox[{
-                 RowBox[{"MapThread", "[", 
-                  RowBox[{
-                   RowBox[{
-                    RowBox[{"If", "[", 
-                    RowBox[{
-                    RowBox[{"#2", "===", "Null"}], ",", "Null", ",", "#1"}], 
-                    "]"}], "&"}], ",", 
-                   RowBox[{"{", 
-                    RowBox[{"#1", ",", "#2"}], "}"}]}], "]"}], "&"}], ",", 
-                RowBox[{"{", 
-                 RowBox[{"allRedMatrix", ",", "preMoveMatrixRed"}], "}"}]}], 
-               "]"}]}]}], ",", "\[IndentingNewLine]", 
-            RowBox[{
-             RowBox[{"preMoveMatrixBlue", " ", "=", " ", 
-              RowBox[{"distanceMatrixBlue", "/.", 
-               RowBox[{"{", 
-                RowBox[{
-                 RowBox[{"1", "->", " ", 
-                  RowBox[{"bluebtn", "[", "]"}]}], ",", 
-                 RowBox[{
-                  RowBox[{"x_", "/;", 
-                   RowBox[{"x", ">", "1"}]}], " ", "->", " ", "Null"}]}], 
-                "}"}]}]}], ";", "\[IndentingNewLine]", 
-             RowBox[{"moveMatrixBlue", " ", "=", " ", 
-              RowBox[{"MapThread", "[", 
-               RowBox[{
-                RowBox[{
-                 RowBox[{"MapThread", "[", 
-                  RowBox[{
-                   RowBox[{
-                    RowBox[{"If", "[", 
-                    RowBox[{
-                    RowBox[{"#2", "===", "Null"}], ",", "Null", ",", "#1"}], 
-                    "]"}], "&"}], ",", 
-                   RowBox[{"{", 
-                    RowBox[{"#1", ",", "#2"}], "}"}]}], "]"}], "&"}], ",", 
-                RowBox[{"{", 
-                 RowBox[{"allBlueMatrix", ",", " ", "preMoveMatrixBlue"}], 
-                 "}"}]}], "]"}]}], ";"}]}], "\[IndentingNewLine]", "]"}], 
-          ";"}]}], "\[IndentingNewLine]", "]"}], ";"}], "\[IndentingNewLine]",
-       ")"}]}], ";"}],
-   FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-  StyleBox["\[IndentingNewLine]",
-   FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-  StyleBox[
-   RowBox[{"(*", "*)"}],
-   FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-  StyleBox[
-   RowBox[{"(*", "*)"}],
-   FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-  StyleBox["\[IndentingNewLine]",
-   FontSize->Dynamic[
-    0.01 FrontEnd`AbsoluteCurrentValue[{
-       WindowSize, 1}]]]}], "\[IndentingNewLine]", 
- RowBox[{
-  StyleBox[
-   RowBox[{
-    RowBox[{
-     RowBox[{"updateDistances", "[", "]"}], " ", ":=", " ", 
-     RowBox[{"(", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"simplerMatrix", " ", "=", 
-        RowBox[{"terrainMatrix", "/.", 
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{
-            RowBox[{
-             RowBox[{"-", "1"}], "|", "1"}], " ", "->", " ", "0"}], ",", " ", 
-           RowBox[{
-            RowBox[{"0", "|", "2", "|", "3"}], " ", "->", " ", "infinity"}]}],
-           "}"}]}]}], ";", "\[IndentingNewLine]", 
-       RowBox[{"If", "[", 
-        RowBox[{
-         RowBox[{"whoIsPlaying", " ", "==", "0"}], ",", "\[IndentingNewLine]", 
+              RowBox[{"0", "|", "2", "|", "3"}], " ", "->", " ", 
+              "infinity"}]}], "}"}]}]}], ";", "\[IndentingNewLine]", 
          RowBox[{"distanceMatrixRed", " ", "=", " ", 
           RowBox[{"simplerMatrix", " ", "+", " ", 
            RowBox[{"Table", "[", 
@@ -7247,43 +6779,41 @@ Cell[BoxData[{
                RowBox[{"{", 
                 RowBox[{"i", ",", " ", "gridY"}], "}"}]}], "]"}], ",", 
              RowBox[{"{", 
-              RowBox[{"j", ",", " ", "gridX"}], "}"}]}], "]"}]}]}], ",", 
-         "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"distanceMatrixBlue", " ", "=", " ", 
-           RowBox[{"simplerMatrix", "+", 
-            RowBox[{"Table", "[", 
-             RowBox[{
-              RowBox[{"Table", "[", 
-               RowBox[{
-                RowBox[{"Max", "[", 
-                 RowBox[{
-                  RowBox[{"Abs", "[", 
-                   RowBox[{
-                    RowBox[{"position", "[", 
+              RowBox[{"j", ",", " ", "gridX"}], "}"}]}], "]"}]}]}]}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"distanceMatrixBlue", " ", "=", " ", 
+          RowBox[{"simplerMatrix", "+", 
+           RowBox[{"Table", "[", 
+            RowBox[{
+             RowBox[{"Table", "[", 
+              RowBox[{
+               RowBox[{"Max", "[", 
+                RowBox[{
+                 RowBox[{"Abs", "[", 
+                  RowBox[{
+                   RowBox[{"position", "[", 
                     RowBox[{"[", 
                     RowBox[{"1", ",", " ", "1"}], "]"}], "]"}], " ", "-", " ",
-                     "j"}], "]"}], ",", 
-                  RowBox[{"Abs", "[", 
-                   RowBox[{
-                    RowBox[{"position", "[", 
+                    "j"}], "]"}], ",", 
+                 RowBox[{"Abs", "[", 
+                  RowBox[{
+                   RowBox[{"position", "[", 
                     RowBox[{"[", 
                     RowBox[{"1", ",", " ", "2"}], "]"}], "]"}], " ", "-", " ",
-                     "i"}], "]"}]}], "]"}], ",", " ", 
-                RowBox[{"{", 
-                 RowBox[{"i", ",", " ", "gridY"}], "}"}]}], "]"}], ",", 
-              RowBox[{"{", 
-               RowBox[{"j", ",", " ", "gridX"}], "}"}]}], "]"}]}]}], ";"}]}], 
-        "\[IndentingNewLine]", "]"}], ";"}], "\[IndentingNewLine]", ")"}]}], 
-    ";"}],
-   FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-  StyleBox["\[IndentingNewLine]",
-   FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
-  StyleBox[
-   RowBox[{"(*", 
-    RowBox[{"<<", 
-     RowBox[{"<", 
-      RowBox[{"--", 
+                    "i"}], "]"}]}], "]"}], ",", " ", 
+               RowBox[{"{", 
+                RowBox[{"i", ",", " ", "gridY"}], "}"}]}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"j", ",", " ", "gridX"}], "}"}]}], "]"}]}]}], ";"}]}], 
+       "\[IndentingNewLine]", ")"}]}], ";"}],
+    FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
+   StyleBox["\[IndentingNewLine]",
+    FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
+   StyleBox[
+    RowBox[{"(*", 
+     RowBox[{"<<", 
+      RowBox[{"<", 
        RowBox[{"--", 
         RowBox[{"--", 
          RowBox[{"--", 
@@ -7295,168 +6825,126 @@ Cell[BoxData[{
                RowBox[{"--", 
                 RowBox[{"--", 
                  RowBox[{"--", 
-                  RowBox[{"--", "<<"}]}]}]}]}]}]}]}]}]}]}]}]}], "<"}]}], 
-    "*)"}],
-   FontSize->Dynamic[
-    0.01 FrontEnd`AbsoluteCurrentValue[{
-       WindowSize, 1}]]]}], "\[IndentingNewLine]", 
- StyleBox[
-  RowBox[{
-   RowBox[{
-    RowBox[{"displayBlueGrid", "[", "]"}], " ", ":=", " ", 
-    RowBox[{"Grid", "[", 
-     RowBox[{"distanceMatrixBlue", ",", " ", 
-      RowBox[{"Frame", "->", "None"}], ",", "  ", 
-      RowBox[{"Alignment", "->", 
-       RowBox[{"{", 
-        RowBox[{"Center", ",", " ", "Center"}], "}"}]}], ",", " ", 
-      RowBox[{"ItemSize", "->", 
-       RowBox[{"{", 
-        RowBox[{"5", ",", " ", "5"}], "}"}]}]}], "]"}]}], ";"}],
-  FontSize->Dynamic[
-   0.01 FrontEnd`AbsoluteCurrentValue[{
-      WindowSize, 1}]]], "\[IndentingNewLine]", 
- StyleBox[
-  RowBox[{
-   RowBox[{
-    RowBox[{"displayRedGrid", "[", "]"}], " ", ":=", " ", 
-    RowBox[{"Grid", "[", 
-     RowBox[{"distanceMatrixRed", ",", " ", 
-      RowBox[{"Frame", "->", "None"}], ",", "  ", 
-      RowBox[{"Alignment", "->", 
-       RowBox[{"{", 
-        RowBox[{"Center", ",", " ", "Center"}], "}"}]}], ",", " ", 
-      RowBox[{"ItemSize", "->", 
-       RowBox[{"{", 
-        RowBox[{"5", ",", " ", "5"}], "}"}]}]}], "]"}]}], ";"}],
-  FontSize->Dynamic[
-   0.01 FrontEnd`AbsoluteCurrentValue[{
-      WindowSize, 1}]]], "\[IndentingNewLine]", 
- StyleBox[
-  RowBox[{
-   RowBox[{
-    RowBox[{"graphDestroyGrid", "[", "]"}], " ", ":=", " ", 
-    RowBox[{"GraphicsGrid", "[", 
-     RowBox[{"destroyMatrix", ",", " ", "\[IndentingNewLine]", 
-      RowBox[{"Frame", "->", "None"}], ",", "  ", 
-      RowBox[{"Alignment", "->", 
-       RowBox[{"{", 
-        RowBox[{"Center", ",", " ", "Center"}], "}"}]}], ",", " ", 
-      "\[IndentingNewLine]", 
-      RowBox[{"ItemAspectRatio", "->", "1"}]}], " ", 
-     RowBox[{"(*", 
-      RowBox[{"ImageSize", "->", " ", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"gridX", "*", "cellSize"}], ",", " ", 
-         RowBox[{"gridY", " ", "*", " ", "cellSize"}]}], "}"}]}], "*)"}], 
-     "\[IndentingNewLine]", "]"}]}], ";"}],
-  FontSize->Dynamic[
-   0.01 FrontEnd`AbsoluteCurrentValue[{
-      WindowSize, 1}]]], "\[IndentingNewLine]", 
- StyleBox[
-  RowBox[{
-   RowBox[{
-    RowBox[{"graphRedGrid", "[", "]"}], " ", ":=", " ", 
-    RowBox[{"GraphicsGrid", "[", 
-     RowBox[{"moveMatrixRed", ",", " ", "\[IndentingNewLine]", 
-      RowBox[{"Frame", "->", "None"}], ",", "  ", 
-      RowBox[{"Alignment", "->", 
-       RowBox[{"{", 
-        RowBox[{"Center", ",", " ", "Center"}], "}"}]}], ",", " ", 
-      "\[IndentingNewLine]", 
-      RowBox[{"ItemAspectRatio", "->", "1"}]}], " ", 
-     RowBox[{"(*", 
-      RowBox[{"ImageSize", "->", " ", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"gridX", "*", "cellSize"}], ",", " ", 
-         RowBox[{"gridY", " ", "*", " ", "cellSize"}]}], "}"}]}], "*)"}], 
-     "\[IndentingNewLine]", "]"}]}], ";"}],
-  FontSize->Dynamic[
-   0.01 FrontEnd`AbsoluteCurrentValue[{
-      WindowSize, 1}]]], "\[IndentingNewLine]", 
- StyleBox[
-  RowBox[{
-   RowBox[{
-    RowBox[{"graphBlueGrid", "[", "]"}], " ", ":=", " ", 
-    RowBox[{"GraphicsGrid", "[", 
-     RowBox[{"moveMatrixBlue", ",", " ", "\[IndentingNewLine]", 
-      RowBox[{"Frame", "->", "None"}], ",", "  ", 
-      RowBox[{"Alignment", "->", 
-       RowBox[{"{", 
-        RowBox[{"Center", ",", " ", "Center"}], "}"}]}], ",", " ", 
-      "\[IndentingNewLine]", 
-      RowBox[{"ItemAspectRatio", "->", "1"}]}], " ", 
-     RowBox[{"(*", 
-      RowBox[{"ImageSize", "->", " ", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"gridX", "*", "cellSize"}], ",", " ", 
-         RowBox[{"gridY", " ", "*", " ", "cellSize"}]}], "}"}]}], "*)"}], 
-     "\[IndentingNewLine]", "]"}]}], ";"}],
-  FontSize->Dynamic[
-   0.01 FrontEnd`AbsoluteCurrentValue[{
-      WindowSize, 1}]]], "\[IndentingNewLine]", 
- StyleBox[
-  RowBox[{
-   RowBox[{
-    RowBox[{"btnOverlay", "[", "]"}], " ", ":=", " ", 
+                  RowBox[{"--", 
+                   RowBox[{"--", "<<"}]}]}]}]}]}]}]}]}]}]}]}]}], "<"}]}], 
+     "*)"}],
+    FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
+   "\[IndentingNewLine]", 
+   StyleBox[
     RowBox[{
-     RowBox[{"{", 
-      RowBox[{"whoIsPlaying", ",", " ", "currentAction"}], "}"}], "/.", 
-     RowBox[{"{", 
+     RowBox[{
+      RowBox[{"graphDestroyGrid", "[", "]"}], " ", ":=", " ", 
+      RowBox[{"GraphicsGrid", "[", 
+       RowBox[{"destroyMatrix", ",", " ", "\[IndentingNewLine]", 
+        RowBox[{"Frame", "->", "None"}], ",", "  ", 
+        RowBox[{"Alignment", "->", 
+         RowBox[{"{", 
+          RowBox[{"Center", ",", " ", "Center"}], "}"}]}], ",", " ", 
+        "\[IndentingNewLine]", 
+        RowBox[{"ItemAspectRatio", "->", "1"}]}], " ", 
+       RowBox[{"(*", 
+        RowBox[{"ImageSize", "->", " ", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"gridX", "*", "cellSize"}], ",", " ", 
+           RowBox[{"gridY", " ", "*", " ", "cellSize"}]}], "}"}]}], "*)"}], 
+       "\[IndentingNewLine]", "]"}]}], ";"}],
+    FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
+   "\[IndentingNewLine]", 
+   StyleBox[
+    RowBox[{
+     RowBox[{
+      RowBox[{"graphRedGrid", "[", "]"}], " ", ":=", " ", 
+      RowBox[{"GraphicsGrid", "[", 
+       RowBox[{"moveMatrixRed", ",", " ", "\[IndentingNewLine]", 
+        RowBox[{"Frame", "->", "None"}], ",", "  ", 
+        RowBox[{"Alignment", "->", 
+         RowBox[{"{", 
+          RowBox[{"Center", ",", " ", "Center"}], "}"}]}], ",", " ", 
+        "\[IndentingNewLine]", 
+        RowBox[{"ItemAspectRatio", "->", "1"}]}], " ", 
+       RowBox[{"(*", 
+        RowBox[{"ImageSize", "->", " ", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"gridX", "*", "cellSize"}], ",", " ", 
+           RowBox[{"gridY", " ", "*", " ", "cellSize"}]}], "}"}]}], "*)"}], 
+       "\[IndentingNewLine]", "]"}]}], ";"}],
+    FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
+   "\[IndentingNewLine]", 
+   StyleBox[
+    RowBox[{
+     RowBox[{
+      RowBox[{"graphBlueGrid", "[", "]"}], " ", ":=", " ", 
+      RowBox[{"GraphicsGrid", "[", 
+       RowBox[{"moveMatrixBlue", ",", " ", "\[IndentingNewLine]", 
+        RowBox[{"Frame", "->", "None"}], ",", "  ", 
+        RowBox[{"Alignment", "->", 
+         RowBox[{"{", 
+          RowBox[{"Center", ",", " ", "Center"}], "}"}]}], ",", " ", 
+        "\[IndentingNewLine]", 
+        RowBox[{"ItemAspectRatio", "->", "1"}]}], " ", 
+       RowBox[{"(*", 
+        RowBox[{"ImageSize", "->", " ", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"gridX", "*", "cellSize"}], ",", " ", 
+           RowBox[{"gridY", " ", "*", " ", "cellSize"}]}], "}"}]}], "*)"}], 
+       "\[IndentingNewLine]", "]"}]}], ";"}],
+    FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
+   "\[IndentingNewLine]", 
+   StyleBox[
+    RowBox[{
+     RowBox[{
+      RowBox[{"btnOverlay", "[", "]"}], " ", ":=", " ", 
       RowBox[{
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"_", ",", "1"}], "}"}], "->", 
-        RowBox[{"graphDestroyGrid", "[", "]"}]}], ",", " ", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"0", ",", " ", "0"}], "}"}], " ", "->", " ", 
-        RowBox[{"graphBlueGrid", "[", "]"}]}], ",", " ", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"1", ",", " ", "0"}], "}"}], " ", "->", " ", 
-        RowBox[{"graphRedGrid", "[", "]"}]}]}], "}"}]}]}], ";"}],
-  FontSize->Dynamic[
-   0.01 FrontEnd`AbsoluteCurrentValue[{
-      WindowSize, 1}]]], "\[IndentingNewLine]", 
- StyleBox[
-  RowBox[{
-   RowBox[{
-    RowBox[{"displayMatrix", "[", "]"}], " ", ":=", " ", 
-    RowBox[{"MatrixPlot", "[", 
-     RowBox[{"terrainMatrix", ",", " ", 
-      RowBox[{"Frame", "->", "None"}], ",", " ", 
-      RowBox[{"ColorRules", "->", 
+       RowBox[{"{", 
+        RowBox[{"whoIsPlaying", ",", " ", "currentAction"}], "}"}], "/.", 
        RowBox[{"{", 
         RowBox[{
          RowBox[{
-          RowBox[{"-", "1"}], " ", "->", " ", 
-          RowBox[{"Lighter", "[", 
-           RowBox[{"Yellow", ",", " ", "0.5"}], "]"}]}], ",", 
-         RowBox[{"0", "->", "Black"}], ",", 
-         RowBox[{"1", "->", 
-          RowBox[{"Lighter", "[", 
-           RowBox[{"Orange", ",", " ", "0.5"}], "]"}]}], ",", 
-         RowBox[{"2", "->", "Blue"}], ",", 
-         RowBox[{"3", "->", "Red"}]}], "}"}]}], ",", " ", 
-      RowBox[{"Background", "->", "LightBlue"}]}], "]"}]}], ";"}],
-  FontSize->Dynamic[
-   0.01 FrontEnd`AbsoluteCurrentValue[{
-      WindowSize, 1}]]], "\[IndentingNewLine]", 
- StyleBox[
-  RowBox[{
-   RowBox[{"updateMatrix", "[", "]"}], ";"}],
-  FontSize->Dynamic[
-   0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]]}], "Input",
+          RowBox[{"{", 
+           RowBox[{"_", ",", "1"}], "}"}], "->", 
+          RowBox[{"graphDestroyGrid", "[", "]"}]}], ",", " ", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", ",", " ", "0"}], "}"}], " ", "->", " ", 
+          RowBox[{"graphBlueGrid", "[", "]"}]}], ",", " ", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"1", ",", " ", "0"}], "}"}], " ", "->", " ", 
+          RowBox[{"graphRedGrid", "[", "]"}]}]}], "}"}]}]}], ";"}],
+    FontSize->Dynamic[0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]], 
+   "\[IndentingNewLine]", 
+   StyleBox[
+    RowBox[{
+     RowBox[{
+      RowBox[{"displayMatrix", "[", "]"}], " ", ":=", " ", 
+      RowBox[{"MatrixPlot", "[", 
+       RowBox[{"terrainMatrix", ",", " ", 
+        RowBox[{"Frame", "->", "None"}], ",", " ", 
+        RowBox[{"ColorRules", "->", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "1"}], " ", "->", " ", 
+            RowBox[{"Lighter", "[", 
+             RowBox[{"Yellow", ",", " ", "0.5"}], "]"}]}], ",", 
+           RowBox[{"0", "->", "Black"}], ",", 
+           RowBox[{"1", "->", 
+            RowBox[{"Lighter", "[", 
+             RowBox[{"Orange", ",", " ", "0.5"}], "]"}]}], ",", 
+           RowBox[{"2", "->", "Blue"}], ",", 
+           RowBox[{"3", "->", "Red"}]}], "}"}]}], ",", " ", 
+        RowBox[{"Background", "->", "LightBlue"}]}], "]"}]}], ";"}],
+    FontSize->Dynamic[
+     0.01 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]]]}]}]], "Input",
  CellChangeTimes->{
   3.93082296358592*^9, {3.930891031803602*^9, 3.93089103685684*^9}, {
-   3.9308911066096153`*^9, 3.930891109103409*^9}, {3.9308911454835815`*^9, 
+   3.9308911066096153`*^9, 3.930891109103409*^9}, {3.930891145483581*^9, 
    3.930891147465702*^9}, {3.9308912329089146`*^9, 3.9308912369392586`*^9}, {
-   3.930891272233715*^9, 
-   3.9308913702767296`*^9}},ExpressionUUID->"f30f3955-5ebb-a345-a52a-\
+   3.930891272233715*^9, 3.930891370276729*^9}, {3.9309074284484234`*^9, 
+   3.930907531224327*^9}},ExpressionUUID->"f30f3955-5ebb-a345-a52a-\
 ad565d0f29d5"]
 }, Open  ]],
 
@@ -30543,7 +30031,7 @@ $CellContext`currentAction$$}, {{
    3.930905294873615*^9, 3.930905497269665*^9, 3.930905652796528*^9, 
    3.930906320586918*^9, 3.9309073164863605`*^9},
  CellLabel->"Out[32]=",ExpressionUUID->"fb13a19a-a30c-9549-b632-9d44153b5043"]
-}, Open  ]],
+}, {2}]],
 
 Cell[BoxData["\n"], "Input",
  CellChangeTimes->{{3.9308019449878883`*^9, 3.9308019460730133`*^9}, {
@@ -42310,7 +41798,7 @@ TaggingRules->{
       "Subsection", FrontEnd`FontVariationsUnderline -> True}, {
       "Chapter", FrontEnd`FontVariationsUnderline -> True}}}, 
   "SlideshowSettings" -> {"Toolbar" -> True}},
-Magnification:>0.5 Inherited,
+Magnification:>0.6 Inherited,
 FrontEndVersion->"14.0 pour Microsoft Windows (64-bit) (December 12, 2023)",
 StyleDefinitions->Notebook[{
    Cell[
@@ -42365,136 +41853,136 @@ ExpressionUUID->"3755bfad-2ee9-2642-932a-81bfd887d208"
 (*CellTagsOutline
 CellTagsIndex->{
  "SlideShowHeader"->{
-  Cell[580, 22, 136, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"24b5708d-0a0a-cb4c-8ea1-43a7c827c604",
+  Cell[580, 22, 136, 2, 73, "SlideShowNavigationBar",ExpressionUUID->"24b5708d-0a0a-cb4c-8ea1-43a7c827c604",
    CellTags->"SlideShowHeader"],
-  Cell[28182, 491, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"aa4c0200-7934-4f43-89cb-86d2b88b26d1",
+  Cell[28182, 491, 122, 2, 73, "SlideShowNavigationBar",ExpressionUUID->"aa4c0200-7934-4f43-89cb-86d2b88b26d1",
    CellTags->"SlideShowHeader"],
-  Cell[29358, 524, 122, 2, 27, "SlideShowNavigationBar",ExpressionUUID->"716a08a0-b442-d64f-854f-951acf15b2ef",
+  Cell[29358, 524, 122, 2, 33, "SlideShowNavigationBar",ExpressionUUID->"716a08a0-b442-d64f-854f-951acf15b2ef",
    CellTags->"SlideShowHeader"],
-  Cell[30985, 562, 122, 2, 27, "SlideShowNavigationBar",ExpressionUUID->"0caeae90-f1b7-b948-8e88-8e0a940f3351",
+  Cell[30985, 562, 122, 2, 33, "SlideShowNavigationBar",ExpressionUUID->"0caeae90-f1b7-b948-8e88-8e0a940f3351",
    CellTags->"SlideShowHeader"],
-  Cell[322448, 5358, 122, 2, 27, "SlideShowNavigationBar",ExpressionUUID->"572eaf79-5804-5145-b3e2-53ebb13ec755",
+  Cell[322448, 5358, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"572eaf79-5804-5145-b3e2-53ebb13ec755",
    CellTags->"SlideShowHeader"],
-  Cell[1774604, 30560, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"062f437d-f67e-024e-8c6a-87ac3196df2b",
+  Cell[1755631, 30048, 122, 2, 73, "SlideShowNavigationBar",ExpressionUUID->"062f437d-f67e-024e-8c6a-87ac3196df2b",
    CellTags->"SlideShowHeader"],
-  Cell[2439653, 42187, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"5297bb98-e7c0-2d44-b993-e68691a0dbde",
+  Cell[2420680, 41675, 122, 2, 73, "SlideShowNavigationBar",ExpressionUUID->"5297bb98-e7c0-2d44-b993-e68691a0dbde",
    CellTags->"SlideShowHeader"],
-  Cell[2441625, 42235, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"cba9b6df-f463-2d48-8c40-5c9b0dc6d760",
+  Cell[2422652, 41723, 122, 2, 73, "SlideShowNavigationBar",ExpressionUUID->"cba9b6df-f463-2d48-8c40-5c9b0dc6d760",
    CellTags->"SlideShowHeader"],
-  Cell[2442783, 42265, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"ac12d418-18df-8349-88a8-0ab274e66fc6",
+  Cell[2423810, 41753, 122, 2, 73, "SlideShowNavigationBar",ExpressionUUID->"ac12d418-18df-8349-88a8-0ab274e66fc6",
    CellTags->"SlideShowHeader"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"SlideShowHeader", 2447320, 42366}
+ {"SlideShowHeader", 2428347, 41854}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 136, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"24b5708d-0a0a-cb4c-8ea1-43a7c827c604",
+Cell[580, 22, 136, 2, 73, "SlideShowNavigationBar",ExpressionUUID->"24b5708d-0a0a-cb4c-8ea1-43a7c827c604",
  CellTags->"SlideShowHeader"],
-Cell[719, 26, 27426, 460, 229, "Title",ExpressionUUID->"0aec8053-72f7-7c40-ab3b-e0edd08b5eab"]
+Cell[719, 26, 27426, 460, 275, "Title",ExpressionUUID->"0aec8053-72f7-7c40-ab3b-e0edd08b5eab"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[28182, 491, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"aa4c0200-7934-4f43-89cb-86d2b88b26d1",
+Cell[28182, 491, 122, 2, 73, "SlideShowNavigationBar",ExpressionUUID->"aa4c0200-7934-4f43-89cb-86d2b88b26d1",
  CellTags->"SlideShowHeader"],
-Cell[28307, 495, 1014, 24, 369, "Text",ExpressionUUID->"c61323a8-4cbb-424a-9918-e1e3b1d0dad7"]
+Cell[28307, 495, 1014, 24, 442, "Text",ExpressionUUID->"c61323a8-4cbb-424a-9918-e1e3b1d0dad7"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[29358, 524, 122, 2, 27, "SlideShowNavigationBar",ExpressionUUID->"716a08a0-b442-d64f-854f-951acf15b2ef",
+Cell[29358, 524, 122, 2, 33, "SlideShowNavigationBar",ExpressionUUID->"716a08a0-b442-d64f-854f-951acf15b2ef",
  CellTags->"SlideShowHeader"],
 Cell[CellGroupData[{
-Cell[29505, 530, 204, 3, 64, "Section",ExpressionUUID->"1ecfb651-2d1d-a547-9675-9591f7b3afeb"],
-Cell[29712, 535, 1224, 21, 202, "Text",ExpressionUUID->"a08a7806-4591-c64c-81ff-a2a43a5eeb17"]
+Cell[29505, 530, 204, 3, 77, "Section",ExpressionUUID->"1ecfb651-2d1d-a547-9675-9591f7b3afeb"],
+Cell[29712, 535, 1224, 21, 243, "Text",ExpressionUUID->"a08a7806-4591-c64c-81ff-a2a43a5eeb17"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[30985, 562, 122, 2, 27, "SlideShowNavigationBar",ExpressionUUID->"0caeae90-f1b7-b948-8e88-8e0a940f3351",
+Cell[30985, 562, 122, 2, 33, "SlideShowNavigationBar",ExpressionUUID->"0caeae90-f1b7-b948-8e88-8e0a940f3351",
  CellTags->"SlideShowHeader"],
 Cell[CellGroupData[{
-Cell[31132, 568, 197, 3, 64, "Section",ExpressionUUID->"7c3861c3-0ba6-3442-b289-bcf8625b74b1"],
-Cell[31332, 573, 798, 13, 121, "Text",ExpressionUUID->"c2e3909d-cb98-e646-ad29-bf46a1bf1187"],
-Cell[32133, 588, 290266, 4764, 134, "Text",ExpressionUUID->"b3ad3b63-3924-9742-b8ba-6a70d9367d1b"]
+Cell[31132, 568, 197, 3, 77, "Section",ExpressionUUID->"7c3861c3-0ba6-3442-b289-bcf8625b74b1"],
+Cell[31332, 573, 798, 13, 126, "Text",ExpressionUUID->"c2e3909d-cb98-e646-ad29-bf46a1bf1187"],
+Cell[32133, 588, 290266, 4764, 162, "Text",ExpressionUUID->"b3ad3b63-3924-9742-b8ba-6a70d9367d1b"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[322448, 5358, 122, 2, 27, "SlideShowNavigationBar",ExpressionUUID->"572eaf79-5804-5145-b3e2-53ebb13ec755",
+Cell[322448, 5358, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"572eaf79-5804-5145-b3e2-53ebb13ec755",
  CellTags->"SlideShowHeader"],
 Cell[CellGroupData[{
-Cell[322595, 5364, 248, 4, 50, "Section",ExpressionUUID->"600a0397-292d-c04b-a62f-ee71b18f7f2c"],
+Cell[322595, 5364, 248, 4, 77, "Section",ExpressionUUID->"600a0397-292d-c04b-a62f-ee71b18f7f2c"],
 Cell[CellGroupData[{
-Cell[322868, 5372, 359, 5, 28, "Subsubsection",ExpressionUUID->"f793b824-9d38-f648-86f8-87425e6edf47"],
+Cell[322868, 5372, 359, 5, 46, "Subsubsection",ExpressionUUID->"f793b824-9d38-f648-86f8-87425e6edf47"],
 Cell[CellGroupData[{
-Cell[323252, 5381, 39307, 1008, 1134, "Input",ExpressionUUID->"64c110db-7a88-5440-9ae5-a844acf5b729"],
-Cell[362562, 6391, 6514, 128, 209, "Output",ExpressionUUID->"cc2fcb37-d4b8-f142-9324-f988486d198f"]
+Cell[323252, 5381, 34966, 886, 1261, "Input",ExpressionUUID->"64c110db-7a88-5440-9ae5-a844acf5b729"],
+Cell[358221, 6269, 6514, 128, 251, "Output",ExpressionUUID->"cc2fcb37-d4b8-f142-9324-f988486d198f"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[369125, 6525, 402, 7, 63, "Subsubsection",ExpressionUUID->"c2f9b03f-3802-3b40-a156-adc269d1c7fa"],
-Cell[369530, 6534, 7038, 181, 280, "Input",ExpressionUUID->"7ef2629b-d20e-ef41-bf11-b94ae9fe35bd"]
+Cell[364784, 6403, 402, 7, 46, "Subsubsection",ExpressionUUID->"c2f9b03f-3802-3b40-a156-adc269d1c7fa"],
+Cell[365189, 6412, 7038, 181, 212, "Input",ExpressionUUID->"7ef2629b-d20e-ef41-bf11-b94ae9fe35bd"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[376605, 6720, 419, 8, 38, "Subsubsection",ExpressionUUID->"1736f82c-25a2-4647-96f8-e3b2b0a6b9ca"],
-Cell[377027, 6730, 27782, 729, 2129, "Input",ExpressionUUID->"f30f3955-5ebb-a345-a52a-ad565d0f29d5"]
+Cell[372264, 6598, 417, 8, 46, "Subsubsection",ExpressionUUID->"41f1bd29-b115-0a44-b0ab-10997dc8cf92"],
+Cell[372684, 6608, 13155, 339, 1161, "Input",ExpressionUUID->"f30f3955-5ebb-a345-a52a-ad565d0f29d5"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[404846, 7464, 386, 6, 39, "Subsubsection",ExpressionUUID->"a6484111-5c23-3e4f-baba-389dd1da0138"],
-Cell[405235, 7472, 4885, 121, 466, "Input",ExpressionUUID->"c54f696e-9eb8-0542-8e38-9902f97d5c69"]
+Cell[385876, 6952, 386, 6, 47, "Subsubsection",ExpressionUUID->"a6484111-5c23-3e4f-baba-389dd1da0138"],
+Cell[386265, 6960, 4885, 121, 559, "Input",ExpressionUUID->"c54f696e-9eb8-0542-8e38-9902f97d5c69"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[410157, 7598, 381, 6, 39, "Subsubsection",ExpressionUUID->"2b769542-38db-674e-b659-b5fba089d431"],
+Cell[391187, 7086, 381, 6, 47, "Subsubsection",ExpressionUUID->"2b769542-38db-674e-b659-b5fba089d431"],
 Cell[CellGroupData[{
-Cell[410563, 7608, 1132853, 18963, 2773, "Input",ExpressionUUID->"05e0397b-c063-cc46-b1b0-3b412895c6ac"],
-Cell[1543419, 26573, 230757, 3971, 212, "Output",ExpressionUUID->"fb13a19a-a30c-9549-b632-9d44153b5043"]
-}, Open  ]],
-Cell[1774191, 30547, 352, 6, 51, "Input",ExpressionUUID->"14f7bd30-b86b-c443-9fde-6733cf2ba91f"]
+Cell[391593, 7096, 1132853, 18963, 3328, "Input",ExpressionUUID->"05e0397b-c063-cc46-b1b0-3b412895c6ac"],
+Cell[1524449, 26061, 230757, 3971, 254, "Output",ExpressionUUID->"fb13a19a-a30c-9549-b632-9d44153b5043"]
+}, {2}]],
+Cell[1755218, 30035, 352, 6, 61, "Input",ExpressionUUID->"14f7bd30-b86b-c443-9fde-6733cf2ba91f"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1774604, 30560, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"062f437d-f67e-024e-8c6a-87ac3196df2b",
+Cell[1755631, 30048, 122, 2, 73, "SlideShowNavigationBar",ExpressionUUID->"062f437d-f67e-024e-8c6a-87ac3196df2b",
  CellTags->"SlideShowHeader"],
 Cell[CellGroupData[{
-Cell[1774751, 30566, 196, 3, 64, "Section",ExpressionUUID->"bf9ad6a9-5d48-4849-8ce8-40127e73eb1a"],
+Cell[1755778, 30054, 196, 3, 77, "Section",ExpressionUUID->"bf9ad6a9-5d48-4849-8ce8-40127e73eb1a"],
 Cell[CellGroupData[{
-Cell[1774972, 30573, 329, 5, 51, "Subsection",ExpressionUUID->"56dced17-dbbd-1d49-93e7-edcdd8980a3b"],
-Cell[1775304, 30580, 468, 8, 25, "Text",ExpressionUUID->"feb4f43a-5e56-7d4f-a6cd-5b5bd3766234"],
+Cell[1755999, 30061, 329, 5, 61, "Subsection",ExpressionUUID->"56dced17-dbbd-1d49-93e7-edcdd8980a3b"],
+Cell[1756331, 30068, 468, 8, 30, "Text",ExpressionUUID->"feb4f43a-5e56-7d4f-a6cd-5b5bd3766234"],
 Cell[CellGroupData[{
-Cell[1775797, 30592, 440236, 7653, 5656, "Input",ExpressionUUID->"ad48739b-ec77-aa45-b5ae-73d34375917d"],
-Cell[2216036, 38247, 222323, 3893, 212, "Output",ExpressionUUID->"41d164d5-e6b9-4f46-82b3-9caa6ee74285"]
+Cell[1756824, 30080, 440236, 7653, 6787, "Input",ExpressionUUID->"ad48739b-ec77-aa45-b5ae-73d34375917d"],
+Cell[2197063, 37735, 222323, 3893, 254, "Output",ExpressionUUID->"41d164d5-e6b9-4f46-82b3-9caa6ee74285"]
 }, {2}]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2438405, 42146, 337, 8, 79, "Subsection",ExpressionUUID->"48a428d5-6649-9e48-8f95-150b3b16db05"],
-Cell[2438745, 42156, 393, 8, 26, "Text",ExpressionUUID->"f03b96ec-b02c-b046-bae2-d87d6e8ccabe"],
-Cell[2439141, 42166, 147, 3, 51, "Input",ExpressionUUID->"7f50ff52-b3dc-3049-a755-ffc7c4b07a46"]
+Cell[2419432, 41634, 337, 8, 95, "Subsection",ExpressionUUID->"48a428d5-6649-9e48-8f95-150b3b16db05"],
+Cell[2419772, 41644, 393, 8, 31, "Text",ExpressionUUID->"f03b96ec-b02c-b046-bae2-d87d6e8ccabe"],
+Cell[2420168, 41654, 147, 3, 61, "Input",ExpressionUUID->"7f50ff52-b3dc-3049-a755-ffc7c4b07a46"]
 }, Open  ]],
-Cell[2439303, 42172, 301, 9, 107, "Subsection",ExpressionUUID->"27f05f02-9f74-4442-8d7e-2c6e362c4672"]
+Cell[2420330, 41660, 301, 9, 129, "Subsection",ExpressionUUID->"27f05f02-9f74-4442-8d7e-2c6e362c4672"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2439653, 42187, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"5297bb98-e7c0-2d44-b993-e68691a0dbde",
+Cell[2420680, 41675, 122, 2, 73, "SlideShowNavigationBar",ExpressionUUID->"5297bb98-e7c0-2d44-b993-e68691a0dbde",
  CellTags->"SlideShowHeader"],
 Cell[CellGroupData[{
-Cell[2439800, 42193, 257, 4, 64, "Section",ExpressionUUID->"6d52e4bf-04a7-6d45-bec2-fc26481a0275"],
-Cell[2440060, 42199, 1516, 30, 171, "Text",ExpressionUUID->"b0184a76-6fd4-ab4a-a5ea-9aeb7cd50c02"]
+Cell[2420827, 41681, 257, 4, 77, "Section",ExpressionUUID->"6d52e4bf-04a7-6d45-bec2-fc26481a0275"],
+Cell[2421087, 41687, 1516, 30, 205, "Text",ExpressionUUID->"b0184a76-6fd4-ab4a-a5ea-9aeb7cd50c02"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2441625, 42235, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"cba9b6df-f463-2d48-8c40-5c9b0dc6d760",
+Cell[2422652, 41723, 122, 2, 73, "SlideShowNavigationBar",ExpressionUUID->"cba9b6df-f463-2d48-8c40-5c9b0dc6d760",
  CellTags->"SlideShowHeader"],
 Cell[CellGroupData[{
-Cell[2441772, 42241, 201, 3, 64, "Section",ExpressionUUID->"f0496a4e-6159-254d-9447-b9535f6ac37d"],
-Cell[2441976, 42246, 758, 13, 116, "Text",ExpressionUUID->"675e70b5-fd15-ae4c-826c-273a49a3cb36"]
+Cell[2422799, 41729, 201, 3, 77, "Section",ExpressionUUID->"f0496a4e-6159-254d-9447-b9535f6ac37d"],
+Cell[2423003, 41734, 758, 13, 139, "Text",ExpressionUUID->"675e70b5-fd15-ae4c-826c-273a49a3cb36"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2442783, 42265, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"ac12d418-18df-8349-88a8-0ab274e66fc6",
+Cell[2423810, 41753, 122, 2, 73, "SlideShowNavigationBar",ExpressionUUID->"ac12d418-18df-8349-88a8-0ab274e66fc6",
  CellTags->"SlideShowHeader"],
-Cell[2442908, 42269, 552, 8, 119, "Title",ExpressionUUID->"239fb1a9-72d1-3f48-81a9-3026a315fd39"],
-Cell[2443463, 42279, 311, 7, 100, "Text",ExpressionUUID->"ff9e7eb9-73ab-7d48-8e63-c23e769feb39"]
+Cell[2423935, 41757, 552, 8, 143, "Title",ExpressionUUID->"239fb1a9-72d1-3f48-81a9-3026a315fd39"],
+Cell[2424490, 41767, 311, 7, 120, "Text",ExpressionUUID->"ff9e7eb9-73ab-7d48-8e63-c23e769feb39"]
 }, Open  ]]
 }
 ]
